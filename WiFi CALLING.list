@@ -1,0 +1,4 @@
+# WiFi CALLING
+DOMAIN-SUFFIX,pub.3gppnetwork.org
+DST-PORT,4500
+DST-PORT,500
