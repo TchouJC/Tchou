@@ -1,0 +1,44 @@
+安装OpenWrt
+  扩容系统硬盘10G，新增硬盘80G
+OpenWrt建立旁路由模式
+  自定义DNS 114.114.114.114
+OpenWrt禁用IPV6
+OpenWrt终端关闭密码登录：
+  SSH工具登录OpenWrt，修改路径文件：/etc/config/ttyd
+    打开ttyd文件修改命令：    
+      config ttyd
+      option interface '@lan'
+      option command '/bin/login -f root'
+    SSH运行命令重启ttyd:/etc/init.d/ttyd reload  
+OpenWrt扩容系统盘，扩容新增盘
+  命令行：
+    OpenWrt系统盘扩容命令：cp -r /overlay/* /mnt/sda3
+    OpenWrt新增盘授权命令：chmod -R 777 /mnt/sdb1
+OpenWrt配置Aria2
+  软件包安装：webui-aria2
+OpenWrt配置PassWall2
+OpenWrt配置OpenClash/singbox Docker后端搭建
+  Docker命令行：
+    docker run -d --restart=always -p 25500:25500 tindy2013/subconverter:latest
+    docker run -d --restart=always -p 25500:25500 asdlokj1qpi23/subconverter:latest
+    docker run -d --name sing-box-subscribe -p 5000:5000 hestudy/sing-box-subscribe
+  检查命令：（SSH连接openwrt执行命令）  
+    curl http://localhost:25500/version
+    openclash后端本机docker地址：http://localhost:25500/sub ； http://127.0.0.1:25500/sub ； http://192.168.10.1:25500/sub
+    singbox后端本机docker地址：http://localhost:5000/config/ ； http://127.0.0.1:5000/config/ ； http://192.168.10.1:5000/config/
+OpenWrt配置OpenClash
+  参照七尺宇教程
+OpenWrt配置AdGuard Home
+  本地DNS：
+    202.100.199.9（主路由拨号界面查询）
+    202.100.192.68（主路由拨号界面查询）
+  参照七尺宇教程
+OpenWrt配置OpenClash规则自定义
+
+宽带账号密码：
+  0898455703283
+  986387
+  
+ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+4500
+500
