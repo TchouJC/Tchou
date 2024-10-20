@@ -33,12 +33,4 @@ OpenWrt配置AdGuard Home
     202.100.199.9（主路由拨号界面查询）
     202.100.192.68（主路由拨号界面查询）
   参照七尺宇教程
-OpenWrt配置OpenClash规则自定义
-
-宽带账号密码：
-  0898455703283
-  986387
-  
-ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
-4500
-500
+OpenWrt配置OpenClash规则自定义（github源码）
