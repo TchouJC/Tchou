@@ -1,0 +1,32 @@
+singbox后端规则订阅模版
+  https://sing-box-subscribe-doraemon.vercel.app/config/订阅链接地址&file=规则模板json地址
+  http://192.168.10.1:5000/config/订阅链接地址&file=规则模板json地址
+
+机场节点关键字：
+  香港|台湾|日本|新加坡|美国|韩国|澳大利亚|印度|加拿大|墨西哥|法国|意大利|荷兰|西班牙|瑞士|英国|以色列|沙特阿拉伯|南非|阿联酋|巴西|智利|哥伦比亚|马来西亚|俄罗斯|瑞典
+  Hong Kong|Taiwan|Japan|Singapore|USA|UK|Malaysia|Turkey|Argentina
+CloudFisher节点链接
+  https://cloudfisher.net/jsk34?token=ca119bebfac1a76f6b75dffc1d06de22
+EFCloud节点链接
+  https://n15uvht4r659107p.eastasia.cloudapp.azure.com/queue/list?token=9fd6ff40ab57235af21b8481472f59e4
+
+
+香港节点
+香港|Hong Kong
+台湾节点
+Taiwan|台湾
+其他节点
+新加坡|美国|韩国|澳大利亚|印度|加拿大|墨西哥|法国|意大利|荷兰|西班牙|瑞士|英国|以色列|沙特阿拉伯|南非|阿联酋|巴西|智利|哥伦比亚|马来西亚|俄罗斯|瑞典|Japan|Singapore|USA|UK|Malaysia|Turkey|Argentina
+
+GitHub singbox规则文件
+  https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/new%20file/Tchou_config_fakeip.json
+  https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/new%20file/Tchou_config_mixed.json
+  https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/new%20file/Tchou_config_tun.json
+
+GitHub加速镜像：
+  https://mirror.ghproxy.com/
+
+singbox在线配置文件：
+  https://mirror.ghproxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/pzwj/fakeip.json
+  https://mirror.ghproxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/pzwj/mixed.json
+  https://mirror.ghproxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/pzwj/tun.json
