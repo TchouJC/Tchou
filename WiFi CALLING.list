@@ -1,6 +1,0 @@
-# WiFi CALLING
-DOMAIN-SUFFIX,pub.3gppnetwork.org
-DOMAIN-SUFFIX,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
-DOMAIN-SUFFIX,ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
-DST-PORT,4500
-DST-PORT,500
