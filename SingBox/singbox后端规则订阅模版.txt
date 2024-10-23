@@ -1,0 +1,5 @@
+singbox后端规则订阅模版
+  在线转换：https://sing-box-subscribe-doraemon.vercel.app/config/订阅链接地址&file=规则模板json地址
+  本地转换：http://192.168.10.1:5000/config/订阅链接地址&file=规则模板json地址
+GitHub加速镜像：
+  https://mirror.ghproxy.com/
