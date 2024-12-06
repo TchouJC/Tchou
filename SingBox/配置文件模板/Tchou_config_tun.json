@@ -16,7 +16,7 @@
     },
   "cache_file": {
     "enabled": true,
-    "path": "/Users/junchen_tchou/ sing-box config/cache.db",
+    "path": "自定义路径/cache.db",
     "store_fakeip": false
     }
   },
