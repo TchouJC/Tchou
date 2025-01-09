@@ -8,7 +8,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://fba01.fbsubcn01.cc:2096/flydsubal/ptotqkpvctjw33hw?clash=1&extend=1"
+    url: "https://fba01.fbsubcn01.cc:2096/flydsubal/ptotqkpvctjw33hw?sub=2&extend=1"
   CloudFisher:
     type: http
     interval: 1800
@@ -17,7 +17,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://cloudfisher.net/jsk34?token=ca119bebfac1a76f6b75dffc1d06de22"
+    url: "https://cloudfisher.one/jsk34?token=ca119bebfac1a76f6b75dffc1d06de22"
   EFCloud:
     type: http
     interval: 1800
@@ -26,7 +26,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://iqhwbbcnul.germanywestcentral.cloudapp.azure.com/queue/list?token=9fd6ff40ab57235af21b8481472f59e4"
+    url: "https://efxxl.xyz/queue/list?token=9fd6ff40ab57235af21b8481472f59e4"
           
 # 用于下载订阅时指定UA
 global-ua: clash
