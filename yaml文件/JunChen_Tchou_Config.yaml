@@ -36,6 +36,15 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "https://rgergergergerg6555.saojc.xyz/api/v1/client/subscribe?token=4aa0867d93302843c03daef5a6c6fc3e"
+  流量光机场:
+    type: http
+    interval: 1800
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 🟢 直连
+    url: "https://conta.sub-mitce.com/?sid=208085&token=896b4eaaeba6a51910e9"
           
 # 用于下载订阅时指定UA
 global-ua: clash
@@ -155,11 +164,11 @@ pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台�
 # 策略组
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🌐 全部节点, 🌐 其他地区, 🟢 直连]}
-  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)Hong Kong|香港|HK"}
-  - {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: "(?i)Taiwan|台湾|TW"}
-  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美国|USA|US|United States"}
-  - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日本|JP|Japan"}
-  - {name: 🇸🇬 新坡节点, type: select, include-all: true, filter: "(?i)新加坡|SG|Singapore"}
+  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)🇭🇰|Hong Kong|香港|HK"}
+  - {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: "(?i)🇹🇼|Taiwan|台湾|TW"}
+  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)🇺🇲|美国|USA|US|United States"}
+  - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)🇯🇵|日本|JP|Japan"}
+  - {name: 🇸🇬 新坡节点, type: select, include-all: true, filter: "(?i)🇸🇬|新加坡|SG|Singapore"}
   - {name: 🌐 其他地区, type: select, include-all: true, filter: "^((?!(Hong Kong|HK|Taiwan|TW|Japan|JP|Singapore|SG|香港|台湾|日本|新加坡|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|IPV6|0.1x)).)*$"}
   - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(Hong Kong|香港|HK))^((?!(美|韩|印|澳|土|以|联酋|沙特|马来|印度|法|英|德|俄|荷|意|典|士|班牙|加|墨|巴西|智|根廷|非|尼日|哥伦|USA|United States|UK|Malaysia|Turkey|Argentina|Korea|Australia|Antarctica|Konghwaguk|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|IPV6|0.1x)).)*$"}
   - {name: 🔯 台湾故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(Taiwan|台湾|TW))^((?!(美|韩|印|澳|土|以|联酋|沙特|马来|印度|法|英|德|俄|荷|意|典|士|班牙|加|墨|巴西|智|根廷|非|尼日|哥伦|USA|United States|UK|Malaysia|Turkey|Argentina|Korea|Australia|Antarctica|Konghwaguk|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|IPV6|0.1x)).)*$" }
