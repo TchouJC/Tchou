@@ -36,7 +36,7 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "https://rgergergergerg6555.saojc.xyz/api/v1/client/subscribe?token=4aa0867d93302843c03daef5a6c6fc3e"
-  流量光机场:
+  Mitec机场:
     type: http
     interval: 1800
     health-check:
