@@ -8,7 +8,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://fba01.fbsubcn01.cc:2096/flydsubal/ptotqkpvctjw33hw?sub=2&extend=1"
+    url: "订阅链接"
   CloudFisher:
     type: http
     interval: 1800
@@ -17,7 +17,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://cloudfisher.one/jsk34?token=ca119bebfac1a76f6b75dffc1d06de22"
+    url: "订阅链接"
   EFCloud:
     type: http
     interval: 1800
@@ -26,7 +26,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://efxxl.xyz/queue/list?token=9fd6ff40ab57235af21b8481472f59e4"
+    url: "订阅链接"
   流量光机场:
     type: http
     interval: 1800
@@ -35,7 +35,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://rgergergergerg6555.saojc.xyz/api/v1/client/subscribe?token=4aa0867d93302843c03daef5a6c6fc3e"
+    url: "订阅链接"
   Mitec机场:
     type: http
     interval: 1800
@@ -44,7 +44,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://conta.sub-mitce.com/?sid=208085&token=896b4eaaeba6a51910e9"
+    url: "订阅链接"
           
 # 用于下载订阅时指定UA
 global-ua: clash
