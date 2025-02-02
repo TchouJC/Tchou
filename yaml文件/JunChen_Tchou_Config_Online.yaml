@@ -160,7 +160,7 @@ proxies:
   udp: true
  
 # 锚点
-pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🌐 全部节点, 🌐 其他地区, 🟢 直连]}
+pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, 🌐 全部节点, 🌐 其他地区, 🟢 直连]}
 # 策略组
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🌐 全部节点, 🌐 其他地区, 🟢 直连]}
@@ -180,6 +180,7 @@ proxy-groups:
   - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇺🇲|美国|USA|US|United States))^((?!(韩|印|澳|土|以|联酋|沙特|马来|印度|法|英|德|俄|荷|意|典|士|班牙|加|墨|巴西|智|根廷|非|尼日|哥伦|UK|Malaysia|Turkey|Argentina|Korea|Australia|Antarctica|Konghwaguk|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|IPV6|0.1x)).)*$" }
   - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|日本|JP|Japan))^((?!(韩|印|澳|土|以|联酋|沙特|马来|印度|法|英|德|俄|荷|意|典|士|班牙|加|墨|巴西|智|根廷|非|尼日|哥伦|UK|Malaysia|Turkey|Argentina|Korea|Australia|Antarctica|Konghwaguk|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|IPV6|0.1x)).)*$" }
   - {name: ♻️ 新坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇸🇬|新加坡|SG|Singapore))^((?!(韩|印|澳|土|以|联酋|沙特|马来|印度|法|英|德|俄|荷|意|典|士|班牙|加|墨|巴西|智|根廷|非|尼日|哥伦|UK|Malaysia|Turkey|Argentina|Korea|Australia|Antarctica|Konghwaguk|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|IPV6|0.1x)).)*$" }
+  - {name: 🍃 台湾均衡, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(韩|印|澳|土|以|联酋|沙特|马来|印度|法|英|德|俄|荷|意|典|士|班牙|加|墨|巴西|智|根廷|非|尼日|哥伦|UK|Malaysia|Turkey|Argentina|Korea|Australia|Antarctica|Konghwaguk|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|IPV6|0.1x)).)*$" }
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
   - {name: 🌐 全部节点, type: select, include-all: true} 
   - {name: 📹 YouTube,!!merge <<: *pr}
