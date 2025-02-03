@@ -14,10 +14,8 @@
       "external_ui_download_detour": "🚀 节点选择",
       "default_mode": "rule"
     },
-  "cache_file": {
-    "enabled": true,
-    "path": "/Users/junchen_tchou/sing-box config/cache.db",
-    "store_fakeip": false
+    "cache_file": {
+      "enabled": true,
     }
   },
 
@@ -25,20 +23,19 @@
  {
    "servers": 
    [
-     {"tag": "dns_direct", "address": "223.5.5.5", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
-     {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
+     {"tag": "proxyDns", "address": "tls://8.8.8.8", "detour": "🚀 节点选择"},
+     {"tag": "localDns", "address": "223.5.5.5", "detour": "🎯 全球直连"}
    ],
-   "rules": 
-   [
-     {"outbound": "any", "server": "dns_direct", "disable_cache": true},
-     {"clash_mode": "Direct", "server": "dns_direct"},
-     {"clash_mode": "Global", "server": "dns_proxy"},
-     {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
-     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
-   ],
-   "final": "dns_proxy",
-   "strategy": "ipv4_only"
-},
+   "rules": [
+      { "outbound": "any", "server": "localDns", "disable_cache": true },
+      { "rule_set": "geosite-cn", "server": "localDns" },   
+      { "clash_mode": "direct", "server": "localDns" },
+      { "clash_mode": "global", "server": "proxyDns" },
+      { "rule_set": "geosite-geolocation-!cn", "server": "proxyDns" }
+    ],
+    "final": "localDns",
+    "strategy": "ipv4_only"
+  },
 
 "inbounds": [
   {
@@ -46,10 +43,10 @@
     "address": "172.19.0.1/30",
     "mtu": 9000,
     "auto_route": true,
-    "auto_redirect": false,
-    "auto_redirect_input_mark": "0x2023",
-    "auto_redirect_output_mark": "0x2024",
+    "auto_redirect": true,
     "strict_route": true,
+    "sniff": true,
+    "endpoint_independent_nat": false,
     "stack": "system",
     "platform": {
       "http_proxy": {
