@@ -163,7 +163,7 @@ proxies:
 pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, 🌐 全部节点, 🌐 其他地区, 🟢 直连]}
 # 策略组
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🌐 全部节点, 🌐 其他地区, 🟢 直连]}
+  - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, 🌐 全部节点, 🌐 其他地区, 🟢 直连]}
   - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)🇭🇰|Hong Kong|HongKong|香港|HK"}
   - {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: "(?i)🇹🇼|Taiwan|台湾|TW"}
   - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)🇺🇲|美国|USA|US|United States"}
@@ -227,7 +227,7 @@ rule-anchor:
 rule-providers: 
   private_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   proxylite: {!!merge <<: *Tchou, url: "https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/OpenClash/%E8%A7%84%E5%88%99%E6%96%87%E4%BB%B6/ProxyLite.list"}
-  ai: {!!merge <<: *Tchou, url: "https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/OpenClash/%E8%A7%84%E5%88%99%E6%96%87%E4%BB%B6/AI.list"}
+  ai: {!!merge <<: *Tchou, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/OpenAi.list"}
   youtube_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   github_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
