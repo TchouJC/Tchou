@@ -1,7 +1,15 @@
-# 代理补充列表
-
-# 域名后缀匹配
-DOMAIN-SUFFIX,qichiyu.com
+# 机场
+DOMAIN-SUFFIX,wgetcloud.org
+DOMAIN-SUFFIX,flyingbird.pro
+DOMAIN-SUFFIX,fbwebid.cc
+DOMAIN-SUFFIX,cloudfisher.net
+DOMAIN-SUFFIX,efcloud3.cc
+DOMAIN-SUFFIX,efcloud.pages
+DOMAIN-SUFFIX,efrceo.makeup
+DOMAIN-SUFFIX,efflame.yachts
+DOMAIN-SUFFIX,llgjc1.com
+DOMAIN-SUFFIX,llg01.com
+DOMAIN-SUFFIX,malijfa.com
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,1e100
