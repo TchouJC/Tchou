@@ -189,7 +189,7 @@ proxy-groups:
   - {name: 👽 Twitter,!!merge <<: *pr}
   - {name: 👨🏿‍💻 GitHub,!!merge <<: *pr}
   - {name: 📲 Telegram,!!merge <<: *pr}
-  - {name: 🎵 TikTok,!!merge <<: *pr}
+  - {name: 🎵 TikTok, type: select, proxies: [🟢 直连, 🚀 节点选择, ♻️ 台湾自动, ♻️ 新坡自动, ♻️ 日本自动, ♻️ 美国自动, 🔯 台湾故转, 🔯 新坡故转, 🔯 日本故转, 🔯 美国故转, 🇹🇼 台湾节点, 🇸🇬 新坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🍃 台湾均衡]}
   - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 💶 PayPal,!!merge <<: *pr}
   - {name: 🐬 OneDrive,!!merge <<: *pr}
@@ -197,7 +197,7 @@ proxy-groups:
   - {name: 🎥 NETFLIX,!!merge <<: *pr}
   - {name: ✈️ Speedtest,!!merge <<: *pr}
   - {name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择]}
-  - {name: 🐟 漏网之鱼,!!merge <<: *pr}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🟢 直连, 🚀 节点选择]}
 rules:
   - RULE-SET,private_domain,🟢 直连
   - RULE-SET,Agent Airport,🚀 节点选择
