@@ -99,7 +99,7 @@
   "route": 
  {
    "auto_detect_interface": true,
-   "final": "🐠 漏网之鱼",
+   "final": "🐟 漏网之鱼",
    "rules": 
    [
      {"action": "sniff"},
