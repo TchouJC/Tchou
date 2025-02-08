@@ -183,7 +183,7 @@ proxy-groups:
   - {name: 🍃 台湾均衡, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$" }
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
   - {name: 🌐 全部节点, type: select, include-all: true} 
-  - {name: 🤖 ChatGPT,!!merge <<: *pr}
+  - {name: 🤖 AI,!!merge <<: *pr}
   - {name: 📹 YouTube,!!merge <<: *pr}
   - {name: 🍀 Google,!!merge <<: *pr}
   - {name: 👽 Twitter,!!merge <<: *pr}
@@ -201,7 +201,7 @@ proxy-groups:
 rules:
   - RULE-SET,private_domain,🟢 直连
   - RULE-SET,Agent Airport,🚀 节点选择
-  - RULE-SET,ai,🤖 ChatGPT
+  - RULE-SET,AI_domain,🤖 AI
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,twitter_domain,twitter_Tchou,👽 Twitter
@@ -230,7 +230,7 @@ rule-anchor:
 rule-providers: 
   private_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   Agent Airport: {!!merge <<: *Tchou, url: "https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/OpenClash/%E8%A7%84%E5%88%99%E6%96%87%E4%BB%B6/Agent%20Airport.list"}
-  ai: {!!merge <<: *Tchou, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/OpenAi.list"}
+  AI_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/openai.mrs"}
   youtube_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   twitter_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/twitter.mrs"}
