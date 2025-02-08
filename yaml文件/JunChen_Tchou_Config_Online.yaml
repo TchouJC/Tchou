@@ -204,8 +204,7 @@ rules:
   - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,google_domain,🍀 Google
-  - RULE-SET,twitter_domain,👽 Twitter
-  - RULE-SET,twitter_Tchou,👽 Twitter
+  - RULE-SET,twitter_domain,twitter_Tchou,👽 Twitter
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,tiktok_domain,🎵 TikTok
