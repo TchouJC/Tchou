@@ -197,7 +197,7 @@ proxy-groups:
   - {name: 🎥 NETFLIX,!!merge <<: *pr}
   - {name: ✈️ Speedtest,!!merge <<: *pr}
   - {name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择]}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [🟢 直连, 🚀 节点选择]}
+  - {name: 🐟 漏网之鱼,!!merge <<: *pr}
 rules:
   - RULE-SET,private_domain,🟢 直连
   - RULE-SET,Agent Airport,🚀 节点选择
