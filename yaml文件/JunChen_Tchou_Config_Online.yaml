@@ -151,7 +151,7 @@ proxies:
   udp: true
  
 # 锚点
-pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, 🌐 全部节点, 🌐 其他地区, 🟢 直连]}
+pr: &pr {type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🌐 全部节点, 🌐 其他地区, 🟢 直连, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡]}
 # 策略组
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, 🌐 全部节点, 🌐 其他地区, 🟢 直连]}
@@ -174,25 +174,25 @@ proxy-groups:
   - {name: 🍃 台湾均衡, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$" }
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
   - {name: 🌐 全部节点, type: select, include-all: true} 
-  - {name: 🤖 AI, type: select, proxies: [🚀 节点选择, ♻️ 台湾自动, ♻️ 新坡自动, ♻️ 日本自动, ♻️ 美国自动, 🔯 台湾故转, 🔯 新坡故转, 🔯 日本故转, 🔯 美国故转, 🇹🇼 台湾节点, 🇸🇬 新坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🍃 台湾均衡]}
-  - {name: 📹 YouTube,!!merge <<: *pr}
-  - {name: 🍀 Google,!!merge <<: *pr}
-  - {name: 👽 Twitter,!!merge <<: *pr}
-  - {name: 👨🏿‍💻 GitHub,!!merge <<: *pr}
-  - {name: 📲 Telegram,!!merge <<: *pr}
-  - {name: 🤓 Facebook ,!!merge <<: *pr}
-  - {name: 📷 Instagram ,!!merge <<: *pr}
-  - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择, ♻️ 台湾自动, ♻️ 新坡自动, ♻️ 日本自动, ♻️ 美国自动, 🔯 台湾故转, 🔯 新坡故转, 🔯 日本故转, 🔯 美国故转, 🇹🇼 台湾节点, 🇸🇬 新坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🍃 台湾均衡]}
+  - {name: 🤖 AI, type: select, proxies: [🚀 节点选择]}
+  - {name: 📹 YouTube, type: select, proxies: [🚀 节点选择]}
+  - {name: 🍀 Google, type: select, proxies: [🚀 节点选择]}
+  - {name: 👽 Twitter, type: select, proxies: [🚀 节点选择]}
+  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🚀 节点选择]}
+  - {name: 📲 Telegram, type: select, proxies: [🚀 节点选择]}
+  - {name: 🤓 Facebook, type: select, proxies: [🚀 节点选择]}
+  - {name: 📷 Instagram, type: select, proxies: [🚀 节点选择]}
+  - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择]}
   - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择]}
-  - {name: 💶 PayPal,!!merge <<: *pr}
-  - {name: 🐬 OneDrive,!!merge <<: *pr}
-  - {name: 🪟 Microsoft,!!merge <<: *pr}
-  - {name: 🎥 NETFLIX,!!merge <<: *pr}
-  - {name: ✈️ Speedtest,!!merge <<: *pr}
-  - {name: 🎹 Spotify,!!merge <<: *pr}
-  - {name: 🧸 Disney+,!!merge <<: *pr}
-  - {name: 🧜‍♀️ HBO,!!merge <<: *pr} 
-  - {name: 🎠 Amazon,!!merge <<: *pr} 
+  - {name: 💶 PayPal, type: select, proxies: [🟢 直连, 🚀 节点选择]}
+  - {name: 🐬 OneDrive, type: select, proxies: [🟢 直连, 🚀 节点选择]}
+  - {name: 🪟 Microsoft, type: select, proxies: [🟢 直连, 🚀 节点选择]}
+  - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择]}
+  - {name: ✈️ Speedtest, type: select, proxies: [🟢 直连, 🚀 节点选择]}
+  - {name: 🎹 Spotify, type: select, proxies: [🚀 节点选择]}
+  - {name: 🧸 Disney+, type: select, proxies: [🚀 节点选择]}
+  - {name: 🧜‍♀️ HBO, type: select, proxies: [🚀 节点选择]} 
+  - {name: 🎠 Amazon, type: select, proxies: [🟢 直连, 🚀 节点选择]} 
   - {name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 🐟 漏网之鱼,!!merge <<: *pr}
 rules:
