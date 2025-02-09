@@ -190,6 +190,7 @@ proxy-groups:
   - {name: 👨🏿‍💻 GitHub,!!merge <<: *pr}
   - {name: 📲 Telegram,!!merge <<: *pr}
   - {name: 🤓 Facebook ,!!merge <<: *pr}
+  - {name: 📷 instagram ,!!merge <<: *pr}
   - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择, ♻️ 台湾自动, ♻️ 新坡自动, ♻️ 日本自动, ♻️ 美国自动, 🔯 台湾故转, 🔯 新坡故转, 🔯 日本故转, 🔯 美国故转, 🇹🇼 台湾节点, 🇸🇬 新坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🍃 台湾均衡]}
   - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 💶 PayPal,!!merge <<: *pr}
@@ -213,6 +214,7 @@ rules:
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,Facebook_domain,🤓 Facebook
+  - RULE-SET,instagram_domain,📷 instagram
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,paypal_domain,💶 PayPal
@@ -224,10 +226,6 @@ rules:
   - RULE-SET,speedtest_domain,🧸 Disney+
   - RULE-SET,speedtest_domain,🧜‍♀️ HBO
   - RULE-SET,speedtest_domain,🎠 Amazon
-
-
-
-  
   - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,google_ip,🍀 Google,no-resolve
@@ -252,6 +250,7 @@ rule-providers:
   github_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
   telegram_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
   Facebook_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/facebook.mrs"}
+  instagram_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/instagram.mrs"}
   tiktok_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
   apple_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
   paypal_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
