@@ -36,6 +36,15 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "https://conta.sub-mitce.com/?sid=208085&token=aeb91ba5ea383fa34827"
+  FG机场:
+    type: http
+    interval: 1800
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 🟢 直连
+    url: "http://feigou.zhunchuanpb.com/api/v1/client/subscribe?token=c286939bc52ec4f2bd6622d2c283473d"
           
 # 用于下载订阅时指定UA
 global-ua: clash
