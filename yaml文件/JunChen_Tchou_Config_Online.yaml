@@ -215,8 +215,8 @@ proxy-groups:
   - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择]}
   - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 💶 PayPal, type: select, proxies: [🟢 直连, 🚀 节点选择]}
-  - {name: 🐬 OneDrive, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 💧 Copilot, type: select, proxies: [🚀 节点选择]}
+  - {name: 🐬 OneDrive, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 🪟 Microsoft, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择]}
   - {name: 📢 FCM, type: select, proxies: [🚀 节点选择]}
