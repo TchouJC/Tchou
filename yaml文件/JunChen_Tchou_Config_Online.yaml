@@ -216,6 +216,7 @@ proxy-groups:
   - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 💶 PayPal, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 🐬 OneDrive, type: select, proxies: [🟢 直连, 🚀 节点选择]}
+  - {name: 💧 Copilot, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 🪟 Microsoft, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择]}
   - {name: ✈️ Speedtest, type: select, proxies: [🟢 直连, 🚀 节点选择]}
@@ -239,6 +240,7 @@ rules:
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,paypal_domain,💶 PayPal
+  - RULE-SET,bing_domain,💧 Copilot
   - RULE-SET,onedrive_domain,🐬 OneDrive
   - RULE-SET,microsoft_domain,🪟 Microsoft
   - RULE-SET,netflix_domain,🎥 NETFLIX
@@ -277,6 +279,7 @@ rule-providers:
   tiktok_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
   apple_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
   paypal_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
+  bing_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/bing.mrs"}
   onedrive_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs"}
   microsoft_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
   netflix_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}  
