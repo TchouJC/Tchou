@@ -27,16 +27,7 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "https://rgergergergerg6555.saojc.xyz/api/v1/client/subscribe?token=5dd3395bfbc646a9a2aff58edffb847f"
-  Mitec机场:
-    type: http
-    interval: 1800
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 🟢 直连
-    url: "https://conta.sub-mitce.com/?sid=208085&token=aeb91ba5ea383fa34827"
-  FG机场:
+  FG 🐶:
     type: http
     interval: 1800
     health-check:
@@ -45,6 +36,24 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "http://feigou.zhunchuanpb.com/api/v1/client/subscribe?token=c286939bc52ec4f2bd6622d2c283473d"
+  Mitec:
+    type: http
+    interval: 1800
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 🟢 直连
+    url: "https://conta.sub-mitce.com/?sid=208085&token=aeb91ba5ea383fa34827"
+  EFCloud:
+    type: http
+    interval: 1800
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 🟢 直连
+    url: "https://efxxl.xyz/queue/list?token=93b32a22ffc08a7252c823fc062e379a"
           
 # 用于下载订阅时指定UA
 global-ua: clash
