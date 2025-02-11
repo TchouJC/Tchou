@@ -216,9 +216,10 @@ proxy-groups:
   - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 💶 PayPal, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 🐬 OneDrive, type: select, proxies: [🟢 直连, 🚀 节点选择]}
-  - {name: 💧 Copilot, type: select, proxies: [🟢 直连, 🚀 节点选择]}
+  - {name: 💧 Copilot, type: select, proxies: [🚀 节点选择]}
   - {name: 🪟 Microsoft, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择]}
+  - {name: 📢 FCM, type: select, proxies: [🚀 节点选择]}
   - {name: ✈️ Speedtest, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 🎹 Spotify, type: select, proxies: [🚀 节点选择]}
   - {name: 🧸 Disney+, type: select, proxies: [🚀 节点选择]}
@@ -244,6 +245,7 @@ rules:
   - RULE-SET,onedrive_domain,🐬 OneDrive
   - RULE-SET,microsoft_domain,🪟 Microsoft
   - RULE-SET,netflix_domain,🎥 NETFLIX
+  - RULE-SET,googlefcm_domain,📢 FCM
   - RULE-SET,speedtest_domain,✈️ Speedtest
   - RULE-SET,spotify_domain,🎹 Spotify
   - RULE-SET,disney_domain,🧸 Disney+
@@ -282,7 +284,8 @@ rule-providers:
   bing_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/bing.mrs"}
   onedrive_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs"}
   microsoft_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
-  netflix_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}  
+  netflix_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
+  googlefcm_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/googlefcm.mrs"}
   speedtest_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"}
   spotify_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/spotify.mrs"}
   disney_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/disney.mrs"}
