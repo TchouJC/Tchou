@@ -1,15 +1,5 @@
 # 机场订阅，名称不能重复
 proxy-providers:
-  FG机场:
-    type: http
-    interval: 1800
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 🟢 直连
-    url: "http://feigou.zhunchuanpb.com/api/v1/client/subscribe?token=c286939bc52ec4f2bd6622d2c283473d"
-proxy-providers:
   FLYINGBIRD:
     type: http
     interval: 1800
@@ -19,6 +9,15 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "https://fba01.fbsubcn01.cc:2096/flydsubal/i0xa9yrriim09djz?clash=1&extend=1"
+  FG机场:
+    type: http
+    interval: 1800
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 🟢 直连
+    url: "http://feigou.zhunchuanpb.com/api/v1/client/subscribe?token=c286939bc52ec4f2bd6622d2c283473d"
   CloudFisher:
     type: http
     interval: 1800
