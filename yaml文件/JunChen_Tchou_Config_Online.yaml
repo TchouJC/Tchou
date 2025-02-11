@@ -238,11 +238,13 @@ rules:
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  #新格式内容使用参数“domain”
   Tchou: &Tchou {type: http, interval: 86400, behavior: domain, format: text}
+  #经典格式内容“classical” 
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
   private_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
-  agent airport: {!!merge <<: *Tchou, url: "https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/OpenClash/%E8%A7%84%E5%88%99%E6%96%87%E4%BB%B6/Agent%20Airport.list"}
+  agent airport: {!!merge <<: *class, url: "https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/OpenClash/%E8%A7%84%E5%88%99%E6%96%87%E4%BB%B6/Agent%20Airport.list"}
   ai_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/openai.mrs"}
   youtube_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
