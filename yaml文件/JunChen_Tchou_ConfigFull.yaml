@@ -19,7 +19,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: ""订阅链接"
+    url: "订阅链接"
     
     
   流量光机场:
@@ -30,7 +30,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: ""订阅链接"
+    url: "订阅链接"
     
     
   FG 🐶:
@@ -41,7 +41,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: ""订阅链接"
+    url: "订阅链接"
     
     
   Mitec:
@@ -52,7 +52,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: ""订阅链接"
+    url: "订阅链接"
     
     
   EFCloud:
@@ -63,7 +63,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: ""订阅链接"
+    url: "订阅链接"
     
           
 # 用于下载订阅时指定UA
