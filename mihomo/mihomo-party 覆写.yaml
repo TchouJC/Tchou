@@ -117,7 +117,7 @@ proxy-groups:
   - {name: ♻️ 新坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇸🇬|新加坡|SG|Singapore))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$" }
   - {name: 🍃 台湾均衡, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$" }
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
-  - name: 🌐 全部节点,type:select,include-all:true
+   - name: 🌐 全部节点, type: select, include-all: true
   - {name: 🤖 AI, type: select, proxies: [🚀 节点选择]}
   - {name: 📹 YouTube, type: select, proxies: [🚀 节点选择]}
   - {name: 🍀 Google, type: select, proxies: [🚀 节点选择]}
