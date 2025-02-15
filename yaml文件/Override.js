@@ -98,7 +98,7 @@ function main(config) {
     {...groupBaseOption,"name": "兜底分流","type": "select","proxies": ["手动切换", "香港节点", "美国节点", "狮城节点", "日本节点", "台湾节点", "DIRECT"],},
     // 地区分组
     {...groupBaseOption,"name": "🚀 节点选择","type": "select","proxies": ["🔯 香港故转", "🔯 台湾故转", "🔯 美国故转", "🔯 日本故转", "🔯 新坡故转", "♻️ 香港自动", "♻️ 台湾自动", "♻️ 美国自动", "♻️ 日本自动", "♻️ 新坡自动", "♻️ 自动选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇺🇲 美国节点", "🇯🇵 日本节点", "🇸🇬 新坡节点", "🍃 台湾均衡", "🌐 全部节点", "🌐 其他地区", "DIRECT"],},
-    {...groupBaseOption,"name": "🌐 全部节点","type": "select","proxies": "include-all: true,"},
+    {...groupBaseOption,"name": "🌐 全部节点","type": "select","proxies": "include-all: true"},
     {...groupBaseOption,"name": "♻️ 自动选择","type": "url-test","tolerance": 20,"include-all": true,"exclude-filter": "DIRECT",},
     {...groupBaseOption,"name": "香港节点","type": "url-test","tolerance": 0,"include-all": true,"filter": "(?i)🇭🇰|香港|(\b(HK|Hong)\b)",},
     {...groupBaseOption,"name": "美国节点","type": "url-test","tolerance": 0,"include-all": true,"filter": "(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b)",},
