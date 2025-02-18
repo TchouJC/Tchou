@@ -101,7 +101,19 @@
         { "tag": "🎯 全球直连", "type": "direct" },
         { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
         { "tag": "hysteria2","type": "hysteria2","server": "akuslax90.mmaccc.top","server_port": 443,"up_mbps": 50,"down_mbps": 500,"password": "788b3c34-1c73-4a40-a02e-f195cb738d01",
-          "tls": {"enabled": true,"server_name": "akuslax90.mmaccc.top","alpn": ["h3"]},"brutal_debug": false}
+          "tls": {"enabled": true,"server_name": "akuslax90.mmaccc.top","alpn": ["h3"]},"brutal_debug": false},
+          {
+            "type": "direct",
+            "tag": "direct"
+          },
+          {
+            "type": "block",
+            "tag": "block"
+          },
+          {
+            "type": "dns",
+            "tag": "dns-out"
+          }
       ],
     "route": {
       "default_domain_resolver": {"server": "local"},
