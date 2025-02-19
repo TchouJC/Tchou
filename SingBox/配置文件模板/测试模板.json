@@ -104,7 +104,7 @@
   "route": {
     "default_domain_resolver": {"server": "local"},
     "auto_detect_interface": true,
-    "final": "🐟 漏网之鱼",
+    "final": "🚀 节点选择",
     "rules": [
       {"inbound": ["tun-in", "mixed-in"],"action": "sniff"},
       {"type": "logical","mode": "or","rules":[{"port":53},{"protocol": "dns"}],"action": "hijack-dns"},
