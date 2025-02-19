@@ -101,9 +101,11 @@
         { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
         { "tag": "🎯 全球直连", "type": "direct" },
         { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
-        { "server": "akusum.mmaccc.top",
+        { "type": "hysteria2",
+          "tag": "HY节点-1",
+          "server": "akusum.mmaccc.top",
           "server_port": 443,
-          "up_mbps": 20,
+          "up_mbps": 100,
           "down_mbps": 100,
           "password": "788b3c34-1c73-4a40-a02e-f195cb738d01",
           "tls": {
@@ -113,8 +115,11 @@
               "h3"
             ]
           }
+          
         },
-        {"server": "de1.dexlos.com",
+        { "type": "hysteria2",
+          "tag": "HY节点-2",
+          "server": "de1.dexlos.com",
           "server_port": 443,
           "up_mbps": 100,
           "down_mbps": 100,
@@ -126,6 +131,7 @@
               "h3"
             ]
           }
+         
         }
       ],
     "route": {
