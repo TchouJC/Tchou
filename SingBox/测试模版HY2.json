@@ -101,7 +101,7 @@
         { "tag": "🎯 全球直连", "type": "direct" },
         { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
         { "type": "hysteria2",
-          "tag": "hysteria2-1",
+          "tag": "hysteria2",
           "server": "akusum.mmaccc.top", 
           "server_port": 443,
           "up_mbps": 100,
