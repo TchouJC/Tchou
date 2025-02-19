@@ -31,8 +31,8 @@
     ],
     "rules": [
       {"outbound": "any","server": "local"},
-      {"clash_mode": "🎯 全球直连","server": "local"},
-      {"clash_mode": "GLOBAL","server": "google"},
+      {"clash_mode": "direct","server": "local"},
+      {"clash_mode": "global","server": "google"},
       {"query_type": ["A","AAAA"],"rule_set": "geosite-cn","server": "fakeip"},
       {"rule_set": "geosite-cn","server": "local"},
       {"type": "logical","mode": "and",
