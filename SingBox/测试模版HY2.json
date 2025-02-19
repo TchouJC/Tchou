@@ -102,14 +102,30 @@
         { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
         { "type": "hysteria2",
           "tag": "hysteria2",
-          "server": ["akusum.mmaccc.top", "de1.dexlos.com"],
+          "server": "akusum.mmaccc.top", 
           "server_port": 443,
           "up_mbps": 100,
           "down_mbps": 100,
-          "password": ["788b3c34-1c73-4a40-a02e-f195cb738d01", "662A7162-E772-46BF-BF1A-D2F378CB2018"],
+          "password": "788b3c34-1c73-4a40-a02e-f195cb738d01",
           "tls": {
             "enabled": true,
-            "server_name": ["akusum.mmaccc.top", "de1.dexlos.com"],
+            "server_name": "akusum.mmaccc.top",
+            "alpn": [
+              "h3"
+            ]
+          },
+          "brutal_debug": false
+        },
+        { "type": "hysteria2",
+          "tag": "hysteria2",
+          "server": "de1.dexlos.com", 
+          "server_port": 443,
+          "up_mbps": 100,
+          "down_mbps": 100,
+          "password": "662A7162-E772-46BF-BF1A-D2F378CB2018",
+          "tls": {
+            "enabled": true,
+            "server_name": "de1.dexlos.com",
             "alpn": [
               "h3"
             ]
