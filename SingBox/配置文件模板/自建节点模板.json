@@ -107,15 +107,15 @@
       { "tag": "🤙 VM节点", "type": "vmess", "server": "akusum.mmaccc.top", "server_port": 443, "uuid": "788b3c34-1c73-4a40-a02e-f195cb738d01",
         "security": "auto", "alter_id": 0, "transport": {"type": "ws", "headers": {"Host": "akusum.mmaccc.top"}, "path": " '/?ed=2048'"}
       },
-      { "tag": "🤙 VL节点", "type": "vless", "server": "你的域名", "server_port": 443, "uuid": "服务端对应的uuid",
+      { "tag": "🤙 VL节点", "type": "vless", "server": "", "server_port": 443, "uuid": "",
         "flow": "xtls-rprx-vision", "packet_encoding": "xudp", "tls": {"enabled": true,"insecure": false}
       },
-      { "tag": "🤙 TR节点", "type": "trojan", "server": "你的域名", "server_port": 443, "password": "服务端对应的密码",
+      { "tag": "🤙 TR节点", "type": "trojan", "server": "", "server_port": 443, "password": "",
         "tls": { "enabled": true, "insecure": false}
       },
-      { "tag": "🤙 TU节点","type": "tuic", "server": "服务端 ip", "server_port": 443, "password": "服务端对应密码", "uuid": "服务端对应uuid",
+      { "tag": "🤙 TU节点","type": "tuic", "server": "", "server_port": 443, "password": "", "uuid": "",
         "congestion_control": "cubic", "heartbeat": "10s",
-        "tls": {"enabled": true, "server_name": "你的域名", "insecure": false}
+        "tls": {"enabled": true, "server_name": "", "insecure": false}
       }
     ],
   "route": {
