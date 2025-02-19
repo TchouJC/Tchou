@@ -101,7 +101,7 @@
         { "tag": "🎯 全球直连", "type": "direct" },
         { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
         { "type": "hysteria2",
-          "tag": "hysteria2",
+          "tag": "hysteria2-1",
           "server": "akusum.mmaccc.top", 
           "server_port": 443,
           "up_mbps": 100,
@@ -117,7 +117,7 @@
           "brutal_debug": false
         },
         { "type": "hysteria2",
-          "tag": "hysteria2",
+          "tag": "hysteria2-2",
           "server": "de1.dexlos.com", 
           "server_port": 443,
           "up_mbps": 100,
