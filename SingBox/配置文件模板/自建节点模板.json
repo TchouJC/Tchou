@@ -100,8 +100,13 @@
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
       { "tag": "🎯 全球直连", "type": "direct" },
       { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }]},
-      { "type": "hysteria2","tag": "HY2节点","server": "akusum.mmaccc.top","server_port": 443,"password": "788b3c34-1c73-4a40-a02e-f195cb738d01",
-          "tls": {"enabled": true,"server_name": "akusum.mmaccc.top","insecure": false}
+      { "tag": "HY2节点", "type": "hysteria2", "server": "akusum.mmaccc.top", "server_port": 443, "password": "788b3c34-1c73-4a40-a02e-f195cb738d01",
+          "tls": {"enabled": true, "server_name": "akusum.mmaccc.top", "insecure": false}
+      },
+      { "tag": "VM节点", "type": "vmess", "server": "akusum.mmaccc.top", "server_port": 8880, "uuid": "788b3c34-1c73-4a40-a02e-f195cb738d01",
+        "security": "auto",
+        "alter_id": 0,
+        "transport": {"type": "ws", "headers": {"Host": "akusum.mmaccc.top"}, "path": " '/?ed=2048'"}
       }
     ],
   "route": {
