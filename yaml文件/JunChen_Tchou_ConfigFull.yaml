@@ -208,7 +208,7 @@ proxy-groups:
   - {name: 🎹 Spotify, type: select, proxies: [🚀 节点选择]}
   - {name: 🧸 Disney+, type: select, proxies: [🚀 节点选择]}
   - {name: 🧜‍♀️ HBO, type: select, proxies: [🚀 节点选择]} 
-  - {name: 🎠 Amazon, type: select, proxies: [🚀 节点选择, 🟢 直连]} 
+  - {name: 🎠 Amazon, type: select, proxies: [🚀 节点选择]} 
   - {name: 🎯 全球直连, type: select, proxies: [🟢 直连]}
   - {name: 🐟 漏网之鱼,!!merge <<: *pr}
 rules:
