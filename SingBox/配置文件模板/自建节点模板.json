@@ -91,7 +91,7 @@
         { "tag": "🐬 OneDrive", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
         { "tag": "🪟 Microsoft", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
         { "tag": "🎥 Netflix", "type": "selector", "outbounds": ["🚀 节点选择"] },
-        { "tag": "📢 FCM", "type": "selector", "outbounds": ["🚀 节点选择", "🐸 手动切换"] },
+        { "tag": "📢 FCM", "type": "selector", "outbounds": ["🚀 节点选择"] },
         { "tag": "♻️ Speedtest", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
         { "tag": "🎹 Spotify", "type": "selector", "outbounds": ["🚀 节点选择"] },
         { "tag": "🧸 Disney+", "type": "selector", "outbounds": ["🚀 节点选择"] },
