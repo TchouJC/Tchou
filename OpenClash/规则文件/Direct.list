@@ -1,5 +1,8 @@
 # 直连补充列表(国内域名不解析时，防止走代理使用)
 
+#机场
+DOMAIN-SUFFIX,feigou.idsduf.com
+
 # MyList
 # 域名后缀匹配
 DOMAIN-SUFFIX,time.windows.com
