@@ -31,11 +31,7 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-    #绕过证书参数
-    override:
-      skip-cert-verify:true
-    udp: true
-    
+   
   FG 🐶:
     type: http
     interval: 1800
@@ -45,10 +41,6 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-    #绕过证书参数
-    override:
-      skip-cert-verify:true
-    udp: true
 
   Mitec:
     type: http
@@ -59,11 +51,6 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-    #绕过证书参数
-    override:
-      skip-cert-verify:true
-    udp: true
-        
           
 # 用于下载订阅时指定UA
 global-ua: clash.meta
