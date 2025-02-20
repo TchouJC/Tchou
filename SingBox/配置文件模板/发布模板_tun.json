@@ -87,7 +87,7 @@
     { "tag": "🎹 Spotify", "type": "selector", "outbounds": ["🚀 节点选择"] },
     { "tag": "🧸 Disney+", "type": "selector", "outbounds": ["🚀 节点选择"] },
     { "tag": "🧜‍♀️ HBO", "type": "selector", "outbounds": ["🚀 节点选择"] },
-    { "tag": "🎠 Amazon", "type": "selector", "outbounds": ["🚀 节点选择", "🎯 全球直连"] },
+    { "tag": "🎠 Amazon", "type": "selector", "outbounds": ["🚀 节点选择"] },
     { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
     { "tag": "🎯 全球直连", "type": "direct" },
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]}
