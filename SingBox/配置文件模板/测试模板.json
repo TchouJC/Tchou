@@ -85,7 +85,7 @@
       { "tag": "🤓 Facebook", "type": "selector", "outbounds": ["🚀 节点选择"] },
       { "tag": "📷 Instagram", "type": "selector", "outbounds": ["🚀 节点选择"] },
       { "tag": "🎵 TikTok", "type": "selector", "outbounds": ["🚀 节点选择"] },
-      { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🎯 全球直连"] },
+      { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
       { "tag": "💰 PayPal", "type": "selector", "outbounds": ["🚀 节点选择"] },
       { "tag": "💧 Copilot", "type": "selector", "outbounds": ["🚀 节点选择"] },
       { "tag": "🐬 OneDrive", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
