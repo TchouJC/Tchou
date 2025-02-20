@@ -31,7 +31,9 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-    
+    override:
+      skip-cert-verify:true
+    udp: true
     
   FG 🐶:
     type: http
@@ -42,8 +44,10 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-    
-    
+    override:
+      skip-cert-verify:true
+    udp: true
+
   Mitec:
     type: http
     interval: 1800
@@ -53,21 +57,13 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-    
-    
-  EFCloud:
-    type: http
-    interval: 1800
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 🟢 直连
-    url: "订阅链接"
-    
+    override:
+      skip-cert-verify:true
+    udp: true
+        
           
 # 用于下载订阅时指定UA
-global-ua: clash
+global-ua: clash.meta
     
 # 全局配置
 port: 7890
