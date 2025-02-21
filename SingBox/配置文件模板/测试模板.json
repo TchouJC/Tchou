@@ -99,7 +99,7 @@
       { "tag": "🎠 Amazon", "type": "selector", "outbounds": ["🚀 节点选择"] },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
       { "tag": "🎯 全球直连", "type": "direct" },
-      { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]}
+      { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }]},
     ],
   "route": {
     "default_domain_resolver": {"server": "local"},
