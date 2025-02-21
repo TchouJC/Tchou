@@ -249,9 +249,9 @@ function main(config) {
     },
     "YouTube": {
       ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/YouTube.list",
-      "path": "./rules/YouTube.list"
+      "behavior": "mrs",
+      "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs",
+      "path": "./rules/youtube.mrs
     },
     "Telegram": {
       ...ruleProviderCommon,
