@@ -9,7 +9,7 @@
     "clash_api": {
       "external_controller": "127.0.0.1:9095",
       "external_ui": "/etc/sing-box/ui",
-      "secret": "q1w2e3r4",
+      "secret": "",
       "external_ui_download_url": "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
       "external_ui_download_detour": "🎯 全球直连",
       "default_mode": "rule"
