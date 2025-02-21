@@ -9,7 +9,7 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-    
+     
   CloudFisher:
     type: http
     interval: 1800
@@ -19,7 +19,7 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-    
+     
   流量光机场:
     type: http
     interval: 1800
@@ -165,12 +165,12 @@ proxies:
   udp: true
  
 # 锚点
-pr: &pr {type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🌐 全部节点, 🌐 其他地区, 🟢 直连, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡]}
+pr: &pr {type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🟢 直连, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡]}
 # 策略组
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🌐 全部节点, 🌐 其他地区, 🟢 直连, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡]}
+  - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🟢 直连, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡]}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|直连|direct)).)*$" }
-  - {name: 🌐 全部节点, type: select, include-all: true, filter: "^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$" }
+  - {name: 🚀 手动选择, type: select, include-all: true, filter: "^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$" } 
   - {name: 🌐 其他地区, type: select, include-all: true, filter: "^((?!(🇭🇰|🇹🇼|🇺🇲|🇯🇵|🇸🇬|Hong Kong|HongKong|HK|Taiwan|TW|Japan|JP|Singapore|SG|USA|US|United States|香港|台湾|日本|新加坡|美国|直连|direct|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$"}
   - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)🇭🇰|Hong Kong|HongKong|香港|HK"}
   - {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: "(?i)🇹🇼|Taiwan|台湾|TW"}
