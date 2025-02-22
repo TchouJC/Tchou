@@ -24,8 +24,8 @@ geox-url:
   asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
   
 # 控制面板
-external-controller: 127.0.0.1:9097
-secret: "q1w2e3r4"
+external-controller: 127.0.0.1:9095
+secret: ""
 external-ui: ui
 external-ui-url: "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 #其他模板：https://ghfast.top/https://github.com/MetaCubeX/yacd/archive/gh-pages.zip
