@@ -1,1 +1,1 @@
-QX配置规则
+Quantumult X 配置规则
