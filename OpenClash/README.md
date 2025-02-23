@@ -1,1 +1,1 @@
-OpenClash配置规则
+OpenClash 配置规则-同步
