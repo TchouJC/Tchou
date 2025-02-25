@@ -1,6 +1,6 @@
 # 机场订阅，名称不能重复
 proxy-providers:
-  FLYINGBIRD:
+  机场名称:
     type: http
     interval: 1800
     health-check:
@@ -9,47 +9,7 @@ proxy-providers:
       interval: 300
     proxy: 🟢 直连
     url: "订阅链接"
-     
-  CloudFisher:
-    type: http
-    interval: 1800
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 🟢 直连
-    url: "订阅链接"
-     
-  流量光机场:
-    type: http
-    interval: 1800
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 🟢 直连
-    url: "订阅链接"
-    
-  FG 🐶:
-    type: http
-    interval: 1800
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 🟢 直连
-    url: "订阅链接"
-    
-  Mitec:
-    type: http
-    interval: 1800
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 🟢 直连
-    url: "订阅链接"
-          
+
 # 用于下载订阅时指定UA
 global-ua: clash.meta
     
