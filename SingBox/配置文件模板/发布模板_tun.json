@@ -53,7 +53,7 @@
     }
   ],
   "outbounds": [
-    { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🐸 手动切换", "♻️ 自动选择",  "🎯 全球直连", "🔯 香港自动", "🔯 台湾自动", "🔯 日本自动", "🔯 新坡自动", "🔯 美国自动", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新坡节点", "🇺🇲 美国节点", "🌐 其他地区"] },
+    { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🔯 香港自动", "🔯 台湾自动", "🔯 日本自动", "🔯 新坡自动", "🔯 美国自动", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新坡节点", "🇺🇲 美国节点", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区",  "🎯 全球直连"] },
     { "tag": "🐸 手动切换", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }]},
     { "tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期|direct"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "🌐 其他地区", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["🇭🇰|🇹🇼|🇺🇲|🇯🇵|🇸🇬|Hong Kong|HongKong|HK|Taiwan|TW|Japan|JP|Singapore|SG|USA|US|United States|香港|台湾|日本|新加坡|美国|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期"] }] },
