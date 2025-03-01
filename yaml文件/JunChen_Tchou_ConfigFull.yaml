@@ -125,7 +125,7 @@ proxies:
   udp: true
  
 # 锚点
-pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连]}
+pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截]}
 # 策略组
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, ♻️ 自动选择, 🚀 手动切换, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截]}
@@ -149,7 +149,7 @@ proxy-groups:
   - {name: 🔯 新坡故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇸🇬|新加坡|SG|Singapore))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$" }
   - {name: 🍃 台湾均衡, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$" }
   - {name: 🐟 漏网之鱼,!!merge <<: *pr}
-  - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
+  - {name: 🎯 全球直连, type: select, proxies: [🟢 直连]}
   - {name: 🛑 全球拦截, type: select, proxies: [REJECT]}
   - {name: 🍎 Apple, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
   - {name: 💶 PayPal, type: select, proxies: [🚀 节点选择]}
