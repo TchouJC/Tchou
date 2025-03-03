@@ -115,7 +115,7 @@ proxy-groups:
   - {name: 🚀 手动选择, type: select, include-all: true, filter: "^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$" } 
   - {name: 🌐 其他地区, type: select, include-all: true, filter: "^((?!(🇭🇰|🇹🇼|🇺🇲|🇯🇵|🇸🇬|Hong Kong|HongKong|HK|Taiwan|TW|Japan|JP|Singapore|SG|USA|US|United States|香港|台湾|日本|新加坡|美国|直连|direct|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$"}
   - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)🇭🇰|Hong Kong|HongKong|香港|HK"}
-  - {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: "(?i)🇹🇼|Taiwan|台湾|TW"}
+  - {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: "(?i)🇹🇼|Taiwan|台湾|TW", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Taiwan_Province.png}
   - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)🇺🇲|美国|USA|US|United States"}
   - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)🇯🇵|日本|JP|Japan"}
   - {name: 🇸🇬 新坡节点, type: select, include-all: true, filter: "(?i)🇸🇬|新加坡|SG|Singapore"}
