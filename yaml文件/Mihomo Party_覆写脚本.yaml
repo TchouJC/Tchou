@@ -176,7 +176,7 @@ rules:
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,disney_domain,🧸 Disney+
-  - RULE-SET,hbo_domain,🧜‍♀️ HBO, icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/HBO_MAX.png
+  - RULE-SET,hbo_domain,🧜‍♀️ HBO
   - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
@@ -215,7 +215,7 @@ rule-providers:
   tiktok_domain: {!!merge <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
   netflix_domain: {!!merge <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
   disney_domain: {!!merge <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/disney.mrs"}
-  hbo_domain: {!!merge <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/hbo.mrs", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/HBO_MAX.png}
+  hbo_domain: {!!merge <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/hbo.mrs"}
   geolocation-!cn: {!!merge <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   cn_domain: {!!merge <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   gfw_domain: {!!merge <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
