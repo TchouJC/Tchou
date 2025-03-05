@@ -9,7 +9,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: DIRECT
-    url: "http://192.168.10.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store"
+    url: "订阅链接"
           
 # 用于下载订阅时指定UA
 global-ua: clash.meta
