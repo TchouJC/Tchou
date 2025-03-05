@@ -1,0 +1,218 @@
+# 配置名称: Clash 配置
+
+# 配置作者: Lucky
+
+# 👉 👉 👉 👉 👉 👉请在第100行填写你的订阅链接完成使用
+
+redir-port: 7892      # Redir 端口
+mixed-port: 7893      # 混合端口 HTTP和SOCKS5用一个端口
+geodata-mode: true    #【Meta专属】使用geoip.dat数据库(默认：false使用mmdb数据库)
+tcp-concurrent: false #【Meta专属】TCP 并发连接所有 IP, 将使用最快握手的 TCP
+allow-lan: true       # 允许局域网的连接（可用来共享代理）
+bind-address: "*"     # 仅在将allow-lan设置为true时适用
+                      # #"*": 绑定所有IP地址
+find-process-mode: strict           #匹配所有进程（always/strict/off）
+ipv6: false           # 开启 IPv6 总开关，关闭阻断所有 IPv6 链接和屏蔽 DNS 请求 AAAA 记录
+mode: rule            # 规则模式：rule（规则） / global（全局代理）/ direct（全局直连）/ script (脚本)
+log-level: info       # 设置日志输出级别 (5 个级别：silent / error / warning / info / debug）
+external-controller: 0.0.0.0:9093   #外部控制器,可以使用 RESTful API 来控制你的 clash 内核
+global-client-fingerprint: chrome   #全局 TLS 指纹，优先低于 proxy 内的 client-fingerprint
+                                    #可选： "chrome","firefox","safari","ios","random","none" options.
+
+geox-url:             #自定义 geodata url
+  mmdb: "https://raw.githubusercontent.com/Masaiki/GeoIP2-CN/release/Country.mmdb"
+
+profile:
+  store-selected: true # 存储 select 选择记录
+  store-fake-ip: true  # 持久化 fake-ip
+  
+sniffer:               # 嗅探域名 可选配置
+  enable: true
+  parse-pure-ip: true  # 是否使用嗅探结果作为实际访问，默认 true
+  sniff:
+    TLS:               # TLS 默认嗅探 443
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+      
+tun:                   # Tun 配置
+  enable: true
+  stack: system        # 可选： system/gvisor/lwip
+                       # tun模式堆栈,如无使用问题,建议使用 system 栈;
+                       # MacOS 用户推荐 gvisor栈,IOS无法使用system栈
+  dns-hijack:          # dns劫持,一般设置为 any:53 即可, 即劫持所有53端口的udp流量
+     - 'any:53'
+# strict_route: true   # 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
+  auto-route: true     # 自动设置全局路由，可以自动将全局流量路由进入tun网卡。
+  auto-detect-interface: true     # 自动识别出口网卡
+        
+
+dns:
+  enable: true             # 禁用系统 DNS
+  ipv6: false              # 关闭 IPv6
+  enhanced-mode: fake-ip   # 增强模式：redir-host或fake-ip
+  listen: 0.0.0.0:53       # DNS监听地址
+  fake-ip-range: 198.18.0.1/16    # Fake-IP解析地址池
+  # fake ip 白名单列表'以下地址不会下发fakeip映射用于连接 
+  fake-ip-filter: ['*.lan', 'cable.auth.com', '*.msftconnecttest.com', '*.msftncsi.com', 'network-test.debian.org', 'detectportal.firefox.com', 'resolver1.opendns.com', '*.srv.nintendo.net', '*.stun.playstation.net', 'xbox.*.microsoft.com', '*.xboxlive.com', 'stun.*', 'global.turn.twilio.com', 'global.stun.twilio.com', 'localhost.*.qq.com', 'localhost.*.weixin.qq.com', '*.logon.battlenet.com.cn', '*.logon.battle.net', '*.blzstatic.cn', 'music.163.com', '*.music.163.com', '*.126.net', 'musicapi.taihe.com', 'music.taihe.com', 'songsearch.kugou.com', 'trackercdn.kugou.com', '*.kuwo.cn', 'api-jooxtt.sanook.com', 'api.joox.com', 'joox.com', 'y.qq.com', '*.y.qq.com', 'streamoc.music.tc.qq.com', 'mobileoc.music.tc.qq.com', 'isure.stream.qqmusic.qq.com', 'dl.stream.qqmusic.qq.com', 'aqqmusic.tc.qq.com', 'amobile.music.tc.qq.com', '*.xiami.com', '*.music.migu.cn', 'music.migu.cn', 'proxy.golang.org', '*.mcdn.bilivideo.cn', '*.cmpassport.com', 'id6.me', 'open.e.189.cn', 'mdn.open.wo.cn', 'opencloud.wostore.cn', 'auth.wosms.cn', '*.jegotrip.com.cn', '*.icitymobile.mobi', '*.pingan.com.cn', '*.cmbchina.com', 'pool.ntp.org', '*.pool.ntp.org', 'ntp.*.com', 'time.*.com', 'ntp?.*.com', 'time?.*.com', 'time.*.gov', 'time.*.edu.cn', '*.ntp.org.cn', 'PDC._msDCS.*.*', 'DC._msDCS.*.*', 'GC._msDCS.*.*']
+                          
+
+  nameserver:        # 常规 DNS 服务器
+    - 223.5.5.5
+    - 119.29.29.29
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+  fallback:          # 国外 DNS 服务器
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+
+  fallback-filter:   # 回退过滤器
+    geoip: true      # GEOIP 启用
+    geoip-code: CN   # GEOIP 编码
+    ipcidr:          # IPCIDR
+      - 240.0.0.0/4  
+
+# =====================================================================================================================
+# 订阅更新与测试
+订阅链接:    &SubscribeLink {type: http,     interval: 86400,  health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 1800} }
+
+# 锚点
+pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Global.png}
+
+
+# =====================================================================================
+# 代理
+proxy-providers:
+  Subscribe: {<<: *SubscribeLink, 
+  path: ./proxy-providers/Sub.yaml, 
+  url: https://cloudfisher.one/jsk34?token=7b4a30b5c192005fcc963c7fd6caf64b&list=true&udp=true}
+    # 可以使用任意类型的链接替换上面文字,多个链接使用英文符号的竖杠|隔开一起写上即可
+    # Sub-Store生成的链接,可以直接替换上述url引号中的部分,具体见Sub-Store教程                       
+proxies: null
+# =======================================================================================================
+# 策略组
+proxy-groups:
+  - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png}
+  - {name: ♻️ 自动选择, type: url-test, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|直连|direct)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Auto_Link.png}
+  - {name: 🚀 手动选择, type: select, include-all: true, url: http://www.gstatic.com/generate_204, filter: "^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png} 
+  - {name: 🌐 其他地区, type: select, include-all: true, url: http://www.gstatic.com/generate_204, filter: "^((?!(🇭🇰|🇹🇼|🇺🇲|🇯🇵|🇸🇬|Hong Kong|HongKong|HK|Taiwan|TW|Japan|JP|Singapore|SG|USA|US|United States|香港|台湾|日本|新加坡|美国|直连|direct|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Network_2.png}
+  - {name: 🇭🇰 香港节点, type: select, include-all: true, url: http://www.gstatic.com/generate_204, filter: "(?i)🇭🇰|Hong Kong|HongKong|香港|HK", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
+  - {name: 🇹🇼 台湾节点, type: select, include-all: true, url: http://www.gstatic.com/generate_204, filter: "(?i)🇹🇼|Taiwan|台湾|TW", icon: https://ghfast.top/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
+  - {name: 🇺🇲 美国节点, type: select, include-all: true, url: http://www.gstatic.com/generate_204, filter: "(?i)🇺🇲|美国|USA|US|United States", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
+  - {name: 🇯🇵 日本节点, type: select, include-all: true, url: http://www.gstatic.com/generate_204, filter: "(?i)🇯🇵|日本|JP|Japan", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
+  - {name: 🇸🇬 新坡节点, type: select, include-all: true, url: http://www.gstatic.com/generate_204, filter: "(?i)🇸🇬|新加坡|SG|Singapore", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
+  - {name: ♻️ 香港自动, type: url-test, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|Hong Kong|HongKong|香港|HK))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
+  - {name: ♻️ 台湾自动, type: url-test, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
+  - {name: ♻️ 美国自动, type: url-test, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇺🇲|美国|USA|US|United States))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
+  - {name: ♻️ 日本自动, type: url-test, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|日本|JP|Japan))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
+  - {name: ♻️ 新坡自动, type: url-test, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇸🇬|新加坡|SG|Singapore))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
+  - {name: 🔯 香港故转, type: fallback, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|Hong Kong|HongKong|香港|HK))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
+  - {name: 🔯 台湾故转, type: fallback, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
+  - {name: 🔯 美国故转, type: fallback, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇺🇲|美国|USA|US|United States))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
+  - {name: 🔯 日本故转, type: fallback, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|日本|JP|Japan))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
+  - {name: 🔯 新坡故转, type: fallback, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇸🇬|新加坡|SG|Singapore))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
+  - {name: 🍃 台湾均衡, type: load-balance, include-all: true, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期)).)*$", icon: https://ghfast.top/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
+  - {name: 🐟 漏网之鱼,!!merge <<: *pr, icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Fish_b.png}
+  - {name: 🎯 全球直连, type: select, proxies: [DIRECT], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/DIRECT.png}
+  - {name: 🛑 全球拦截, type: select, proxies: [REJECT], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/AdblockPlus_2.png}
+  
+  - {name: 🍎 Apple, type: select, proxies: [🎯 全球直连, 🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Apple_rainbow.png}
+  - {name: 💶 PayPal, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/PayPal_business.png}
+  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/GitHub.png}
+  - {name: 📲 Telegram, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Telegram.png}
+  - {name: 👽 Twitter, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/X.png}
+  - {name: 🤓 Facebook, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Facebook.png}
+  - {name: 📷 Instagram, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Instagram.png}
+  - {name: 🤖 AI, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/ChatGPT.png}
+  - {name: 📹 YouTube, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/YouTube.png}
+  - {name: 📢 FCM, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/FCM_Firebase_Cloud_Messaging.png}
+  - {name: 🍀 Google, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Google.png}
+  - {name: 💧 Copilot, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft_Copilot.png}
+  - {name: 🐬 OneDrive, type: select, proxies: [🎯 全球直连, 🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/OneDrive.png}
+  - {name: 🪟 Microsoft, type: select, proxies: [🎯 全球直连, 🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft.png}
+  - {name: ✈️ Speedtest, type: select, proxies: [🎯 全球直连, 🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/SpeedTest.png}
+  - {name: 🎹 Spotify, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Spotify.png}
+  - {name: 🎠 Amazon, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Amazon.png} 
+  - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png}
+  - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Netflix.png}
+  - {name: 🧸 Disney+, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Disney_plus.png}
+  - {name: 🧜‍♀️ HBO, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/HBO_MAX.png} 
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  #新格式内容使用参数“domain”
+  Tchou: &Tchou {type: http, interval: 86400, behavior: domain, format: text}
+  #经典格式内容“classical” 
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+
+rule-providers: 
+  private_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs, path: ./Ruleset/private.mrs}
+  apple_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs, path: ./Ruleset/apple-cn.mrs}
+  paypal_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs, path: ./Ruleset/paypal.mrs}
+  github_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs, path: ./Ruleset/github.mrs}
+  telegram_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs, path: ./Ruleset/telegram.mrs}
+  twitter_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/twitter.mrs, path: ./Ruleset/twitter.mrs}
+  facebook_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/facebook.mrs, path: ./Ruleset/facebook.mrs}
+  instagram_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/instagram.mrs, path: ./Ruleset/instagram.mrs}
+  ai_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/openai.mrs, path: ./Ruleset/openai.mrs}
+  youtube_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs, path: ./Ruleset/youtube.mrs}
+  googlefcm_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/googlefcm.mrs, path: ./Ruleset/googlefcm.mrs}
+  google_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs, path: ./Ruleset/google.mrs}
+  bing_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/bing.mrs, path: ./Ruleset/bing.mrs}
+  onedrive_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs, path: ./Ruleset/onedrive.mrs}
+  microsoft_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs, path: ./Ruleset/microsoft.mrs}
+  speedtest_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs, path: ./Ruleset/ookla-speedtest.mrs}
+  spotify_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/spotify.mrs, path: ./Ruleset/spotify.mrs}
+  amazon_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/amazon.mrs, path: ./Ruleset/amazon.mrs}
+  tiktok_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs, path: ./Ruleset/tiktok.mrs}
+  netflix_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs, path: ./Ruleset/netflix.mrs}
+  disney_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/disney.mrs, path: ./Ruleset/disney.mrs}
+  hbo_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/hbo.mrs, path: ./Ruleset/hbo.mrs}
+  geolocation-!cn: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs, path: ./Ruleset/geolocation-!cn.mrs}
+  cn_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs, path: ./Ruleset/cn.mrs}
+  gfw_domain: {<<: *domain, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs, path: ./Ruleset/gfw.mrs}
+  cn_ip: {<<: *ip, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs, path: ./Ruleset/cnIP.mrs}
+  telegram_ip: {<<: *ip, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs, path: ./Ruleset/telegramIP.mrs}
+  twitter_ip: {<<: *ip, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/twitter.mrs, path: ./Ruleset/twitterIP.mrs}
+  facebook_ip: {<<: *ip, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/facebook.mrs, path: ./Ruleset/facebookIP.mrs}
+  google_ip: {<<: *ip, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs, path: ./Ruleset/googleIP.mrs}
+  netflix_ip: {<<: *ip, url: https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs, path: ./Ruleset/netflixIP.mrs}
+
+rules:
+  - RULE-SET,private_domain,🎯 全球直连
+  - RULE-SET,apple_domain,🍎 Apple
+  - RULE-SET,paypal_domain,💶 PayPal
+  - RULE-SET,github_domain,👨🏿‍💻 GitHub
+  - RULE-SET,telegram_domain,📲 Telegram
+  - RULE-SET,twitter_domain,👽 Twitter
+  - RULE-SET,facebook_domain,🤓 Facebook
+  - RULE-SET,instagram_domain,📷 Instagram
+  - RULE-SET,ai_domain,🤖 AI
+  - RULE-SET,youtube_domain,📹 YouTube
+  - RULE-SET,googlefcm_domain,📢 FCM
+  - RULE-SET,google_domain,🍀 Google
+  - RULE-SET,bing_domain,💧 Copilot
+  - RULE-SET,onedrive_domain,🐬 OneDrive
+  - RULE-SET,microsoft_domain,🪟 Microsoft
+  - RULE-SET,speedtest_domain,✈️ Speedtest
+  - RULE-SET,spotify_domain,🎹 Spotify
+  - RULE-SET,amazon_domain,🎠 Amazon
+  - RULE-SET,tiktok_domain,🎵 TikTok
+  - RULE-SET,netflix_domain,🎥 NETFLIX
+  - RULE-SET,disney_domain,🧸 Disney+
+  - RULE-SET,hbo_domain,🧜‍♀️ HBO
+  - RULE-SET,geolocation-!cn,🚀 节点选择
+  - RULE-SET,cn_domain,🎯 全球直连
+  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
+  - RULE-SET,twitter_ip,👽 Twitter,no-resolve
+  - RULE-SET,facebook_ip,🤓 Facebook,no-resolve
+  - RULE-SET,google_ip,🍀 Google,no-resolve
+  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
+  - RULE-SET,cn_ip,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
+
+script:
+  shortcuts:
+    quic: network == 'udp' and dst_port == 443
