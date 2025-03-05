@@ -100,7 +100,7 @@ i:    &Lucky7 {type: http,     behavior: ipcidr,    interval: 86400}
 proxy-providers:
   Subscribe: {<<: *Lucky1, 
   path: ./proxy-providers/Sub.yaml, 
-  url: http://192.168.10.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=Stash&list=true&udp=true}
+  url: https://cloudfisher.one/jsk34?token=7b4a30b5c192005fcc963c7fd6caf64b&list=true&udp=true}
     # 可以使用任意类型的链接替换上面文字,多个链接使用英文符号的竖杠|隔开一起写上即可
     # Sub-Store生成的链接,可以直接替换上述url引号中的部分,具体见Sub-Store教程                       
 proxies: null
