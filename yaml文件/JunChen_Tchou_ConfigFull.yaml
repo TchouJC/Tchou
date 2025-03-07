@@ -1,7 +1,7 @@
 
 # 机场订阅，名称不能重复
 proxy-providers:
-  Mitec:
+  订阅名称:
     type: http
     interval: 1800
     health-check:
