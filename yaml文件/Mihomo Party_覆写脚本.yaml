@@ -1,47 +1,54 @@
+      
 # 用于下载订阅时指定UA
-global-ua: clash.meta
+global-ua: mihomo
+#header:
+#User-Agent:
+#- "mihomo"
+#- "Clash.meta"
+#- "Clash"
 
-# 全局配置
+# 全局配置 
 port: 7890
 socks-port: 7891
 redir-port: 7892
 mixed-port: 7893
 tproxy-port: 7894
-ipv6: false
 allow-lan: true
+bind-address: "*"
+ipv6: false
 unified-delay: true
 tcp-concurrent: true
-
-geodata-mode: false
-# GEO 文件加载模式（standard：标准加载器/memconservative：专为内存受限 (小内存) 设备优化的加载器 (默认值)）
-geodata-loader: standard
-geo-auto-update: true
-geo-update-interval: 48
-geox-url:
-  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
-  asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
-
-# 控制面板
-external-controller: 127.0.0.1:9095
-secret: ""
-external-ui: ui
-external-ui-url: "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
-#其他模板：https://ghfast.top/https://github.com/MetaCubeX/yacd/archive/gh-pages.zip
-
-# 匹配进程 always/strict/off
-find-process-mode: strict
+log-level: warning
+find-process-mode: 'off'
+# interface-name: en0
 global-client-fingerprint: chrome
 keep-alive-idle: 600
-keep-alive-interval: 30
-
-# 策略组选择和fakeip缓存
+keep-alive-interval: 15
+disable-keep-alive: false
 profile:
   store-selected: true
   store-fake-ip: true
 
-# 流量嗅探
+# 数据库
+# geodata-loader: memconservative/standard
+# geodata-mode: true/false
+geo-auto-update: false
+geo-update-interval: 24
+geox-url:
+  geoip: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geosite: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb"
+  asn: "https://mirror.ghproxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+
+
+# 控制面板
+external-controller: 127.0.0.1:9095
+secret: ""
+external-ui: "/etc/mihomo/run/ui"
+external-ui-name: zashboard
+external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+# 嗅探
 sniffer:
   enable: true
   sniff:
@@ -53,23 +60,30 @@ sniffer:
     QUIC:
       ports: [443, 8443]
   force-domain:
-    - +.v2ex.com
+    - "+.v2ex.com"
   skip-domain:
-    - "Mijia Cloud"
+    - "rule-set:private_domain,cn_domain"
     - "dlg.io.mi.com"
     - "+.push.apple.com"
     - "+.apple.com"
+    - "+.wechat.com"
+    - "+.qpic.cn"
+    - "+.qq.com"
+    - "+.wechatapp.com"
+    - "+.vivox.com"
+    - "+.oray.com"
+    - "+.sunlogin.net"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
 
-# 代理模式
+# 入站  
 tun:
   enable: true
+  # system/gvisor/mixed
   stack: mixed
-  mtu: 9000
-  dns-hijack:
-    - "any:53"
-    - "tcp://any:53"
+  dns-hijack: ["any:53", "tcp://any:53"]
   auto-route: true
-  auto-reDIRECT: true
+  auto-redirect: true
   auto-detect-interface: true
 
 # DNS模块
@@ -78,17 +92,19 @@ dns:
   listen: 0.0.0.0:1053
   ipv6: false
   respect-rules: true
-  # 模式切换 redir-host / fake-ip
   enhanced-mode: fake-ip
   fake-ip-range: 28.0.0.1/8
-  # 模式切换 whitelist/blacklist
-  # 黑名单模式表示如果匹配成功则不返回 Fake-IP, 白名单模式时只有匹配成功才返回 Fake-IP
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "+.lan"
-    - "+.local"
-    - geosite:private
-    - geosite:cn
+    - "rule-set:private_domain,cn_domain"
+    - "+.services.googleapis.cn"
+    - "+.xn--ngstr-lra8j.com"
+    - "time.*.com"
+    - "+.pool.ntp.org"
+    - "+.ntp.tencent.com"
+    - "+.ntp1.aliyun.com"
+    - "+.ntp.ntsc.ac.cn"
+    - "+.cn.ntp.org.cn"
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
@@ -98,13 +114,6 @@ dns:
   nameserver:
     - 223.5.5.5
     - 119.29.29.29
-  nameserver-policy:
-    "rule-set:private_domain,cn_domain":
-      - 223.5.5.5
-      - 119.29.29.29
-    "rule-set:geolocation-!cn":
-      - "https://dns.cloudflare.com/dns-query"
-      - "https://dns.google/dns-query"
 
 # 锚点
 pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, 🍃 台湾均衡, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Global.png}
@@ -159,33 +168,33 @@ rules:
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
-  - RULE-SET,telegram_domain,📲 Telegram
-  - RULE-SET,twitter_domain,👽 Twitter
-  - RULE-SET,facebook_domain,🤓 Facebook
-  - RULE-SET,instagram_domain,📷 Instagram
-  - RULE-SET,ai_domain,🤖 AI
-  - RULE-SET,youtube_domain,📹 YouTube
-  - RULE-SET,googlefcm_domain,📢 FCM
-  - RULE-SET,google_domain,🍀 Google
-  - RULE-SET,bing_domain,💧 Copilot
-  - RULE-SET,onedrive_domain,🐬 OneDrive
-  - RULE-SET,microsoft_domain,🪟 Microsoft
-  - RULE-SET,speedtest_domain,✈️ Speedtest
-  - RULE-SET,spotify_domain,🎹 Spotify
-  - RULE-SET,amazon_domain,🎠 Amazon
-  - RULE-SET,tiktok_domain,🎵 TikTok
-  - RULE-SET,netflix_domain,🎥 NETFLIX
-  - RULE-SET,disney_domain,🧸 Disney+
-  - RULE-SET,hbo_domain,🧜‍♀️ HBO
-  - RULE-SET,geolocation-!cn,🚀 节点选择
-  - RULE-SET,cn_domain,🎯 全球直连
-  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
-  - RULE-SET,twitter_ip,👽 Twitter,no-resolve
-  - RULE-SET,facebook_ip,🤓 Facebook,no-resolve
-  - RULE-SET,google_ip,🍀 Google,no-resolve
-  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
-  - RULE-SET,cn_ip,🎯 全球直连
-  - MATCH,🐟 漏网之鱼
+  - RULE-SET,telegram_domain, Telegram
+  - RULE-SET,twitter_domain, Twitter
+  - RULE-SET,facebook_domain, Facebook
+  - RULE-SET,instagram_domain, Instagram
+  - RULE-SET,ai_domain, AI
+  - RULE-SET,youtube_domain, YouTube
+  - RULE-SET,googlefcm_domain, FCM
+  - RULE-SET,google_domain, Google
+  - RULE-SET,bing_domain, Copilot
+  - RULE-SET,onedrive_domain, OneDrive
+  - RULE-SET,microsoft_domain, Microsoft
+  - RULE-SET,speedtest_domain, Speedtest
+  - RULE-SET,spotify_domain, Spotify
+  - RULE-SET,amazon_domain, Amazon
+  - RULE-SET,tiktok_domain, TikTok
+  - RULE-SET,netflix_domain, NETFLIX
+  - RULE-SET,disney_domain, Disney+
+  - RULE-SET,hbo_domain, HBO
+  - RULE-SET,geolocation-!cn, 节点选择
+  - RULE-SET,cn_domain, 全球直连
+  - RULE-SET,telegram_ip, Telegram,no-resolve
+  - RULE-SET,twitter_ip, Twitter,no-resolve
+  - RULE-SET,facebook_ip, Facebook,no-resolve
+  - RULE-SET,google_ip, Google,no-resolve
+  - RULE-SET,netflix_ip, NETFLIX,no-resolve
+  - RULE-SET,cn_ip, 全球直连
+  - MATCH, 漏网之鱼
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
