@@ -1,0 +1,1 @@
+CreateObject("WScript.Shell").Run "D:\Aira2\aria2c.exe --conf-path=aria2.conf",0
