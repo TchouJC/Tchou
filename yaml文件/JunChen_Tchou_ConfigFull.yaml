@@ -160,6 +160,7 @@ proxy-groups:
 rules:
   - RULE-SET,Proxy_domain,🚀 节点选择
   - RULE-SET,private_domain,🎯 全球直连
+  - RULE-SET,gfw_domain,🚀 节点选择
 
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,paypal_domain,💶 PayPal
