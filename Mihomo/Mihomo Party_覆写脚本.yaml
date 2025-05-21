@@ -173,6 +173,7 @@ rules:
   - RULE-SET,hbo_domain,🧜‍♀️ HBO
 
   - RULE-SET,geolocation-!cn,🚀 节点选择
+  - RULE-SET,geolocation-cn,🎯 全球直连
   - RULE-SET,cn_domain,🎯 全球直连
 
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
@@ -215,6 +216,7 @@ rule-providers:
   disney_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/disney.mrs"}
   hbo_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/hbo.mrs"}
   geolocation-!cn: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
+  geolocation-cn: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-cn.mrs"}
   cn_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   gfw_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
 
