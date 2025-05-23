@@ -213,7 +213,7 @@ rules:
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
 
-  - RULE-SET,cn_ip,🎯 全球直连
+  - RULE-SET,cn_ip,🎯 全球直连,no-resolve
   - RULE-SET,ChinaCompany_Ip,🎯 全球直连,no-resolve
 
   - MATCH,🐟 漏网之鱼
