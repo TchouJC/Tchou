@@ -150,8 +150,6 @@ proxy-groups:
   - {name: 🍃 应用净化, type: select, proxies: [🛑 全球拦截, 🎯 全球直连], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Forbidden.png} 
   - {name: 🛡️ 隐私防护, type: select, proxies: [🛑 全球拦截, 🎯 全球直连], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Forbidden.png} 
 
-
-
 rules:
   - RULE-SET,Proxy_domain,🚀 节点选择
   - RULE-SET,private_domain,🎯 全球直连
