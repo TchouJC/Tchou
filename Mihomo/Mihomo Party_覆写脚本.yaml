@@ -177,7 +177,6 @@ rules:
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,Download_domain,🎯 全球直连
 
-
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,twitter_ip,👽 Twitter,no-resolve
   - RULE-SET,facebook_ip,🤓 Facebook,no-resolve
