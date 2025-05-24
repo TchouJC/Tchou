@@ -157,7 +157,8 @@ rules:
   - DOMAIN-SUFFIX,jiuse.icu,🚀 节点选择
   - DOMAIN-SUFFIX,hl718.com,🚀 节点选择
   - DOMAIN-SUFFIX,qichiyu.com,🚀 节点选择
-  
+
+  - RULE-SET,category-ads-all,🛑 全球拦截
   - RULE-SET,private_domain,🎯 全球直连
   - RULE-SET,gfw_domain,🚀 节点选择
   - RULE-SET,geolocation-!cn,🚀 节点选择
@@ -203,6 +204,7 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 
 rule-providers: 
+  category-ads-all: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
   private_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   gfw_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
   geolocation-!cn: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
