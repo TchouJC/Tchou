@@ -151,7 +151,13 @@ proxy-groups:
   - {name: 🛡️ 隐私防护, type: select, proxies: [🛑 全球拦截, 🎯 全球直连], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Forbidden.png} 
 
 rules:
+  - RULE-SET,gfw_domain,🚀 节点选择
+  - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,Proxy_domain,🚀 节点选择
+  - RULE-SET,ProxyLite_domain,🚀 节点选择
+  - RULE-SET,Global_domain,🚀 节点选择
+  - RULE-SET,ProxyGFWlist_domain,🚀 节点选择
+
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
@@ -188,11 +194,6 @@ rules:
   - RULE-SET,UnBan_Domain,🎯 全球直连
   - RULE-SET,Lan_domain,🎯 全球直连
 
-  - RULE-SET,gfw_domain,🚀 节点选择
-  - RULE-SET,geolocation-!cn,🚀 节点选择
-  - RULE-SET,ProxyLite_domain,🚀 节点选择
-  - RULE-SET,Global_domain,🚀 节点选择
-  - RULE-SET,ProxyGFWlist_domain,🚀 节点选择
 
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,twitter_ip,👽 Twitter,no-resolve
@@ -201,6 +202,7 @@ rules:
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
 
   - RULE-SET,cn_ip,🎯 全球直连,no-resolve
+  - RULE-SET,geoip-Private,🎯 全球直连,no-resolve
   - RULE-SET,ChinaCompany_Ip,🎯 全球直连,no-resolve
 
   - MATCH,🐟 漏网之鱼
@@ -211,7 +213,13 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 
 rule-providers: 
+  gfw_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
+  geolocation-!cn: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   Proxy_domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/OpenClash/%E8%A7%84%E5%88%99%E6%96%87%E4%BB%B6/Proxy.list"}
+  ProxyLite_domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ProxyLite/ProxyLite.list"}
+  Global_domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global.list"}
+  ProxyGFWlist_domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list"}
+  
   apple_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
   paypal_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
   github_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
@@ -248,12 +256,6 @@ rule-providers:
   UnBan_Domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"}
   Lan_domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.list"}
   
-  gfw_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
-  geolocation-!cn: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
-  ProxyLite_domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ProxyLite/ProxyLite.list"}
-  Global_domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global.list"}
-  ProxyGFWlist_domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list"}
-
   telegram_ip: { <<: *ip, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   twitter_ip: { <<: *ip, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/twitter.mrs"}
   facebook_ip: { <<: *ip, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/facebook.mrs"}
@@ -261,5 +263,5 @@ rule-providers:
   netflix_ip: { <<: *ip, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
 
   cn_ip: { <<: *ip, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
-  GEOIP-Private: { <<: *ip, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
+  geoip-Private: { <<: *ip, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
   ChinaCompany_Ip: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"}  
