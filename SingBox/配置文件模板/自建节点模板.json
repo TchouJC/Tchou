@@ -153,7 +153,7 @@
         
       ],
       "rule_set": [
-        {"tag": "geosite-category-ads-all","type": "remote","format": "binary","url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs","download_detour": "🎯 全球直连"},
+        { "tag": "geosite-category-ads-all","type": "remote","format": "binary","url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs","download_detour": "🎯 全球直连"},
         { "tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs", "download_detour": "🎯 全球直连" },
         { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "🎯 全球直连" },
         { "tag": "geosite-gfw", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/gfw.srs", "download_detour": "🎯 全球直连" },
