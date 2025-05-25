@@ -154,7 +154,7 @@ proxy-groups:
   - {name: 🎹 Spotify, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Spotify.png}
   - {name: 🎠 Amazon, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Amazon.png} 
   - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png}
-  - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Netflix.png}
+  - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择, 🎥 奈飞节点], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Netflix.png}
   - {name: 🧸 Disney+, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Disney_plus.png}
   - {name: 🧜‍♀️ HBO, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/HBO_MAX.png} 
   - {name: 🌍 国外媒体, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Infuse.png} 
