@@ -104,7 +104,7 @@
   "route": 
  {
    "auto_detect_interface": true,
-   "final": "🐠 兜底策略",
+   "final": "🐟 漏网之鱼",
    "rules": 
    [
      {"action": "sniff"},
