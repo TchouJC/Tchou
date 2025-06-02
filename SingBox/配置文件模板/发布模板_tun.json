@@ -5,11 +5,11 @@
   },
   "experimental": {
     "clash_api": {
-      "external_controller": "0.0.0.0:9095",
+      "external_controller": "127.0.0.1:9090",
       "external_ui": "ui",
       "secret": "",
       "external_ui_download_url": "https://gh-proxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "🎯 全球直连",
+      "external_ui_download_detour": "direct",
       "default_mode": "rule"
     },
     "cache_file": {
@@ -17,7 +17,6 @@
       "store_fakeip": false
     }
   },
-  
   "dns": {
     "servers": [
       {
@@ -56,7 +55,6 @@
     "final": "localDns",
     "strategy": "ipv4_only"
   },
-  
   "inbounds": [
     {
       "tag": "tun-in",
@@ -83,7 +81,6 @@
       "listen_port": 2080
     }
   ],
-
   "outbounds": [
       { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🔯 香港自动", "🔯 台湾自动", "🔯 日本自动", "🔯 新坡自动", "🔯 美国自动", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新坡节点", "🇺🇲 美国节点", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区",  "🎯 全球直连"] },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
@@ -124,7 +121,6 @@
       { "tag": "🎯 全球直连", "type": "direct" },
       { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }]}
       ],
-
 "route": {
     "auto_detect_interface": true,
     "final": "Proxy",
