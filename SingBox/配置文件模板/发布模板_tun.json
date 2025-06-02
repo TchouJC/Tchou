@@ -1,35 +1,58 @@
 {
   "log": {
-    "disabled": false,
-    "level": "info",
-    "timestamp": true
+	"disabled": false,
+	"level": "info",
+	"timestamp": true
   },
   "experimental": {
-    "clash_api": {
-      "external_controller": "0.0.0.0:9095",
-      "external_ui": "ui",
-      "secret": "",
-      "external_ui_download_url": "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "🎯 全球直连",
-      "default_mode": "rule"
-    },
-  "cache_file": {
-    "enabled": true,
-    "store_fakeip": true
-  }
+	"clash_api": {
+	  "external_controller": "0.0.0.0:9095",
+	  "external_ui": "ui",
+	  "secret": "",
+	  "external_ui_download_url": "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+	  "external_ui_download_detour": "🎯 全球直连",
+	  "default_mode": "rule"
+	},
+	"cache_file": {
+	  "enabled": true,
+	  "store_fakeip": true
+	}
   },
   "dns": {
-    "servers": [
-      {"tag": "proxyDns","address": "tls://8.8.8.8","detour": "🚀 节点选择"},
-      {"tag": "localDns","address": "https://223.5.5.5/dns-query","detour": "🎯 全球直连"}
-    ],
-    "rules": [
-      {"outbound": "any","server": "localDns"},
-      {"rule_set": "geosite-cn","server": "localDns"},   
-      {"clash_mode": "direct","server": "localDns"},
-      {"clash_mode": "global","server": "proxyDns"},
-      {"rule_set": "geosite-geolocation-!cn","server": "proxyDns"}
-    ],
+	"servers": [
+	  {
+		"tag": "proxyDns",
+		"address": "tls://8.8.8.8",
+		"detour": "🚀 节点选择"
+	  },
+	  {
+		"tag": "localDns",
+		"address": "https://223.5.5.5/dns-query",
+		"detour": "🎯 全球直连"
+	  }
+	],
+	"rules": [
+	  {
+		"outbound": "any",
+		"server": "localDns"
+	  },
+	  {
+		"rule_set": "geosite-cn",
+		"server": "localDns"
+	  },
+	  {
+		"clash_mode": "direct",
+		"server": "localDns"
+	  },
+	  {
+		"clash_mode": "global",
+		"server": "proxyDns"
+	  },
+	  {
+		"rule_set": "geosite-geolocation-!cn",
+		"server": "proxyDns"
+	  }
+	],
 	"final": "localDns",
 	"strategy": "ipv4_only"
   },
