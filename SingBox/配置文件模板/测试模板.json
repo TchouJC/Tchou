@@ -4,6 +4,7 @@
     "level": "info",
     "timestamp": true
   },
+
   "experimental": {
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
@@ -13,15 +14,22 @@
       "external_ui_download_detour": "🎯 全球直连",
       "default_mode": "rule"
     },
-  "cache_file": {"enabled": true,"store_fakeip": true,"store_rdrc": true}
+  "cache_file": {
+    "enabled": true,
+    "store_fakeip": true,
+    "store_rdrc": true
+  }
   },
+
   "dns": {
-    "servers": [
+    "servers": 
+    [
       {"tag": "google","type": "tls","server": "8.8.8.8","detour": "🚀 节点选择"},
       {"tag": "local","type": "https","server": "223.5.5.5"},
       {"tag": "fakeip","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"}
-    ],
-    "rules": [
+     ],
+    "rules": 
+    [
       {"clash_mode": "direct","server": "local"},
       {"clash_mode": "global","server": "google"},
       {"query_type": ["A","AAAA"],"rule_set": "geosite-cn","server": "fakeip"},
@@ -29,12 +37,13 @@
       {"type": "logical","mode": "and","rules": [{"rule_set": "geosite-geolocation-!cn","invert": true},{"rule_set": "geoip-cn"}],"server": "google","client_subnet": "114.114.114.114/24"},
       {"query_type": ["A","AAAA"],"server": "fakeip"}
     ],
-    "independent_cache": true,"strategy": "prefer_ipv4"
+    "independent_cache": true,
+    "strategy": "prefer_ipv4"
   },
   "inbounds": [
     {"tag": "tun-in","type": "tun","address": ["172.19.0.0/30","fdfe:dcba:9876::0/126"],
-      "stack": "mixed","auto_route": true,"strict_route": true,
-      "platform": {"http_proxy": {"enabled": true,"server": "127.0.0.1","server_port": 7890}}},
+    "stack": "mixed","auto_route": true,"strict_route": true,
+      "platform": {"http_proxy":{"enabled": true,"server": "127.0.0.1","server_port": 7890}}},
     {"tag": "mixed-in","type": "mixed","listen": "127.0.0.1","listen_port": 7890}
   ],
   "outbounds": [

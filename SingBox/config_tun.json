@@ -26,7 +26,8 @@
    "servers": 
    [
      {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
-     {"tag": "dns_direct", "address": "223.5.5.5", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}],
+     {"tag": "dns_direct", "address": "223.5.5.5", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
+    ],
    "rules": 
    [
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
@@ -41,14 +42,8 @@
 
 "inbounds": [
   {"tag": "tun-in","type": "tun","address": ["172.19.0.1/30","fdfe:dcba:9876::1/126"],
-    "mtu": 9000,"auto_route": true,"auto_redirect": true,"stack": "mixed"
-  },
-  {
-    "tag": "mixed-in",
-    "type": "mixed",
-    "listen": "0.0.0.0",
-    "listen_port": 7893
-  }
+    "mtu": 9000,"auto_route": true,"auto_redirect": true,"stack": "mixed"},
+  {"tag": "mixed-in","type": "mixed","listen": "0.0.0.0","listen_port": 7893}
 ],
 
     "outbounds": [

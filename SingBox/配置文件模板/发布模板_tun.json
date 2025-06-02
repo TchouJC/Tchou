@@ -27,7 +27,8 @@
       {"rule_set": "geosite-cn","server": "localDns"},   
       {"rule_set": "geosite-geolocation-!cn","server": "proxyDns"}
     ],
-    "final": "proxyDns","strategy": "ipv4_only"
+    "final": "proxyDns",
+    "strategy": "ipv4_only"
   },
   "inbounds": [
     {"tag": "tun-in","type": "tun","address": ["172.19.0.0/30"],
