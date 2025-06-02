@@ -1,20 +1,21 @@
 {
   "log": {
+    "disabled": false,
     "level": "info",
     "timestamp": true
   },
   "experimental": {
     "clash_api": {
-      "external_controller": "127.0.0.1:9090",
+      "external_controller": "0.0.0.0:9095",
       "external_ui": "ui",
       "secret": "",
-      "external_ui_download_url": "https://gh-proxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "direct",
+      "external_ui_download_url": "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "🎯 全球直连",
       "default_mode": "rule"
     },
     "cache_file": {
       "enabled": true,
-      "store_fakeip": false
+      "store_fakeip": true
     }
   },
   "dns": {
@@ -22,12 +23,12 @@
       {
         "tag": "proxyDns",
         "address": "tls://8.8.8.8",
-        "detour": "Proxy"
+        "detour": "🚀 节点选择"
       },
       {
         "tag": "localDns",
         "address": "https://223.5.5.5/dns-query",
-        "detour": "direct"
+        "detour": "🎯 全球直连"
       }
     ],
     "rules": [
@@ -52,7 +53,7 @@
         "server": "proxyDns"
       }
     ],
-    "final": "localDns",
+    "final": "proxyDns",
     "strategy": "ipv4_only"
   },
   "inbounds": [
@@ -65,7 +66,7 @@
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
-      "stack": "system",
+      "stack": "mixed",
       "platform": {
         "http_proxy": {
           "enabled": true,
