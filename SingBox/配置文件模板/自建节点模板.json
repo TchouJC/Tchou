@@ -33,7 +33,8 @@
         {"type": "logical","mode": "and","rules": [{"rule_set": "geosite-geolocation-!cn","invert": true},{"rule_set": "geoip-cn"}],"server": "google","client_subnet": "114.114.114.114/24"},
         {"query_type": ["A","AAAA"],"server": "fakeip"}
       ],
-      "independent_cache": true,"strategy": "prefer_ipv4"
+      "independent_cache": true,
+      "strategy": "prefer_ipv4"
     },
     "inbounds": [
       {"tag": "tun-in","type": "tun","address": ["172.19.0.0/30","fdfe:dcba:9876::0/126"],
