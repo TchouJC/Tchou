@@ -43,7 +43,7 @@
           "172.19.0.0/30",
           "fdfe:dcba:9876::0/126"
         ],
-        "stack": "system",
+        "stack": "mixed",
         "auto_route": true,
         "strict_route": true,
         "platform": {
@@ -115,8 +115,8 @@
       "auto_detect_interface": true,
       "final": "🐟 漏网之鱼",
       "rules": [
-        {"inbound": ["tun-in", "mixed-in"],"action": "sniff"},
-        {"type": "logical","mode": "or","rules":[{"port":53},{"protocol": "dns"}],"action": "hijack-dns"},
+        {"action": "sniff"},
+        {"protocol": "dns", "action": "hijack-dns"},
         {"clash_mode": "direct","outbound": "🎯 全球直连"},
         {"clash_mode": "global","outbound": "GLOBAL"},
         {"domain": ["clash.razord.top","yacd.metacubex.one","yacd.haishan.me","d.metacubex.one"],"outbound": "🎯 全球直连"},
