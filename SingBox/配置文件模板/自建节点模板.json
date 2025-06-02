@@ -13,8 +13,12 @@
         "external_ui_download_detour": "🎯 全球直连",
         "default_mode": "rule"
       },
-    "cache_file": {"enabled": true,"store_fakeip": true,"store_rdrc": true}
-    },
+  "cache_file": {
+    "enabled": true,
+    "store_fakeip": true,
+    "store_rdrc": true
+  }
+  },
     "dns": {
       "servers": [
         {"tag": "google","type": "tls","server": "8.8.8.8","detour": "🚀 节点选择"},

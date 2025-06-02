@@ -13,7 +13,11 @@
       "external_ui_download_detour": "🎯 全球直连",
       "default_mode": "rule"
     },
-  "cache_file": {"enabled": true,"store_fakeip": true,"store_rdrc": true}
+  "cache_file": {
+    "enabled": true,
+    "store_fakeip": true,
+    "store_rdrc": true
+  }
   },
   "dns": {
     "fakeip": {"enabled": true,"inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"},
