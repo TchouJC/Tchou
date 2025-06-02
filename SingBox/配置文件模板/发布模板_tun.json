@@ -15,8 +15,7 @@
     },
   "cache_file": {
     "enabled": true,
-    "store_fakeip": true,
-    "store_rdrc": true
+    "store_fakeip": true
   }
   },
   "dns": {
@@ -26,9 +25,9 @@
     ],
     "rules": [
       {"outbound": "any","server": "localDns"},
+      {"rule_set": "geosite-cn","server": "localDns"},   
       {"clash_mode": "direct","server": "localDns"},
       {"clash_mode": "global","server": "proxyDns"},
-      {"rule_set": "geosite-cn","server": "localDns"},   
       {"rule_set": "geosite-geolocation-!cn","server": "proxyDns"}
     ],
     "final": "localDns",
