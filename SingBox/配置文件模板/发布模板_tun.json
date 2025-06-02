@@ -13,15 +13,13 @@
       "external_ui_download_detour": "🎯 全球直连",
       "default_mode": "rule"
     },
-  "cache_file": {
-    "enabled": true,
-    "store_fakeip": false
-    }
+  "cache_file": {"enabled": true,"store_fakeip": false}
   },
   "dns": {
     "servers": [
       {"tag": "proxyDns","address": "tls://8.8.8.8","detour": "🚀 节点选择"},
-      {"tag": "localDns","address": "https://223.5.5.5/dns-query","detour": "🎯 全球直连"}],
+      {"tag": "localDns","address": "https://223.5.5.5/dns-query","detour": "🎯 全球直连"}
+    ],
     "rules": [
       {"outbound": "any","server": "localDns"},
       {"clash_mode": "direct","server": "localDns"},
@@ -29,20 +27,13 @@
       {"rule_set": "geosite-cn","server": "localDns"},   
       {"rule_set": "geosite-geolocation-!cn","server": "proxyDns"}
     ],
-    "final": "proxyDns",
-    "strategy": "ipv4_only"
+    "final": "proxyDns","strategy": "ipv4_only"
   },
   "inbounds": [
     {"tag": "tun-in","type": "tun","address": ["172.19.0.0/30"],
       "mtu": 9000,"auto_route": true,"strict_route": true,"stack": "mixed",
-      "platform": {"http_proxy": {"enabled": true,"server": "127.0.0.1","server_port": 2080}}
-    },
-    {
-      "tag": "mixed-in",
-      "type": "mixed",
-      "listen": "0.0.0.0",
-      "listen_port": 2080
-    }
+      "platform": {"http_proxy": {"enabled": true,"server": "127.0.0.1","server_port": 2080}}},
+    {"tag": "mixed-in","type": "mixed","listen": "0.0.0.0","listen_port": 2080}
   ],
   "outbounds": [
       { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🔯 香港自动", "🔯 台湾自动", "🔯 日本自动", "🔯 新坡自动", "🔯 美国自动", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新坡节点", "🇺🇲 美国节点", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区",  "🎯 全球直连"] },
