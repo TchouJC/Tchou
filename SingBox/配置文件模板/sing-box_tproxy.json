@@ -43,7 +43,7 @@
   {
     "type": "tproxy",
     "tag": "tproxy-in",
-    "listen": "127.0.0.1",
+    "listen": "192.168.10.1",
     "listen_port": 7895
   }
 ],
