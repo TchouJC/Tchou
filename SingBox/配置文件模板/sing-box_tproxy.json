@@ -41,13 +41,11 @@
 
 "inbounds": [
   {
-            "tag": "tproxy-in",
-            "type": "tproxy",
-            "listen": "0.0.0.0",
-            "listen_port": 7895,
-            "udp_timeout": 180,
-            "sniff": true
-        }
+    "type": "tproxy",
+    "tag": "tproxy-in",
+    "listen": "0.0.0.0",
+    "listen_port": 7895
+  }
 ],
 
   "outbounds": [
