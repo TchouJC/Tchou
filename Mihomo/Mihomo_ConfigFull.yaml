@@ -169,6 +169,7 @@ rules:
   - DOMAIN-SUFFIX,jiuse.icu,🚀 节点选择
   - DOMAIN-SUFFIX,hl718.com,🚀 节点选择
   - DOMAIN-SUFFIX,qichiyu.com,🚀 节点选择
+  - DOMAIN-SUFFIX,ganjingworld.com,🚀 节点选择
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
@@ -177,6 +178,7 @@ rules:
   - RULE-SET,facebook_domain,🤓 Facebook
   - RULE-SET,instagram_domain,📷 Instagram
   - RULE-SET,openai_domain,🤖 AI
+  - RULE-SET,wikimedia_domain,🚀 节点选择
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,googlefcm_domain,📢 FCM
   - RULE-SET,google_domain,🍀 Google
@@ -219,6 +221,7 @@ rule-providers:
   facebook_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/facebook.mrs"}
   instagram_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/instagram.mrs"}
   openai_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
+  wikimedia_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/wikimedia.mrs"}
   youtube_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   googlefcm_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/googlefcm.mrs"}
   google_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
