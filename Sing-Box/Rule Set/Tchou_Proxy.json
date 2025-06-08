@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "ultramobile.com",
+        "ghproxy.link",
+        "jiuse.icu",
+        "hl718.com",
+        "qichiyu.com",
+        "ganjingworld.com"
+      ]
+    }
+  ]
+}
