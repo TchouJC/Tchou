@@ -151,6 +151,7 @@ proxy-groups:
   - {name: 🛑 全球拦截, type: select, proxies: [REJECT], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/AdblockPlus_2.png}
 
 rules:
+  - DOMAIN-SUFFIX,istoreos.com,🎯 全球直连
   - DOMAIN-SUFFIX,ultramobile.com,🚀 节点选择
   - DOMAIN-SUFFIX,ghproxy.link,🚀 节点选择
   - DOMAIN-SUFFIX,ghfast.top,🚀 节点选择
