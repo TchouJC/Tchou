@@ -86,6 +86,7 @@
       {"clash_mode": "direct","outbound": "🎯 全球直连"},
       {"clash_mode": "global","outbound": "GLOBAL"},
       {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one", "board.zash.run.place"],"outbound": "🎯 全球直连"},
+      {"domain_suffix":"istoreos.com","outbound": "🎯 全球直连"},
       {"domain_suffix": ["ultramobile.com", "ghproxy.link", "ghfast.top", "jiuse.icu", "hl718.com", "qichiyu.com", "ganjingworld.com"],"outbound": "🚀 节点选择"},
       {"rule_set": ["geosite-apple", "geoip-apple"], "outbound": "🍏 Apple"},
       {"rule_set": "geosite-paypal", "outbound": "💰 PayPal"},
