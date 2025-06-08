@@ -1,7 +1,8 @@
-DOMAIN-SUFFIX,ultramobile.com
-DOMAIN-SUFFIX,ghproxy.link
-DOMAIN-SUFFIX,ghfast.top
-DOMAIN-SUFFIX,jiuse.icu
-DOMAIN-SUFFIX,hl718.com
-DOMAIN-SUFFIX,qichiyu.com
-DOMAIN-SUFFIX,ganjingworld.com
+payload:
+    - +.ultramobile.com
+    - +.ghproxy.link
+    - +.ghfast.top
+    - +.jiuse.icu
+    - +.hl718.com
+    - +.qichiyu.com
+    - +.ganjingworld.com
