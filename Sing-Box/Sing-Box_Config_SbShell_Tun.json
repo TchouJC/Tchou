@@ -112,8 +112,8 @@
      {"clash_mode": "direct","outbound": "🎯 全球直连"},
      {"clash_mode": "global","outbound": "GLOBAL"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one", "board.zash.run.place"],"outbound": "🎯 全球直连"},
-     {"domain_suffix":"istoreos.com", "outbound": "🎯 全球直连"},
-     {"domain_suffix": ["ultramobile.com", "ghproxy.link", "ghfast.top", "jiuse.icu", "hl718.com", "qichiyu.com", "ganjingworld.com"],"outbound": "🚀 节点选择"},
+     {"rule_set": "geosite-Tchou_Proxy","outbound": "🚀 节点选择"},
+     {"rule_set": "geosite-Tchou_Direct","outbound": "🎯 全球直连"},
      {"rule_set": ["geosite-apple", "geoip-apple"], "outbound": "🍏 Apple"},
      {"rule_set": "geosite-paypal", "outbound": "💰 PayPal"},
      {"rule_set": "geosite-github", "outbound": "👨‍💻 Github"},
@@ -147,6 +147,8 @@
       ],
     
       "rule_set": [
+        { "tag": "geosite-Tchou_Proxy", "type": "remote", "format": "source", "url": "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Proxy.json", "download_detour": "🎯 全球直连" },
+        { "tag": "geosite-Tchou_Direct", "type": "remote", "format": "source", "url": "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Direct.json", "download_detour": "🎯 全球直连" },
         { "tag": "geosite-apple", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs", "download_detour": "🎯 全球直连" },
         { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "🎯 全球直连" },
         { "tag": "geosite-paypal", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/paypal.srs", "download_detour": "🎯 全球直连" },
