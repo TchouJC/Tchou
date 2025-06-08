@@ -163,8 +163,14 @@ proxy-groups:
   - {name: 🛑 全球拦截, type: select, proxies: [REJECT], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/AdblockPlus_2.png}
 
 rules:
-  - RULE-SET,Tchou_Proxy_domain,🚀 节点选择
-  - RULE-SET,Tchou_Direct_domain,🎯 全球直连
+  - DOMAIN-SUFFIX,istoreos.com,🎯 全球直连
+  - DOMAIN-SUFFIX,ultramobile.com,🚀 节点选择
+  - DOMAIN-SUFFIX,ghproxy.link,🚀 节点选择
+  - DOMAIN-SUFFIX,ghfast.top,🚀 节点选择
+  - DOMAIN-SUFFIX,jiuse.icu,🚀 节点选择
+  - DOMAIN-SUFFIX,hl718.com,🚀 节点选择
+  - DOMAIN-SUFFIX,qichiyu.com,🚀 节点选择
+  - DOMAIN-SUFFIX,ganjingworld.com,🚀 节点选择
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
@@ -205,11 +211,9 @@ rules:
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
-  class: &class {type: http, interval: 86400, behavior: classical, format: yaml}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
 
 rule-providers: 
-  Tchou_Proxy_domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Mihomo/Rule%20Set/Tchou_Proxy.yaml"}
-  Tchou_Direct_domain: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Mihomo/Rule%20Set/Tchou_Direct.yaml"}
   apple_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
   paypal_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
   github_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
