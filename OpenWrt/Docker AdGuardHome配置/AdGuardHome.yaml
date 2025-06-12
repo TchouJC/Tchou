@@ -2,11 +2,11 @@ http:
   pprof:
     port: 6060
     enabled: false
-  address: 0.0.0.0:2000
+  address: 0.0.0.0:3000
   session_ttl: 720h
 users:
   - name: root
-    password: $2a$10$d8z6JM4L0mVzWBSOS/nKNefP8tJMhoLkumM7CCDs04uUNWVQIoov2
+    password: $2a$10$5VhmN8s1L1Dw.nP1mfuhfOSbqpx.sSLA5Zy2hBYjKMBqH5xcx1w2u
 auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
@@ -15,7 +15,7 @@ theme: auto
 dns:
   bind_hosts:
     - 0.0.0.0
-  port: 5335
+  port: 53
   anonymize_client_ip: false
   ratelimit: 0
   ratelimit_subnet_len_ipv4: 24
@@ -23,15 +23,11 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-    - 211.138.164.6
-    - 221.176.88.95
     - 223.5.5.5
+    - 119.29.29.29
   upstream_dns_file: ""
   bootstrap_dns:
-    - 9.9.9.10
-    - 149.112.112.10
-    - 2620:fe::10
-    - 2620:fe::fe:10
+    - 119.29.29.29
   fallback_dns: []
   upstream_mode: parallel
   fastest_timeout: 1s
@@ -45,7 +41,7 @@ dns:
     - 127.0.0.0/8
     - ::1/128
   cache_size: 4194304
-  cache_ttl_min: 3600
+  cache_ttl_min: 3598
   cache_ttl_max: 86400
   cache_optimistic: true
   bogus_nxdomain: []
@@ -63,7 +59,9 @@ dns:
   upstream_timeout: 10s
   private_networks: []
   use_private_ptr_resolvers: true
-  local_ptr_upstreams: []
+  local_ptr_upstreams:
+    - 211.138.164.6
+    - 221.176.88.95
   use_dns64: false
   dns64_prefixes: []
   serve_http3: false
@@ -149,7 +147,7 @@ filtering:
   safebrowsing_block_host: standard-block.dns.adguard.com
   rewrites: []
   safe_fs_patterns:
-    - /usr/bin/AdGuardHome/userfilters/*
+    - /opt/adguardhome/work/userfilters/*
   safebrowsing_cache_size: 1048576
   safesearch_cache_size: 1048576
   parental_cache_size: 1048576
