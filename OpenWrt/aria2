@@ -1,6 +1,6 @@
 
 config aria2 'main'
-	option enabled '1'
+	option enabled '0'
 	option user 'aria2'
 	option dir '/mnt/sda1/Aria2_Download'
 	option config_dir '/var/etc/aria2'
