@@ -6,7 +6,7 @@ http:
   session_ttl: 720h
 users:
   - name: root
-    password: $2a$10$5VhmN8s1L1Dw.nP1mfuhfOSbqpx.sSLA5Zy2hBYjKMBqH5xcx1w2u
+    password: $2a$10$/BEUKDmm9zihDZSHcAeC9e8EBPqfnxBNC58BHOfm5Je.jglAtW7ea
 auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
@@ -15,7 +15,7 @@ theme: auto
 dns:
   bind_hosts:
     - 0.0.0.0
-  port: 53
+  port: 5115
   anonymize_client_ip: false
   ratelimit: 0
   ratelimit_subnet_len_ipv4: 24
@@ -25,6 +25,8 @@ dns:
   upstream_dns:
     - 223.5.5.5
     - 119.29.29.29
+    - 211.138.164.6
+    - 221.176.88.95
   upstream_dns_file: ""
   bootstrap_dns:
     - 119.29.29.29
@@ -41,7 +43,7 @@ dns:
     - 127.0.0.0/8
     - ::1/128
   cache_size: 4194304
-  cache_ttl_min: 3598
+  cache_ttl_min: 3600
   cache_ttl_max: 86400
   cache_optimistic: true
   bogus_nxdomain: []
@@ -98,14 +100,18 @@ statistics:
   interval: 24h
   enabled: true
 filters:
-  - enabled: false
+  - enabled: true
     url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
     name: AdGuard DNS filter
     id: 1
-  - enabled: false
-    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_2.txt
-    name: AdAway Default Blocklist
+  - enabled: true
+    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdns.txt
+    name: adblockdns
     id: 2
+  - enabled: true
+    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdnslite.txt
+    name: adblockdnslite
+    id: 1749908455
 whitelist_filters: []
 user_rules: []
 dhcp:

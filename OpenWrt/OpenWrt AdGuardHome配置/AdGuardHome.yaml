@@ -98,14 +98,18 @@ statistics:
   interval: 24h
   enabled: true
 filters:
-  - enabled: false
+  - enabled: true
+    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdns.txt
+    name: adblockdns
+    id: 1749908786
+  - enabled: true
+    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdnslite.txt
+    name: adblockdnslite
+    id: 1749908787
+  - enabled: true
     url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
     name: AdGuard DNS filter
-    id: 1
-  - enabled: false
-    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_2.txt
-    name: AdAway Default Blocklist
-    id: 2
+    id: 1749908788
 whitelist_filters: []
 user_rules: []
 dhcp:
