@@ -6,7 +6,7 @@ http:
   session_ttl: 720h
 users:
   - name: root
-    password: $2a$10$tvIuS2zZesqtyz9einTw..NmqT/71tW5NV7gxqB/F3YXaPuImMzDy
+    password: $2a$10$5OyM3VOH6ObtBOm81FmhWOxj7oKc0pTFAWAUj3n8Bu.O2albakyee
 auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
@@ -23,13 +23,12 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-    - 8.8.8.8
-    - 1.1.1.1
+    - 192.168.10.1:1053
   upstream_dns_file: ""
   bootstrap_dns:
-    - 119.29.29.29
+    - 223.5.5.5
   fallback_dns: []
-  upstream_mode: parallel
+  upstream_mode: load_balance
   fastest_timeout: 1s
   allowed_clients: []
   disallowed_clients: []
@@ -40,10 +39,10 @@ dns:
   trusted_proxies:
     - 127.0.0.0/8
     - ::1/128
-  cache_size: 4194304
-  cache_ttl_min: 3600
-  cache_ttl_max: 86400
-  cache_optimistic: true
+  cache_size: 0
+  cache_ttl_min: 0
+  cache_ttl_max: 0
+  cache_optimistic: false
   bogus_nxdomain: []
   aaaa_disabled: true
   enable_dnssec: false
@@ -60,8 +59,7 @@ dns:
   private_networks: []
   use_private_ptr_resolvers: true
   local_ptr_upstreams:
-    - 8.8.8.8
-    - 1.1.1.1
+    - 192.168.10.1:1053
   use_dns64: false
   dns64_prefixes: []
   serve_http3: false
@@ -88,7 +86,7 @@ tls:
 querylog:
   dir_path: ""
   ignored: []
-  interval: 2160h
+  interval: 24h
   size_memory: 1000
   enabled: true
   file_enabled: true
@@ -97,19 +95,7 @@ statistics:
   ignored: []
   interval: 24h
   enabled: true
-filters:
-  - enabled: true
-    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdns.txt
-    name: adblockdns
-    id: 1749908786
-  - enabled: true
-    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdnslite.txt
-    name: adblockdnslite
-    id: 1749908787
-  - enabled: true
-    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
-    name: AdGuard DNS filter
-    id: 1749908788
+filters: []
 whitelist_filters: []
 user_rules: []
 dhcp:
