@@ -2,5 +2,5 @@
 config qbittorrent 'config'
 	option enabled '0'
 	option download_dir '/mnt/sda1/Aria2_Download'
-	option http_port '8080'
+	option http_port '8084'
 
