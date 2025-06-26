@@ -95,7 +95,19 @@ statistics:
   ignored: []
   interval: 24h
   enabled: true
-filters: []
+filters:
+  - enabled: true
+    url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+    name: AdGuard DNS filter
+    id: 1750936469
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/MobileFilter/sections/adservers.txt
+    name: AdGuard Mobile Ads filter
+    id: 1750936470
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt
+    name: AdGuard Chinese filter
+    id: 1750936471
 whitelist_filters: []
 user_rules: []
 dhcp:
