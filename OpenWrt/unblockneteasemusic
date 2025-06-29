@@ -1,0 +1,12 @@
+
+config unblockneteasemusic 'config'
+	option enable '1'
+	option auto_update '1'
+	option update_time '3'
+	list music_source 'kuwo'
+	list music_source 'migu'
+	option enable_flac '1'
+	option select_max_br '1'
+	option replace_music_source 'dont_replace'
+	option block_ads '1'
+

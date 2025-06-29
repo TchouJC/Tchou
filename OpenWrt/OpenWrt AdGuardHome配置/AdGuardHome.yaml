@@ -23,7 +23,7 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-    - 192.168.10.1:1053
+    - 127.0.0.1:7874
   upstream_dns_file: ""
   bootstrap_dns:
     - 223.5.5.5
@@ -59,7 +59,7 @@ dns:
   private_networks: []
   use_private_ptr_resolvers: true
   local_ptr_upstreams:
-    - 192.168.10.1:1053
+    - 127.0.0.1:7874
   use_dns64: false
   dns64_prefixes: []
   serve_http3: false

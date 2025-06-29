@@ -1,6 +1,6 @@
 
 config mosdns 'config'
-	option enabled '1'
+	option enabled '0'
 	option listen_port '5335'
 	option geo_auto_update '1'
 	option geo_update_week_time '*'
@@ -28,4 +28,5 @@ config mosdns 'config'
 	list remote_dns 'tls://8.8.8.8'
 	list remote_dns 'tls://1.1.1.1'
 	option geoip_type 'geoip'
+	option github_proxy 'https://gh-proxy.com'
 
