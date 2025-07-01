@@ -163,16 +163,16 @@
         "uTorrent.exe"
       ],
       "domain": [
+        "clash.razord.top",
+        "yacd.metacubex.one",
+        "yacd.haishan.me",
+        "d.metacubex.one",
         "asusrouter.com",
         "instant.arubanetworks.com",
         "oasisauth.h3c.com",
         "router.asus.com",
         "router.asus.com",
-        "www.asusrouter.com",
-        "clash.razord.top",
-        "yacd.metacubex.one",
-        "yacd.haishan.me",
-        "d.metacubex.one"
+        "www.asusrouter.com"
       ],
       "ip_cidr": [
         "0.0.0.0/8",
