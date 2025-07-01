@@ -131,7 +131,7 @@ config lan_access_control
 config authentication
 	option enabled '1'
 	option username 'nikki'
-	option password '831926'
+	option password 'q1w2e3r4'
 
 config hosts
 	option enabled '0'
