@@ -91,6 +91,7 @@
       {"protocol": "dns", "action": "hijack-dns"},
       {"clash_mode": "direct","outbound": "🎯 全球直连"},
       {"clash_mode": "global","outbound": "GLOBAL"},
+      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one", "board.zash.run.place"],"outbound": "🎯 全球直连"},
       {"rule_set": "geosite-Tchou_Proxy","outbound": "🚀 节点选择"},
       {"rule_set": "geosite-Tchou_Direct","outbound": "🎯 全球直连"},
       {"rule_set": ["geosite-apple", "geoip-apple"], "outbound": "🍏 Apple"},
