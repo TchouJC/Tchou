@@ -138,8 +138,6 @@
       "rule_set": [
         { "tag": "geosite-Tchou_Proxy", "type": "remote", "format": "source", "url": "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Proxy.json", "download_detour": "🎯 全球直连" },
         { "tag": "geosite-Tchou_Direct", "type": "remote", "format": "source", "url": "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Direct.json", "download_detour": "🎯 全球直连" },
-        { "tag": "geosite-Tchou_Proxy", "type": "remote", "format": "source", "url": "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Proxy.json", "download_detour": "🎯 全球直连" },
-        { "tag": "geosite-Tchou_Direct", "type": "remote", "format": "source", "url": "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Direct.json", "download_detour": "🎯 全球直连" },
         { "tag": "geosite-apple", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs", "download_detour": "🎯 全球直连" },
         { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "🎯 全球直连" },
         { "tag": "geosite-paypal", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/paypal.srs", "download_detour": "🎯 全球直连" },
