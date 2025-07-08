@@ -205,9 +205,15 @@ config log 'log'
 
 config subscription
 	option name 'Sub Store'
-	option url 'http://192.168.10.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=ClashMeta'
+	option url 'http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=ClashMeta'
 	option user_agent 'clash.meta'
 	option prefer 'remote'
-	option update '2025-07-07 02:42:17'
+	option expire '2026-06-22 03:32:37'
+	option upload '1.68659 GB'
+	option download '53.241 GB'
+	option total '60 GB'
+	option used '54.9276 GB'
+	option avaliable '5.07236 GB'
+	option update '2025-07-08 04:55:18'
 	option success '1'
 
