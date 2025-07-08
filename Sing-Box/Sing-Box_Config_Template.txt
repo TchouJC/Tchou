@@ -1,18 +1,18 @@
 singbox后端规则订阅模版
   在线转换：https://sing-box-subscribe-doraemon.vercel.app/config/订阅链接地址&file=规则模板json地址
-  本地转换：http://192.168.10.1:5000/config/订阅链接地址&file=规则模板json地址
+  本地转换：http://192.168.10.2:5000/config/订阅链接地址&file=规则模板json地址
   镜像地址：https://ghfast.top/
-  订阅地址：http://192.168.10.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box
+  订阅地址：http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box
   
   Sing-Box_Config_Beta：
-  http://192.168.10.1:5000/config/http://192.168.10.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Beta.json
+  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Beta.json
   Sing-Box_Config_Self-built_Beta：
-  http://192.168.10.1:5000/config/http://192.168.10.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Self-built_Beta.json
+  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Self-built_Beta.json
   Sing-Box_Config_Tun：
-  http://192.168.10.1:5000/config/http://192.168.10.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Tun.json
+  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Tun.json
   Sing-Box_Config_Tun_Fakeip：
-  http://192.168.10.1:5000/config/http://192.168.10.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Tun_Fakeip.json
+  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Tun_Fakeip.json
   Sing-Box_Config_iPhone：
-  http://192.168.10.1:5000/config/http://192.168.10.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_iPhone.json
+  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_iPhone.json
   Sing-Box_Config_SbShell_Tun：
-  http://192.168.10.1:5000/config/http://192.168.10.1:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_SbShell_Tun.json
+  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_SbShell_Tun.json
