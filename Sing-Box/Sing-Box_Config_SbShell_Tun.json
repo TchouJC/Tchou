@@ -17,49 +17,33 @@
   "cache_file": {
     "enabled": true,
     "path": "/etc/sing-box/cache.db",
-    "store_fakeip": false
+    "store_fakeip": true
     }
   },
 
- "dns": 
- {
-   "servers": 
-   [
-     {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
-     {"tag": "dns_direct", "address": "223.5.5.5", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
-   ],
-   "rules": 
-   [
-     {"outbound": "any", "server": "dns_direct", "disable_cache": true},
-     {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
-     {"clash_mode": "Direct", "server": "dns_direct"},
-     {"clash_mode": "Global", "server": "dns_proxy"},
-     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
-   ],
-   "final": "dns_proxy",
-   "strategy": "ipv4_only"
-},
-
-"inbounds": [
-  {
-    "tag": "tun-in",
-    "type": "tun",
-    "address": [
-      "172.19.0.1/30",
-      "fdfe:dcba:9876::1/126"
-    ],
-    "mtu": 9000,
-    "auto_route": true,
-    "auto_redirect": true
+  "dns": {
+    "servers": [
+      {"tag": "google","type": "tls","server": "8.8.8.8","detour": "🚀 节点选择"},
+      {"tag": "local","type": "https","server": "223.5.5.5"},
+      {"tag": "fakeip","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"}
+     ],
+     "rules": [
+      {"clash_mode": "direct","server": "local"},
+      {"clash_mode": "global","server": "google"},
+      {"query_type": ["A","AAAA"],"rule_set": "geosite-cn","server": "fakeip"},
+      {"rule_set": "geosite-cn","server": "local"},
+      {"type": "logical","mode": "and","rules": [{"rule_set": "geosite-geolocation-!cn","invert": true},{"rule_set": "geoip-cn"}],"server": "google","client_subnet": "114.114.114.114/24"},
+      {"query_type": ["A","AAAA"],"server": "fakeip"}
+    ],   
+     "independent_cache": true,
+    "strategy": "prefer_ipv4"
   },
-  {
-    "tag": "mixed-in",
-    "type": "mixed",
-    "listen": "127.0.0.1",
-    "listen_port": 7890
-  }
-],
-
+  "inbounds": [
+    {"tag": "tun-in","type": "tun","address": ["172.19.0.0/30","fdfe:dcba:9876::0/126"],
+    "stack": "mixed","auto_route": true,"strict_route": true,
+      "platform": {"http_proxy":{"enabled": true,"server": "127.0.0.1","server_port": 7890}}},
+    {"tag": "mixed-in","type": "mixed","listen": "127.0.0.1","listen_port": 7890}
+  ],
   "outbounds": [
       { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🔯 香港自动", "🔯 台湾自动", "🔯 日本自动", "🔯 新坡自动", "🔯 美国自动", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新坡节点", "🇺🇲 美国节点", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区",  "🎯 全球直连"] },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
@@ -101,11 +85,11 @@
       { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }]}
       ],
   
-  "route": 
- {
-   "auto_detect_interface": true,
-   "final": "🐟 漏网之鱼",
-   "rules": 
+"route": {
+    "default_domain_resolver": {"server": "local"},
+    "auto_detect_interface": true,
+    "final": "🐟 漏网之鱼",
+    "rules": 
    [
      {"action": "sniff"},
      {"protocol": "dns", "action": "hijack-dns"},
