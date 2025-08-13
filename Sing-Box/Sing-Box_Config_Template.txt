@@ -4,15 +4,15 @@ singbox后端规则订阅模版
   镜像地址：https://ghfast.top/
   订阅地址：http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box
   
-  Sing-Box_Config_Beta：
+  Sing-Box_Config_1.12：
   http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_1.12.json
-  Sing-Box_Config_Self-built_Beta：
+  Sing-Box_Config_Self-built_1.12：
   http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Self-built_1.12.json
   Sing-Box_Config_Tun：
   http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Tun.json
   Sing-Box_Config_Tun_Fakeip：
   http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_Tun_Fakeip.json
-  Sing-Box_Config_iPhone：
-  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_iPhone.json
-  Sing-Box_Config_SbShell_Tun：
-  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_SbShell_FakeipTun.json
+  Sing-Box_Config_iPhone_1.12：
+  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_iPhone_1.12.json
+  Sing-Box_Config_SbShell_FakeipTun_1.12：
+  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_SbShell_FakeipTun_1.12.json
