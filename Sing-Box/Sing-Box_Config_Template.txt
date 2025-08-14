@@ -17,4 +17,4 @@ singbox后端规则订阅模版
   Sing-Box_Config_SbShell_FakeipTun_1.12：
   http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg3abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_SbShell_FakeipTun_1.12.json
   Momo_Fakeip_1.12.json：
-  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg3abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/config/singbox/1.12.x/momofake.json
+  http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Momo_Fakeip_1.12.json
