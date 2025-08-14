@@ -7,7 +7,7 @@
   "experimental": {
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
-      "external_ui": "ui",
+      "external_ui": "/etc/momo/run/ui",
       "secret": "",
       "external_ui_download_url": "https://ghfast.top/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
       "external_ui_download_detour": "🎯 全球直连",
@@ -15,8 +15,8 @@
     },
     "cache_file": {
       "enabled": true,
-      "store_fakeip": true,
-      "store_rdrc": true
+      "path": "/etc/momo/run/cache.db",
+      "store_fakeip": true
     }
   },
   "dns": {
@@ -37,11 +37,14 @@
     "strategy": "prefer_ipv4"
   },
   "inbounds": [
-    {"tag": "tun-in","type": "tun","address": ["172.19.0.0/30","fdfe:dcba:9876::0/126"],
-    "stack": "mixed","auto_route": true,"strict_route": true,
-      "platform": {"http_proxy":{"enabled": true,"server": "127.0.0.1","server_port": 7890}}},
-    {"tag": "mixed-in","type": "mixed","listen": "127.0.0.1","listen_port": 7890}
-  ],
+    {"tag": "dns-in","type": "direct","listen": "::","listen_port": 1053},
+    {"tag": "http-in","type": "http","listen": "::","listen_port": 8080},
+    {"tag": "socks-in","type": "socks","listen": "::","listen_port": 1080},
+    {"tag": "redirect-in","type": "redirect","listen": "::","listen_port": 7890},
+    {"tag": "tproxy-in","type": "tproxy","listen": "::","listen_port": 7891},
+    {"tag": "tun-in","type": "tun","interface_name": "momo","address": ["172.31.0.1/30","fdfe:dcba:9876::1/126"],"auto_route": false,"auto_redirect": false}
+  ],  
+  
   "outbounds": [
       { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🔯 香港自动", "🔯 台湾自动", "🔯 日本自动", "🔯 新坡自动", "🔯 美国自动", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新坡节点", "🇺🇲 美国节点", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区",  "🎯 全球直连"] },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
@@ -82,7 +85,8 @@
       { "tag": "🎯 全球直连", "type": "direct" },
       { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }]}
       ],
-"route": {
+
+ "route": {
      "default_domain_resolver": {"server": "local"},
      "final": "🐟 漏网之鱼",
      "rules": [
@@ -124,7 +128,7 @@
       {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"}
       ],
 
-      "rule_set": [
+ "rule_set": [
         { "tag": "geosite-Tchou_Proxy", "type": "remote", "format": "source", "url": "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Proxy.json", "download_detour": "🎯 全球直连" },
         { "tag": "geosite-Tchou_Direct", "type": "remote", "format": "source", "url": "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Direct.json", "download_detour": "🎯 全球直连" },
         { "tag": "geosite-apple", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs", "download_detour": "🎯 全球直连" },
