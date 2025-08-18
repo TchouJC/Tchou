@@ -95,8 +95,8 @@
      "default_domain_resolver": {"server": "Local-DNS"},
      "final": "🐟 漏网之鱼",
      "rules": [
-        {"action": "sniff","inbound": "tun-in"},
-        {"action": "hijack-dns","protocol": "dns"},
+        {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
+        {"action": "hijack-dns","protocol": "dns-in"},
         {"ip_is_private": true,"outbound": "🎯 全球直连"},
         {"action": "route","clash_mode": "direct","outbound": "🎯 全球直连"},
         {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
