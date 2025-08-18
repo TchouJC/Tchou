@@ -40,14 +40,20 @@
       "tag": "tun-in",
       "interface_name": "",
       "address": [
-        "172.18.0.1/30",
-        "fdfe:dcba:9876::1/126"
+        "172.18.0.1/30"
       ],
       "mtu": 9000,
       "auto_route": true,
       "strict_route": false,
       "endpoint_independent_nat": false,
-      "stack": "mixed"
+      "stack": "mixed",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
+        }
+      }
     }
   ],
   "outbounds": [
@@ -89,7 +95,7 @@
       { "tag": "🔯 美国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇺🇲|USA|美国|United States|US"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },           
       { "tag": "🎯 全球直连", "type": "direct" },
       { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }]}
-      ],  
+      ],    
   "route": {
     "rules": [
       {"action": "sniff","inbound": "tun-in"},
@@ -129,7 +135,7 @@
       {"action": "route","rule_set": ["geosite-geolocation-!cn"],"outbound": "🚀 节点选择"},
       {"action": "route","rule_set": ["geosite-geolocation-cn"],"outbound": "🎯 全球直连"},
       {"action": "route","rule_set": ["geoip-cn","geosite-cn"],"outbound": "🎯 全球直连"}
-    ],
+    ],    
     "rule_set": [
       { "tag": "geosite-Tchou_Proxy", "type": "remote", "format": "source", "url": "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Proxy.json", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-Tchou_Direct", "type": "remote", "format": "source", "url": "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Direct.json", "download_detour": "🎯 全球直连" },
@@ -169,12 +175,11 @@
       { "tag": "geosite-geolocation-cn", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-cn.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "🎯 全球直连" }   
-    ],
-
+    ],    
     "auto_detect_interface": true,
     "final": "🐟 漏网之鱼",
     "default_domain_resolver": {"server": "Local-DNS"}
-  },  
+  },
  "dns": {
     "servers": [
       {"tag": "Local-DNS","type": "https","domain_resolver": "Local-DNS-Resolver","server": "223.5.5.5","path": "/dns-query"},
