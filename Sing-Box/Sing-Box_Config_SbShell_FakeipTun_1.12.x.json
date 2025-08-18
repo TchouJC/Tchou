@@ -158,13 +158,14 @@
       ],
       "mtu": 9000,
       "auto_route": true,
+      "auto_redirect": false,
       "strict_route": true
     }
   ],
   "experimental": {
     "cache_file": {
       "enabled": true,
-      "path": "/etc/momo/run/cache.db",
+      "path": "cache.db",
       "store_fakeip": true
     },
     "clash_api": {
