@@ -2,11 +2,11 @@
 config config 'config'
 	option init '1'
 	option enabled '0'
-	option profile 'subscription:cfg0a0caa'
+	option profile 'subscription:cfg0b0caa'
 	option start_delay '0'
 	option scheduled_restart '0'
 	option cron_expression '0 3 * * *'
-	option test_profile '1'
+	option test_profile '0'
 	option fast_reload '0'
 	option core_only '0'
 
@@ -105,15 +105,23 @@ config routing 'routing'
 config placeholder 'placeholder'
 
 config subscription
-	option name '内核运行'
-	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Sing-Box_Config_1.12.json'
+	option name '核心_1.12.x'
+	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/1.12.x/Sing-Box_Config_1.12.x.json'
 	option user_agent 'sing-box'
 	option prefer 'remote'
 	option success '0'
 
 config subscription
-	option name '插件运行'
-	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Momo_Fakeip_1.12.json'
+	option name '核心_1.11.x'
+	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/1.11.x/Sing-Box_Config_1.11.x.json'
+	option user_agent 'sing-box'
+	option prefer 'remote'
+	option update '2025-08-19 22:56:12'
+	option success '1'
+
+config subscription
+	option name '插件_1.12.x'
+	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/CKg2abstVnOeRpm1aB4G/download/collection/Sub%20Store?target=sing-box&file=https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Momo_Tun_Fakeip_1.12.x.json'
 	option user_agent 'sing-box'
 	option prefer 'remote'
 	option success '0'
