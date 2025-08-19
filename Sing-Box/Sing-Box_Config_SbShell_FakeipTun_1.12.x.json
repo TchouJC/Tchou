@@ -11,10 +11,10 @@
       {"query_type": ["A","AAAA"],"rule_set": "geosite-cn","server": "fakeip"},
       {"rule_set": "geosite-cn","server": "local"},
       {"type": "logical","mode": "and","rules": [{"rule_set": "geosite-geolocation-!cn","invert": true},{"rule_set": "geoip-cn"}],"server": "google","client_subnet": "114.114.114.114/24"},
-      {"query_type": ["A","AAAA"],"server": "fakeip"}
+      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
     "final": "google",
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "independent_cache": true
   }, 
    "outbounds": [
@@ -59,7 +59,7 @@
       ],
   "route": {
     "rules": [
-      {"inbound": ["tun-in", "mixed-in"],"action": "sniff"},
+      {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
       {"type": "logical","mode": "or","rules":[{"port":53},{"protocol": "dns"}],"action": "hijack-dns"},
       {"ip_is_private": true,"outbound": "🎯 全球直连"},
       {"clash_mode": "direct","outbound": "🎯 全球直连"},
