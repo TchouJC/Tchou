@@ -1,19 +1,20 @@
 {
   "dns": {
     "servers": [
-      {"tag": "google","type": "tls","server": "8.8.8.8","detour": "🚀 节点选择"},
-      {"tag": "local","type": "https","server": "223.5.5.5"},
-      {"tag": "fakeip","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"}
+      {"tag": "Local-DNS","type": "https","domain_resolver": "Local-DNS-Resolver","server": "223.5.5.5","path": "/dns-query"},
+      {"tag": "Local-DNS-Resolver","type": "udp","server": "223.5.5.5"},
+      {"tag": "Remote-DNS","type": "tls","detour": "🚀 节点选择","domain_resolver": "Remote-DNS-Resolver","server": "8.8.8.8"},
+      {"tag": "Remote-DNS-Resolver","type": "udp","detour": "🚀 节点选择","server": "8.8.8.8"},
+      {"tag": "FakeIP-DNS","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"}
     ],
     "rules": [
-      {"clash_mode": "direct","server": "local"},
-      {"clash_mode": "global","server": "google"},
-      {"query_type": ["A","AAAA"],"rule_set": "geosite-cn","server": "fakeip"},
-      {"rule_set": "geosite-cn","server": "local"},
-      {"type": "logical","mode": "and","rules": [{"rule_set": "geosite-geolocation-!cn","invert": true},{"rule_set": "geoip-cn"}],"server": "google","client_subnet": "114.114.114.114/24"},
-      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
-    ],
-    "final": "google",
+      {"action": "route","type": "logical","mode": "and","rules": [{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"invert": true},{"query_type": ["A","AAAA"]}],"server": "FakeIP-DNS"},
+      {"action": "route","clash_mode": "direct","server": "Local-DNS"},
+      {"action": "route","clash_mode": "global","server": "Remote-DNS"},
+      {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
+      {"action": "route","rule_set": ["geosite-geolocation-!cn"],"server": "Remote-DNS"}
+    ],    
+    "final": "Remote-DNS",
     "strategy": "ipv4_only",
     "independent_cache": true
   }, 
@@ -59,8 +60,8 @@
       ],
   "route": {
     "rules": [
-      {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
-      {"type": "logical","mode": "or","rules":[{"port":53},{"protocol": "dns"}],"action": "hijack-dns"},
+      {"action": "sniff","inbound": "tun-in"},
+      {"action": "hijack-dns","protocol": "dns"},
       {"ip_is_private": true,"outbound": "🎯 全球直连"},
       {"clash_mode": "direct","outbound": "🎯 全球直连"},
       {"clash_mode": "global","outbound": "GLOBAL"},
@@ -138,16 +139,10 @@
     ],
     "final": "🐟 漏网之鱼",
     "auto_detect_interface": true,
-    "default_domain_resolver": {"server": "local"}
+    "default_domain_resolver": {"server": "Local-DNS"}
   },
 "inbounds": [
-    {
-      "tag": "tun-in",
-      "type": "tun",
-      "address": [
-        "172.19.0.1/30",
-        "fdfe:dcba:9876::1/126"
-      ],
+    {"tag": "tun-in","type": "tun","address": ["172.19.0.1/30","fdfe:dcba:9876::1/126"],
       "mtu": 9000,
       "auto_route": true,
       "auto_redirect": true,
