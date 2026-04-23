@@ -97,6 +97,10 @@
       { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }]}
    ],      
   "route": {
+      "default_http_client": ["🎯 全球直连"],
+      "http_clients": [ 
+    { "tag": "🎯 全球直连" , "detour": "🎯 全球直连" } ],
+
     "rules": [
       {"action": "sniff","inbound": "tun-in"},
       {"action": "hijack-dns","protocol": "dns"},
