@@ -177,7 +177,8 @@
     ],
     "auto_detect_interface": true,
     "final": "🐟 漏网之鱼",
-    "default_domain_resolver": {"server": "Local-DNS"}
+    "default_domain_resolver": {"server": "Local-DNS"},
+    "rule_set_outbound": "🚀 节点选择"    
   },
   "dns": {
     "servers": [
