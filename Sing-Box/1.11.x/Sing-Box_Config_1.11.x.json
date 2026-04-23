@@ -14,7 +14,7 @@
       "secret": "",
       "default_mode": "rule",
       "access_control_allow_origin": [],
-      "access_control_allow_private_network": false
+      "access_control_allow_private_network": true
     },
     "cache_file": {
       "enabled": true,
@@ -40,7 +40,8 @@
       "tag": "tun-in",
       "interface_name": "",
       "address": [
-        "172.18.0.1/30"
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
       ],
       "mtu": 9000,
       "auto_route": true,
