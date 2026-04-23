@@ -57,7 +57,7 @@
     }
   ],
   "outbounds": [
-      { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🔯 香港自动", "🔯 台湾自动", "🔯 日本自动", "🔯 新坡自动", "🔯 美国自动", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新坡节点", "🇺🇲 美国节点", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区",  "🎯 全球直连"] },
+      { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🔯 台湾自动", "🔯 日本自动", "🔯 新坡自动", "🔯 美国自动", "🔯 香港自动", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新坡节点", "🇺🇲 美国节点", "🇭🇰 香港节点", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区",  "🎯 全球直连"] },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
       { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
       { "tag": "💰 PayPal", "type": "selector", "outbounds": ["🚀 节点选择"] },
@@ -82,20 +82,20 @@
       { "tag": "🧜‍♀️ HBO", "type": "selector", "outbounds": ["🚀 节点选择"] },
       { "tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
       { "tag": "🐸 手动切换", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }]},
-      { "tag": "🌐 其他地区", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["🇭🇰|🇹🇼|🇺🇲|🇯🇵|🇸🇬|Hong Kong|HongKong|HK|Taiwan|TW|Japan|JP|Singapore|SG|USA|US|United States|香港|台湾|日本|新加坡|美国|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期"] }] },
-      { "tag": "🇭🇰 香港节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|香港|港|HongKong|Hong Kong"] }] },
+      { "tag": "🌐 其他地区", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["🇹🇼|🇺🇲|🇯🇵|🇸🇬|🇭🇰|Taiwan|TW|Japan|JP|Singapore|SG|USA|US|United States|Hong Kong|HongKong|HK|台湾|日本|新加坡|美国|香港|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期"] }] },
       { "tag": "🇹🇼 台湾节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇹🇼|TW|台湾|湾|Taiwan"] }] },
       { "tag": "🇯🇵 日本节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇯🇵|Japan|JP|日本"] }] },
       { "tag": "🇸🇬 新坡节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇸🇬|Singapore|SG|新加坡"] }] },
       { "tag": "🇺🇲 美国节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇺🇲|USA|美国|United States|US"] }] },
-      { "tag": "🔯 香港自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|香港|港|HongKong|Hong Kong"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
+      { "tag": "🇭🇰 香港节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|香港|港|HongKong|Hong Kong"] }] },
       { "tag": "🔯 台湾自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇹🇼|TW|台湾|湾|Taiwan"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
       { "tag": "🔯 日本自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇯🇵|Japan|JP|日本"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
       { "tag": "🔯 新坡自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇸🇬|Singapore|SG|新加坡"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
       { "tag": "🔯 美国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇺🇲|USA|美国|United States|US"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },           
+      { "tag": "🔯 香港自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|香港|港|HongKong|Hong Kong"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
       { "tag": "🎯 全球直连", "type": "direct" },
       { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|过期|收藏|过期"] }]}
-    ],  
+   ],      
   "route": {
     "rules": [
       {"action": "sniff","inbound": "tun-in"},
