@@ -98,7 +98,7 @@
    ],      
 "http_clients": [
     {"tag": "default","detour": "🚀 节点选择"},
-    {"tag": "🎯 全球直连","detour": "direct"}
+    {"tag": "direct","detour": "🎯 全球直连"}
   ], 
    "route": {
     "rules": [
