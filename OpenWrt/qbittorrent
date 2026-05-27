@@ -1,6 +1,6 @@
 
 config qbittorrent 'config'
 	option enabled '0'
-	option download_dir '/mnt/sdb1/Download'
+	option download_dir '/mnt/sdb1/Downloads'
 	option http_port '8084'
 
