@@ -3,6 +3,7 @@
   "rules": [
     {
       "domain_suffix": [
+        "ultramobile.com",
         "istoreos.com"
       ],
       "domain": [
