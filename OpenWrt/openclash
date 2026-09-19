@@ -116,7 +116,7 @@ config openclash 'config'
 	option dnsmasq_noresolv '0'
 	option smart_tolerance '0'
 	option lgbm_update_interval '72'
-	option lgbm_custom_url 'https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model-large.bin'
+	option lgbm_custom_url 'https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model.bin'
 
 config dns_servers
 	option group 'nameserver'
