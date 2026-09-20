@@ -108,6 +108,7 @@
       {"clash_mode": "global","outbound": "GLOBAL"},
       {"rule_set": "geosite-Tchou_Proxy","outbound": "🚀 节点选择"},
       {"rule_set": "geosite-Tchou_Direct","outbound": "🎯 全球直连"},
+      {"rule_set": "geosite-apple-cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-apple", "outbound": "🍏 Apple"},
       {"rule_set": "geosite-paypal", "outbound": "💰 PayPal"},
       {"rule_set": "geosite-github", "outbound": "👨‍💻 Github"},
@@ -141,6 +142,7 @@
     "rule_set": [
       { "tag": "geosite-Tchou_Proxy", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Proxy.json", "http_client": "direct"},
       { "tag": "geosite-Tchou_Direct", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Direct.json", "http_client": "direct"},
+      { "tag": "geosite-apple-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple-cn.srs", "http_client": "direct"},
       { "tag": "geosite-apple", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs", "http_client": "direct"},
       { "tag": "geosite-paypal", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/paypal.srs", "http_client": "direct"},
       { "tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs", "http_client": "direct"},
