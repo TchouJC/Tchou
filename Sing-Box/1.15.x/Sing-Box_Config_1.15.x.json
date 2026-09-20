@@ -100,8 +100,8 @@
     {"tag": "direct","detour": " 🎯 全球直连"}
   ],
    "route": {
+    "default_http_client": "proxy",
     "rules": [
-    "default_http_client", "proxy",
       {"action": "sniff","inbound": "tun-in"},
       {"action": "hijack-dns","protocol": "dns"},
       {"ip_is_private": true,"outbound": "🎯 全球直连"},
