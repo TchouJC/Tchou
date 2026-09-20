@@ -169,6 +169,7 @@ proxy-groups:
   - {name: 🛑 全球拦截, type: select, proxies: [REJECT], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/AdblockPlus_2.png}
 
 rules:
+  - AND,((RULE-SET,geolocation-!cn),(DST-PORT,443),(NETWORK,UDP)),🛑 全球拦截
   - RULE-SET,Tchou_Proxy,🚀 节点选择
   - RULE-SET,Tchou_Direct,🎯 全球直连
   - RULE-SET,apple_domain,🍎 Apple
@@ -201,15 +202,15 @@ rules:
   - RULE-SET,geolocation-cn,🎯 全球直连
   - RULE-SET,Lan_domain,🎯 全球直连
   - RULE-SET,Download_domain,🎯 全球直连
-  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
-  - RULE-SET,twitter_ip,👽 Twitter,no-resolve
-  - RULE-SET,facebook_ip,🤓 Facebook,no-resolve
-  - RULE-SET,google_ip,🍀 Google,no-resolve
-  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
+  - RULE-SET,telegram_ip,📲 Telegram
+  - RULE-SET,twitter_ip,👽 Twitter
+  - RULE-SET,facebook_ip,🤓 Facebook
+  - RULE-SET,google_ip,🍀 Google
+  - RULE-SET,netflix_ip,🎥 NETFLIX
   - RULE-SET,private_ip,🎯 全球直连,no-resolve
-  - RULE-SET,cn_ip,🎯 全球直连,no-resolve
+  - RULE-SET,cn_ip,🎯 全球直连
   - MATCH,🐟 漏网之鱼
-
+  
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
