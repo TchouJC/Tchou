@@ -172,7 +172,8 @@ rules:
   - AND,((RULE-SET,geolocation-!cn),(DST-PORT,443),(NETWORK,UDP)),🛑 全球拦截
   - RULE-SET,Tchou_Proxy,🚀 节点选择
   - RULE-SET,Tchou_Direct,🎯 全球直连
-  - RULE-SET,applecn_domain,🎯 全球直连
+  - RULE-SET,apple@cn_domain,🎯 全球直连
+  - RULE-SET,apple-cn_domain,🎯 全球直连
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
@@ -222,8 +223,9 @@ rule-anchor:
 rule-providers: 
   Tchou_Proxy: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Mihomo/Rule%20Set/Tchou_Proxy_classical.yaml"}
   Tchou_Direct: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Mihomo/Rule%20Set/Tchou_Direct_classical.yaml"}
-  applecn_domain: {<<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}  
-  apple_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
+  apple@cn_domain: {<<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}  
+  apple-cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
+  apple_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"}
   paypal_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
   github_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
   telegram_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
