@@ -182,6 +182,7 @@ rules:
   - RULE-SET,facebook_domain,🤓 Facebook
   - RULE-SET,instagram_domain,📷 Instagram
   - RULE-SET,openai_domain,🤖 AI
+  - RULE-SET,openchatai_domain,🤖 AI
   - RULE-SET,wikimedia_domain,🚀 节点选择
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,googlefcm_domain,📢 FCM
@@ -233,6 +234,7 @@ rule-providers:
   facebook_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/facebook.mrs"}
   instagram_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/instagram.mrs"}
   openai_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
+  openchatai_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-chat-!cn@!cn.mrs"}
   wikimedia_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/wikimedia.mrs"}
   youtube_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   googlefcm_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/googlefcm.mrs"}
