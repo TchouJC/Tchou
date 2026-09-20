@@ -72,7 +72,7 @@
       { "tag": "🍀 Google", "type": "selector", "outbounds": ["🚀 节点选择"] },
       { "tag": "💧 Copilot", "type": "selector", "outbounds": ["🚀 节点选择"] },
       { "tag": "🐬 OneDrive", "type": "selector", "outbounds": ["🚀 节点选择"] },
-      { "tag": "🪟 Microsoft", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
+      { "tag": "🪟 Microsoft", "type": "selector", "outbounds": ["🚀 节点选择"] },
       { "tag": "♻️ Speedtest", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
       { "tag": "🎹 Spotify", "type": "selector", "outbounds": ["🚀 节点选择"] },
       { "tag": "🎠 Amazon", "type": "selector", "outbounds": ["🚀 节点选择"] },
