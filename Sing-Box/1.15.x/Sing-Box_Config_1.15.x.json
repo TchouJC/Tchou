@@ -96,7 +96,7 @@
       { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用"] }]}
    ],   
 "http_clients": [
-    {"tag": "default","detour": "direct"}
+    {"tag": "default","detour": "🔯 台湾自动"}
   ],
    "route": {
     "default_http_client": "default",
