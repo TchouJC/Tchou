@@ -101,6 +101,7 @@
     {"tag": "direct","detour": " 🎯 全球直连"}
   ],
    "route": {
+    "default_http_client": "direct",
     "rules": [
       {"action": "sniff","inbound": "tun-in"},
       {"action": "hijack-dns","protocol": "dns"},
