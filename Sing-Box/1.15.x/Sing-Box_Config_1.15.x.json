@@ -101,6 +101,7 @@
   ],
    "route": {
     "rules": [
+    "default_http_client", "proxy",
       {"action": "sniff","inbound": "tun-in"},
       {"action": "hijack-dns","protocol": "dns"},
       {"ip_is_private": true,"outbound": "🎯 全球直连"},
@@ -143,8 +144,8 @@
     "rule_set": [
       { "tag": "geosite-Tchou_Proxy", "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Proxy.json", "http_client": "proxy"},
       { "tag": "geosite-Tchou_Direct", "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/Rule%20Set/Tchou_Direct.json", "http_client": "proxy"},
-      { "tag": "geosite-applecn1", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple-cn.srs", "download_detour": "🎯 全球直连" },
-      { "tag": "geosite-applecn2", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple@cn.srs", "download_detour": "🎯 全球直连" },
+      { "tag": "geosite-applecn1", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple-cn.srs", "http_client": "proxy"},
+      { "tag": "geosite-applecn2", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple@cn.srs", "http_client": "proxy"},
       { "tag": "geosite-apple", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs", "http_client": "proxy"},
       { "tag": "geosite-paypal", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/paypal.srs", "http_client": "proxy"},
       { "tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs", "http_client": "proxy"},
