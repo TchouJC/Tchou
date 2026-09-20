@@ -120,7 +120,7 @@ pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台�
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新坡节点, ⚖️ 台湾均衡, 🎥 奈飞节点, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png}
   - {name: 🐟 漏网之鱼, <<: *pr, icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Fish_b.png}
-  - {name: 🍎 Apple, type: select, proxies: [🎯 全球直连, 🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Apple_rainbow.png}
+  - {name: 🍎 Apple, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Apple_rainbow.png}
   - {name: 💶 PayPal, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/PayPal_business.png}
   - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/GitHub.png}
   - {name: 📲 Telegram, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Telegram.png}
@@ -132,8 +132,8 @@ proxy-groups:
   - {name: 📢 FCM, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/FCM_Firebase_Cloud_Messaging.png}
   - {name: 🍀 Google, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Google.png}
   - {name: 💧 Copilot, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft_Copilot.png}
-  - {name: 🐬 OneDrive, type: select, proxies: [🎯 全球直连, 🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/OneDrive.png}
-  - {name: 🪟 Microsoft, type: select, proxies: [🎯 全球直连, 🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft.png}
+  - {name: 🐬 OneDrive, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/OneDrive.png}
+  - {name: 🪟 Microsoft, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft.png}
   - {name: ✈️ Speedtest, type: select, proxies: [🎯 全球直连, 🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/SpeedTest.png}
   - {name: 🎹 Spotify, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Spotify.png}
   - {name: 🎠 Amazon, type: select, proxies: [🚀 节点选择], icon: https://ghfast.top/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Amazon.png} 
