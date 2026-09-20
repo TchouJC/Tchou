@@ -172,6 +172,7 @@ rules:
   - AND,((RULE-SET,geolocation-!cn),(DST-PORT,443),(NETWORK,UDP)),🛑 全球拦截
   - RULE-SET,Tchou_Proxy,🚀 节点选择
   - RULE-SET,Tchou_Direct,🎯 全球直连
+  - RULE-SET,applecn_domain,🎯 全球直连
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
@@ -186,6 +187,7 @@ rules:
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,bing_domain,💧 Copilot
   - RULE-SET,onedrive_domain,🐬 OneDrive
+  - RULE-SET,microsoftcn_domain,🎯 全球直连
   - RULE-SET,microsoft_domain,🪟 Microsoft
   - RULE-SET,speedtest_domain,✈️ Speedtest
   - RULE-SET,spotify_domain,🎹 Spotify
@@ -202,6 +204,7 @@ rules:
   - RULE-SET,geolocation-cn,🎯 全球直连
   - RULE-SET,Lan_domain,🎯 全球直连
   - RULE-SET,Download_domain,🎯 全球直连
+  - RULE-SET,apple_ip,🍎 Apple
   - RULE-SET,telegram_ip,📲 Telegram
   - RULE-SET,twitter_ip,👽 Twitter
   - RULE-SET,facebook_ip,🤓 Facebook
@@ -219,6 +222,7 @@ rule-anchor:
 rule-providers: 
   Tchou_Proxy: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Mihomo/Rule%20Set/Tchou_Proxy_classical.yaml"}
   Tchou_Direct: { <<: *class, url: "https://ghfast.top/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Mihomo/Rule%20Set/Tchou_Direct_classical.yaml"}
+  applecn_domain: {<<: *domain, url: "https://ghfast.top/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}  
   apple_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
   paypal_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
   github_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
@@ -233,6 +237,7 @@ rule-providers:
   google_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   bing_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/bing.mrs"}
   onedrive_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs"}
+  microsoftcn_domain: {<<: *domain, url: "https://ghfast.top/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs"}  
   microsoft_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
   speedtest_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"}
   spotify_domain: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/spotify.mrs"}
@@ -249,6 +254,8 @@ rule-providers:
   geolocation-cn: { <<: *domain, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-cn.mrs"}
   Lan_domain: { <<: *class, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Lan/Lan.yaml"}
   Download_domain: { <<: *class, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Download/Download.yaml"} 
+  
+  apple_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo-lite/geoip/apple.mrs"}  
   telegram_ip: { <<: *ip, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   twitter_ip: { <<: *ip, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/twitter.mrs"}
   facebook_ip: { <<: *ip, url: "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/facebook.mrs"}
