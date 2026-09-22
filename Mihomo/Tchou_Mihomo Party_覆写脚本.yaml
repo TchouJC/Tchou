@@ -137,7 +137,7 @@ proxy-groups:
   - {name: ✈️ Speedtest, type: select, proxies: [🎯 全球直连, 🚀 节点选择, 🌐 其他地区, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/SpeedTest.png}
   - {name: 🎹 Spotify, type: select, proxies: [🚀 节点选择, 🌐 其他地区, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Spotify.png}
   - {name: 🎠 Amazon, type: select, proxies: [🚀 节点选择, 🌐 其他地区, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Amazon.png} 
-  - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择, 🌐 其他地区, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png}
+  - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择, 🌐 其他地区, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png}
   - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择, 🎥 奈飞节点, 🌐 其他地区, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Netflix.png}
   - {name: 🧸 Disney+, type: select, proxies: [🚀 节点选择, 🌐 其他地区, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Disney_plus.png}
   - {name: 🧜‍♀️ HBO, type: select, proxies: [🚀 节点选择, 🌐 其他地区, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新坡故转], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/HBO_MAX.png} 
