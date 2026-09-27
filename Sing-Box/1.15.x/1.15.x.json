@@ -209,9 +209,12 @@
   "experimental": {
     "cache_file": {
       "enabled": true,
-      "path": "/etc/sing-box/cache.db",
+      "path": "cache.db",
+      "cache_id": "",
+      "store_fakeip": true,
       "store_dns": true
     },
+    
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/sing-box/ui",
