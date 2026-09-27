@@ -11,8 +11,8 @@
     ],
     "rules": [
       {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
-      {"clash_mode": "Direct", "server": "local"},
-      {"clash_mode": "Global", "server": "fakeip"},
+      {"clash_mode": "direct", "server": "local"},
+      {"clash_mode": "global", "server": "fakeip"},
       {"rule_set": ["fakeipfilter-cn", "geosite-cn", "geosite-microsoft@cn", "geosite-apple-cn", "geosite-apple@cn", "geosite-private"], "server": "local"},
       {"rule_set": "fakeipfilter-!cn", "server": "google"},
       {"type": "logical", "mode": "and", "rules": [{"query_type": ["A", "AAAA"]}, {"rule_set": "geosite-geolocation-!cn", "invert": true}], "action": "evaluate", "server": "google", "client_subnet": "223.5.5.0/24","timeout": "2s"},
@@ -77,8 +77,8 @@
       {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": ["stun", "quic"]}], "action": "reject", "no_drop": true},
       {"network": "icmp", "action": "resolve"},
       {"network": "icmp", "outbound": "🎯 全球直连"},
-      {"clash_mode": "Direct", "outbound": "🎯 全球直连"},
-      {"clash_mode": "Global", "outbound": "GLOBAL"},
+      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
+      {"clash_mode": "global", "outbound": "GLOBAL"},
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
       {"rule_set": "Tchou_Proxy","outbound": "🚀 节点选择"},
       {"rule_set": "Tchou_Direct","outbound": "🎯 全球直连"},
@@ -194,32 +194,39 @@
         }
       }
     }
-  ],  "services": [
+  ],  
+  "services": [
     {
       "type": "api",
       "listen": "0.0.0.0",
       "listen_port": 9090,
-      "secret": "passwd",
+      "secret": "",
       "dashboard": {
         "enabled": true,
-        "path": "/etc/sing-box/dashboard"
+        "path": "dashboard",
+        "download_url": "https://gh-proxy.com/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip",
+        "http_client": "🎯 全球直连",
+        "update_interval": "1d"
       }
     }
   ],
   "experimental": {
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "zashboard",
+      "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
+      "external_ui_download_detour": "🎯 全球直连",
+      "secret": "",
+      "default_mode": "rule",
+      "access_control_allow_origin": [],
+      "access_control_allow_private_network": true
+    },
     "cache_file": {
       "enabled": true,
       "path": "cache.db",
       "cache_id": "",
       "store_fakeip": true,
       "store_dns": true
-    },
-    
-    "clash_api": {
-      "external_controller": "0.0.0.0:9095",
-      "external_ui": "/etc/sing-box/ui",
-      "secret": "passwd",
-      "default_mode": "Rule"
     }
   },
   "certificate": {
