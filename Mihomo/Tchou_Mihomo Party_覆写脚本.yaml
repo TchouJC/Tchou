@@ -129,7 +129,7 @@ proxy-groups:
   - {name: 📷 Instagram, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Instagram.png}
   - {name: 🤖 AI, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/ChatGPT.png}
   - {name: 📹 YouTube, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/YouTube.png}
-  - {name: 📢 FCM, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/FCM_Firebase_Cloud_Messaging.png}
+  - {name: 📢 Gmini, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/FCM_Firebase_Cloud_Messaging.png}
   - {name: 🍀 Google, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Google.png}
   - {name: 💧 Copilot, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft_Copilot.png}
   - {name: 🐬 OneDrive, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/OneDrive.png}
@@ -185,7 +185,7 @@ rules:
   - RULE-SET,openchatai_domain,🤖 AI
   - RULE-SET,wikimedia_domain,🚀 节点选择
   - RULE-SET,youtube_domain,📹 YouTube
-  - RULE-SET,googlefcm_domain,📢 FCM
+  - RULE-SET,googlegemini_domain,📢 Gmini
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,bing_domain,💧 Copilot
   - RULE-SET,onedrive_domain,🐬 OneDrive
@@ -236,7 +236,7 @@ rule-providers:
   openchatai_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-chat-!cn@!cn.mrs"}
   wikimedia_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/wikimedia.mrs"}
   youtube_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
-  googlefcm_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/googlefcm.mrs"}
+  googlegemini_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google-gemini.mrs"}
   google_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   bing_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/bing.mrs"}
   onedrive_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs"}
