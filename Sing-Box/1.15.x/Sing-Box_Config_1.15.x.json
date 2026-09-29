@@ -79,7 +79,7 @@
       {"network": "icmp", "outbound": "🎯 全球直连"},
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
-      {"action": "route","invert": true,"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
+      {"action": "route","ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},      
       {"action": "route","port": [500,4500],"outbound": "🎯 全球直连"},
       {"action": "route","domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},      
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
