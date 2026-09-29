@@ -3,9 +3,16 @@
   "rules": [
     {
       "domain_suffix": [
+        "pub.3gppnetwork.org",
         "appstorrent.ru",
         "istoreos.com"
       ]
+    },
+    {
+      "port": [500, 4500]
+    },
+    {
+      "ip_cidr": ["208.54.2.163/32"]
     }
   ]
 }
