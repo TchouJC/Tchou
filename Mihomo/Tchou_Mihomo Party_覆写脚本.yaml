@@ -169,6 +169,14 @@ proxy-groups:
   - {name: 🛑 全球拦截, type: select, proxies: [REJECT], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/AdblockPlus_2.png}
 
 rules:
+  # Ultra Mobile Wi-Fi Calling / ePDG
+  - IP-CIDR,208.54.2.163/32,🎯 全球直连,no-resolve
+  # IPsec / IKE
+  - DST-PORT,500,🎯 全球直连
+  - DST-PORT,4500,🎯 全球直连
+    # 3GPP ePDG
+  - DOMAIN-SUFFIX,pub.3gppnetwork.org,🎯 全球直连
+
   - AND,((RULE-SET,geolocation-!cn),(DST-PORT,443),(NETWORK,UDP)),🛑 全球拦截
   - RULE-SET,Tchou_Proxy,🚀 节点选择
   - RULE-SET,Tchou_Direct,🎯 全球直连
