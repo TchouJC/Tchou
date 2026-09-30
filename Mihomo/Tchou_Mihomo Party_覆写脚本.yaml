@@ -1,142 +1,75 @@
 # 全局配置 
-mode: rule
-ipv6: false
-port: 7890
-socks-port: 7891
-redir-port: 7892
-mixed-port: 7893
-tproxy-port: 7894
+mixed-port: 7890
 allow-lan: true
-log-level: warning
-interface-name: ""
-secret: ""
-
-external-controller: 0.0.0.0:9095
-external-ui: "ui"
-keep-alive-interval: 15
-find-process-mode: strict
-external-controller-tls: ""
-external-ui-name: zashboard
-external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+bind-address: "*"
+ipv6: false
 unified-delay: true
 tcp-concurrent: true
-authentication: []
-skip-auth-prefixes:
-  - 127.0.0.1/8
-  - ::1/128
-# 用于下载订阅时指定UA
-global-ua: clash.meta
-
+log-level: info
+keep-alive-idle: 600
+keep-alive-interval: 15
 profile:
   store-selected: true
   store-fake-ip: true
-lan-allowed-ips:
-  - 0.0.0.0/0
-  - ::/0
-lan-disallowed-ips: []
+
+external-controller: 0.0.0.0:9090
+secret: ""
+external-ui: "ui"
+external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 tun:
   enable: true
   stack: mixed
-  auto-route: true
-  auto-detect-interface: true
-  auto-redirect: true
   dns-hijack: ["any:53", "tcp://any:53"]
-  device: ""
-  mtu: 9000
-  strict-route: true
-  endpoint-independent-nat: true
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
 
 dns:
   enable: true
+  cache-algorithm: arc
   ipv6: false
-  use-hosts: true
-  use-system-hosts: true
-  nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-  proxy-server-nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query     
   enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.1/8
+  fake-ip-range: 198.18.0.0/16  
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "*.lan"
-    - "*.localdomain"
-    - "*.example"
-    - "*.invalid"
-    - "*.localhost"
-    - "*.test"
-    - "*.local"
-    - "*.home.arpa"
-    - "*.direct"
-
-    # Windows / 网络连通性检测
-    - "network-test.debian.org"
-    - "detectportal.firefox.com"
-    - "*.msftconnecttest.com"
-    - "*.msftncsi.com"
-
-    # 时间 / STUN / 手机网络相关
-    - "time.*.com"
+    - "*"
+    - "+.lan"
+    - "+.local"
+    
+     # 时间 / STUN / 手机网络相关
     - "+.pub.3gppnetwork.org"
-    - "global.turn.twilio.com"
-    - "global.stun.twilio.com"
-
-    # 中国运营商认证/网络检测
-    - "*.cmpassport.com"
-    - "id6.me"
-    - "open.e.189.cn"
-    - "opencloud.wostore.cn"
-    - "id.mail.wo.cn"
-    - "mdn.open.wo.cn"
-    - "nishub1.10010.com"
-    - "enrichgw.10010.com"
-
-  prefer-h3: true
-  fake-ip-range6: fc00::/18
-  listen: 0.0.0.0:1053
-  respect-rules: true
   default-nameserver:
     - 223.5.5.5
+  nameserver:
+    - 127.0.0.1:5335
 
-bind-address: "*"
-global-client-fingerprint: chrome
-keep-alive-idle: 600
-disable-keep-alive: false
-
+  listen: 0.0.0.0:1053
+    
 sniffer:
   enable: true
-  force-dns-mapping: true
-  parse-pure-ip: true
-  override-destination: true
-  force-domain:
-    - "+.v2ex.com"
-  skip-domain:
-    - "+.baidu.com"
-  skip-src-address: []
-  skip-dst-address: []
   sniff:
     HTTP:
-      ports:
-        - "80"
-        - 8080-8880
+      ports: [80, 8080-8880]
+      override-destination: true
     TLS:
-      ports:
-        - "443"
-        - "8443"
+      ports: [443, 8443]
     QUIC:
-      ports:
-        - "443"
-        - "8443"
-hosts: {}
-
-# 锚点
-pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新加坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新加坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, ⚖️ 台湾均衡, 🎥 奈飞节点, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Global.png}
-# 策略组
+      ports: [443, 8443]
+  skip-domain:
+    - "Mijia Cloud"
+    - "+.push.apple.com"
+    
+ # 锚点
+pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新加坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新加坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, ⚖️ 台湾均衡, ♻️ 其他智能, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 美国智能, ♻️ 日本智能, ♻️ 新加坡智能, 🎥 奈飞节点, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Global.png}
+ # 测速锚点
+pg: &pg
+  url: https://cp.cloudflare.com/generate_204
+  interval: 180
+  timeout: 5000
+# 出站策略 smart参数 （ uselightgbm: false, collectdata: false, strategy: sticky-sessions,policy-priority: "Premium:0.9;SG:1.3" ）
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [🔯 台湾故转, 🔯 香港故转, 🔯 美国故转, 🔯 日本故转, 🔯 新加坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新加坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, ⚖️ 台湾均衡, 🎥 奈飞节点, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png}
+  - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新加坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新加坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, ⚖️ 台湾均衡, ♻️ 其他智能, ♻️ 香港智能, ♻️ 台湾智能, ♻️ 美国智能, ♻️ 日本智能, ♻️ 新加坡智能, 🎥 奈飞节点, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png}
   - {name: 🐟 漏网之鱼, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Fish_b.png}
   - {name: 🍎 Apple, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Apple_rainbow.png}
   - {name: 💶 PayPal, <<: *pr, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/PayPal_business.png}
@@ -163,7 +96,7 @@ proxy-groups:
   - {name: 🎞️ 国内媒体, type: select, proxies: [🎯 全球直连], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Niconico.png} 
   - {name: 🍃 应用净化, type: select, proxies: [🛑 全球拦截, 🎯 全球直连], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Forbidden.png} 
   - {name: 🛡️ 隐私防护, type: select, proxies: [🛑 全球拦截, 🎯 全球直连], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Forbidden.png} 
-  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常|直连|direct)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Auto_Link.png}
+  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, <<: *pg, filter: "^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常|直连|direct)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Auto_Link.png}
   - {name: 🚀 手动选择, type: select, include-all: true, filter: "^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png} 
   - {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: "(?i)🇹🇼|Taiwan|台湾|TW", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
   - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)🇭🇰|Hong Kong|HongKong|香港|HK", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
@@ -171,17 +104,17 @@ proxy-groups:
   - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)🇯🇵|日本|JP|Japan", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
   - {name: 🇸🇬 新加坡节点, type: select, include-all: true, filter: "(?i)🇸🇬|新加坡|狮城|SG|Singapore", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
   - {name: 🌐 其他地区, type: select, include-all: true, filter: "^((?!(🇭🇰|🇹🇼|🇺🇲|🇯🇵|🇸🇬|Hong Kong|HongKong|HK|Taiwan|TW|Japan|JP|Singapore|SG|USA|US|United States|香港|台湾|日本|新加坡|狮城|美国|订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Network_2.png}
-  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
-  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|Hong Kong|HongKong|香港|HK))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
-  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇺🇲|美国|USA|US|United States))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
-  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|日本|JP|Japan))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
-  - {name: ♻️ 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇸🇬|新加坡|狮城|SG|Singapore))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
-  - {name: 🔯 台湾故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
-  - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|Hong Kong|HongKong|香港|HK))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
-  - {name: 🔯 美国故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇺🇲|美国|USA|US|United States))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
-  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|日本|JP|Japan))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
-  - {name: 🔯 新加坡故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇸🇬|新加坡|狮城|SG|Singapore))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
-  - {name: ⚖️ 台湾均衡, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
+  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
+  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇭🇰|Hong Kong|HongKong|香港|HK))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
+  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇺🇲|美国|USA|US|United States))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
+  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇯🇵|日本|JP|Japan))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
+  - {name: ♻️ 新加坡自动, type: url-test, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇸🇬|新加坡|狮城|SG|Singapore))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
+  - {name: 🔯 台湾故转, type: fallback, include-all: true, tolerance: 20, <<: *pg,  filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
+  - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇭🇰|Hong Kong|HongKong|香港|HK))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
+  - {name: 🔯 美国故转, type: fallback, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇺🇲|美国|USA|US|United States))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
+  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇯🇵|日本|JP|Japan))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
+  - {name: 🔯 新加坡故转, type: fallback, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇸🇬|新加坡|狮城|SG|Singapore))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
+  - {name: ⚖️ 台湾均衡, type: load-balance, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
   - {name: 🎥 奈飞节点, type: select, include-all: true, filter: "(?i)NF|奈飞|解锁|Netflix|NETFLIX|Media", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Netflix.png}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/DIRECT.png}
   - {name: 🛑 全球拦截, type: select, proxies: [REJECT], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/AdblockPlus_2.png}
