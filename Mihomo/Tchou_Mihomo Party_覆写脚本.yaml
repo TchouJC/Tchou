@@ -1,17 +1,35 @@
-# 全局配置 
+# =========================
+# 基础代理
+# =========================
 mixed-port: 7890
 allow-lan: true
 bind-address: "*"
 ipv6: false
+
+# 连接优化
 unified-delay: true
 tcp-concurrent: true
-log-level: info
+
+# 日志
+log-level: warning
+
+# TCP KeepAlive
 keep-alive-idle: 600
 keep-alive-interval: 15
+
+# 路由器环境不要做进程匹配
+#find-process-mode: off
+
+# =========================
+# 状态持久化
+# =========================
 profile:
   store-selected: true
   store-fake-ip: true
 
+# =========================
+# 外部控制 / Zashboard
+# =========================
 external-controller: 0.0.0.0:9090
 secret: ""
 external-ui: "ui"
@@ -20,7 +38,7 @@ external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/ar
 tun:
   enable: true
   stack: mixed
-  dns-hijack: ["any:53", "tcp://any:53"]
+ # dns-hijack: ["any:53", "tcp://any:53"]
   auto-route: true
   auto-redirect: true
   auto-detect-interface: true
@@ -29,38 +47,104 @@ dns:
   enable: true
   cache-algorithm: arc
   ipv6: false
+
   enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.0/16  
+  fake-ip-range: 198.18.0.0/16
+
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
+    # 单标签主机名 / 本地网络
     - "*"
     - "+.lan"
     - "+.local"
-    
-     # 时间 / STUN / 手机网络相关
+    - "+.localdomain"
+    - "+.home.arpa"
+    - "+.localhost"
+    - "+.invalid"
+    - "+.test"
+    - "+.example"
+    - "+.arpa"
+
+    # Windows / 浏览器连通性检测
+    - "detectportal.firefox.com"
+    - "network-test.debian.org"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+
+    # 时间同步
+    - "time.*.com"
+    - "ntp.*.com"
+    - "+.pool.ntp.org"
+
+    # STUN / TURN
+    - "global.turn.twilio.com"
+    - "global.stun.twilio.com"
+
+    # Wi-Fi Calling / 3GPP / ePDG
     - "+.pub.3gppnetwork.org"
+
+    # 中国运营商认证
+    - "+.cmpassport.com"
+    - "id6.me"
+    - "open.e.189.cn"
+    - "+.opencloud.wostore.cn"
+    - "id.mail.wo.cn"
+    - "mdn.open.wo.cn"
+    - "nishub1.10010.com"
+    - "enrichgw.10010.com"
+
+    # Xiaomi IoT
+    - "+.market.xiaomi.com"
+
   default-nameserver:
     - 223.5.5.5
+    - 119.29.29.29
+
   nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
 
+  proxy-server-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+  direct-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+  direct-nameserver-follow-policy: false
+
   listen: 0.0.0.0:1053
-    
+      
 sniffer:
   enable: true
+
+  # 对已有 DNS 映射的流量也进行域名识别
+  force-dns-mapping: true
+
+  # 对没有域名信息的纯 IP 流量尝试嗅探
+  parse-pure-ip: true
+
+  # 全局先不要强制覆盖目标地址
+  override-destination: false
+
   sniff:
     HTTP:
       ports: [80, 8080-8880]
       override-destination: true
+
     TLS:
       ports: [443, 8443]
+
     QUIC:
       ports: [443, 8443]
+
   skip-domain:
     - "Mijia Cloud"
     - "+.push.apple.com"
-    
+ 
  # 锚点
 pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 美国故转, 🔯 日本故转, 🔯 新加坡故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 美国自动, ♻️ 日本自动, ♻️ 新加坡自动, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, ⚖️ 台湾均衡, 🎥 奈飞节点, ♻️ 自动选择, 🚀 手动选择, 🌐 其他地区, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Global.png}
  # 测速锚点
@@ -110,12 +194,12 @@ proxy-groups:
   - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇺🇲|美国|USA|US|United States))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
   - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇯🇵|日本|JP|Japan))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
   - {name: ♻️ 新加坡自动, type: url-test, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇸🇬|新加坡|狮城|SG|Singapore))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
-  - {name: 🔯 台湾故转, type: fallback, include-all: true, tolerance: 20, <<: *pg,  filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
-  - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇭🇰|Hong Kong|HongKong|香港|HK))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
-  - {name: 🔯 美国故转, type: fallback, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇺🇲|美国|USA|US|United States))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
-  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇯🇵|日本|JP|Japan))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
+  - {name: 🔯 台湾故转, type: fallback, include-all: true, <<: *pg,  filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
+  - {name: 🔯 香港故转, type: fallback, include-all: true, <<: *pg, filter: "(?=.*(🇭🇰|Hong Kong|HongKong|香港|HK))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
+  - {name: 🔯 美国故转, type: fallback, include-all: true, <<: *pg, filter: "(?=.*(🇺🇲|美国|USA|US|United States))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
+  - {name: 🔯 日本故转, type: fallback, include-all: true, <<: *pg, filter: "(?=.*(🇯🇵|日本|JP|Japan))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
   - {name: 🔯 新加坡故转, type: fallback, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇸🇬|新加坡|狮城|SG|Singapore))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
-  - {name: ⚖️ 台湾均衡, type: load-balance, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
+  - {name: ⚖️ 台湾均衡, type: load-balance, strategy: consistent-hashing, include-all: true, tolerance: 20, <<: *pg, filter: "(?=.*(🇹🇼|Taiwan|台湾|TW))^((?!(订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|需要|永久|经常)).)*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
   - {name: 🎥 奈飞节点, type: select, include-all: true, filter: "(?i)NF|奈飞|解锁|Netflix|NETFLIX|Media", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Netflix.png}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/DIRECT.png}
   - {name: 🛑 全球拦截, type: select, proxies: [REJECT], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/AdblockPlus_2.png}
@@ -166,20 +250,20 @@ rules:
   - RULE-SET,geolocation-cn,🎯 全球直连
   - RULE-SET,Lan_domain,🎯 全球直连
   - RULE-SET,Download_domain,🎯 全球直连
-  - RULE-SET,telegram_ip,📲 Telegram
-  - RULE-SET,twitter_ip,👽 Twitter
-  - RULE-SET,facebook_ip,🤓 Facebook
-  - RULE-SET,google_ip,🍀 Google
-  - RULE-SET,netflix_ip,🎥 NETFLIX
+  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
+  - RULE-SET,twitter_ip,👽 Twitter,no-resolve
+  - RULE-SET,facebook_ip,🤓 Facebook,no-resolve
+  - RULE-SET,google_ip,🍀 Google,no-resolve
+  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
   - RULE-SET,private_ip,🎯 全球直连,no-resolve
-  - RULE-SET,cn_ip,🎯 全球直连
+  - RULE-SET,cn_ip,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
-  
+
 rule-anchor:
-  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
-  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
-  class: &class {type: http, interval: 86400, behavior: classical, format: yaml}
- # class: &class {type: http, interval: 86400, behavior: classical, format: text}
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs, proxy: 🎯 全球直连}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs, proxy: 🎯 全球直连}
+  class: &class {type: http, interval: 86400, behavior: classical, format: yaml, proxy: 🎯 全球直连}
+ # class: &class {type: http, interval: 86400, behavior: classical, format: text, proxy: 🎯 全球直连}
 rule-providers: 
   Tchou_Proxy: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Mihomo/Rule%20Set/Tchou_Proxy_classical.yaml"}
   Tchou_Direct: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Mihomo/Rule%20Set/Tchou_Direct_classical.yaml"}
