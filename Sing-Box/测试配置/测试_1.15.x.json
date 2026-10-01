@@ -1,14 +1,9 @@
 {
   "$schema": "https://sing-box.sagernet.org/schema.json",
-"dns": {
-  "servers": [
-    {
-      "tag": "local",
-      "type": "local",
-      "prefer_go": true
-    },
+  "dns": {
+    "servers": [
+      {"tag": "local", "type": "local", "prefer_go": true},
       {"tag": "ali", "type": "https", "server": "223.5.5.5"},
-      {"tag": "tx", "type": "https", "server": "doh.pub", "domain_resolver": "hosts"},
       {"tag": "google", "type": "https", "server": "8.8.8.8", "detour": "🚀 节点选择"},
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.19.0.0/16"},
       {"type": "hosts", "tag": "hosts", "predefined": {"doh.pub": ["1.12.12.21", "120.53.53.53"]}}
@@ -19,7 +14,7 @@
       {"clash_mode": "global", "server": "fakeip"},
       {"rule_set": ["fakeipfilter-cn", "geosite-cn", "geosite-microsoft@cn", "apple-cn", "apple@cn", "geosite-private"], "server": "local"},
       {"rule_set": "fakeipfilter-!cn", "server": "google"},
-      {"type": "logical", "mode": "and", "rules": [{"query_type": ["A", "AAAA"]}, {"rule_set": "geosite-geolocation-!cn", "invert": true}], "action": "evaluate", "server": "google", "client_subnet": "223.5.5.0/24","timeout": "2s"},
+      {"type": "logical", "mode": "and", "rules": [{"query_type": ["A", "AAAA"]}, {"rule_set": "geosite-geolocation-!cn", "invert": true}], "action": "evaluate", "server": "google", "timeout": "2s"},
       {"match_response": true, "rule_set": "geoip-cn", "server": "local"},
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
