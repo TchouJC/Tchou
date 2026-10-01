@@ -44,7 +44,6 @@
       "rule_set": [
         "fakeipfilter-cn",
         "geosite-cn",
-        "geoip-cn",
         "geosite-microsoft@cn",
         "apple-cn",
         "apple@cn",
