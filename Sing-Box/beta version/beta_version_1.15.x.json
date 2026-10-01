@@ -260,7 +260,7 @@
         "path": "dashboard",
         "download_url": "https://gh-proxy.com/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip",
         "http_client": "🎯 全球直连",
-        "update_interval": "1d"
+        "update_interval": "7d"
       }
     }
   ],
