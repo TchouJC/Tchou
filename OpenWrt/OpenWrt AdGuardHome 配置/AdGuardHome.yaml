@@ -30,7 +30,7 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-    - 192.168.10.1:7874
+    - 127.0.0.1:7874
   upstream_dns_file: ""
   bootstrap_dns:
     - 223.5.5.5
@@ -68,8 +68,7 @@ dns:
   upstream_timeout: 10s
   private_networks: []
   use_private_ptr_resolvers: true
-  local_ptr_upstreams:
-    - 192.168.10.1:7874
+  local_ptr_upstreams: []
   use_dns64: false
   dns64_prefixes: []
   serve_http3: false
@@ -161,6 +160,7 @@ filtering:
   rewrites: []
   safe_fs_patterns:
     - /usr/bin/AdGuardHome/userfilters/*
+  max_http_size: 256MB
   safebrowsing_cache_size: 1048576
   safesearch_cache_size: 1048576
   parental_cache_size: 1048576

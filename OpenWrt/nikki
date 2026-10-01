@@ -9,16 +9,16 @@ config config 'config'
 	option test_profile '1'
 	option fast_reload '1'
 	option core_only '1'
-	option profile 'file:Tchou_Smart.yaml'
+	option profile 'file:Nikki_Smart_ConfigFull.yaml'
 
 config proxy 'proxy'
 	option enabled '1'
 	option tcp_mode 'redirect'
 	option udp_mode 'tun'
-	option ipv4_dns_hijack '1'
-	option ipv6_dns_hijack '1'
+	option ipv4_dns_hijack '0'
+	option ipv6_dns_hijack '0'
 	option ipv4_proxy '1'
-	option ipv6_proxy '1'
+	option ipv6_proxy '0'
 	option fake_ip_ping_hijack '1'
 	option router_proxy '1'
 	option lan_proxy '1'
@@ -27,6 +27,9 @@ config proxy 'proxy'
 	option bypass_china_mainland_ip '0'
 	option proxy_tcp_dport '0-65535'
 	option proxy_udp_dport '0-65535'
+	option bypass_china_mainland_ip6 '0'
+	option tun_timeout '60'
+	option tun_interval '1'
 
 config mixin 'mixin'
 	option log_level 'warning'
@@ -122,14 +125,17 @@ config router_access_control
 	list cgroup 'tailscale'
 	list cgroup 'zerotier'
 	option proxy '0'
+	option dns '0'
 
 config router_access_control
 	option enabled '1'
 	option proxy '1'
+	option dns '0'
 
 config lan_access_control
 	option enabled '1'
 	option proxy '1'
+	option dns '0'
 
 config authentication
 	option enabled '1'
