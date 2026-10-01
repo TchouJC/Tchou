@@ -76,11 +76,6 @@
       "timeout": "2s"
     },
     {
-      "match_response": true,
-      "rule_set": "geoip-cn",
-      "server": "local"
-    },
-    {
       "query_type": [
         "A",
         "AAAA"
