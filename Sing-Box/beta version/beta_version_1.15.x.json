@@ -151,10 +151,9 @@
       {"ip_is_private": true,"outbound": "🎯 全球直连"}, 
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
 
+      {"protocol":"dns","action":"hijack-dns"},
 
-      {"type": "logical","mode": "or","rules": [{"port": 53},{"protocol": "dns"}],"action": "hijack-dns"},
-      
-      {"action": "sniff","sniffer": ["http","tls","quic"],"timeout": "100ms"},
+      {"action":"sniff","sniffer":[ "http", "tls"],"timeout":"100ms"},
 
       {"port":853,"action":"reject","no_drop":true},
       
@@ -194,12 +193,10 @@
       {"rule_set": "geosite-category-ads-all","clash_mode": "rule","action": "reject"},
       {"rule_set": "geosite-category-ads-all","clash_mode": "global","outbound": "GLOBAL"},
 
-      {"rule_set": "gfw","outbound": "🚀 节点选择"},
-      {"rule_set": "geosite-geolocation-!cn","outbound": "🚀 节点选择"},
       {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"},
-
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
-      {"inbound": "mixed-in", "action": "resolve"}
+      {"rule_set": "gfw","outbound": "🚀 节点选择"},
+      {"rule_set": "geosite-geolocation-!cn","outbound": "🚀 节点选择"}
     ],
 
     "rule_set": [
