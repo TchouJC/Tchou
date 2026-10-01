@@ -1,8 +1,12 @@
 {
   "$schema": "https://sing-box.sagernet.org/schema.json",
-  "dns": {
-    "servers": [
-      {"tag": "local", "type": "local", "prefer_go": true},
+"dns": {
+  "servers": [
+    {
+      "tag": "local",
+      "type": "local",
+      "prefer_go": true
+    },
       {"tag": "ali", "type": "https", "server": "223.5.5.5"},
       {"tag": "tx", "type": "https", "server": "doh.pub", "domain_resolver": "hosts"},
       {"tag": "google", "type": "https", "server": "8.8.8.8", "detour": "🚀 节点选择"},
