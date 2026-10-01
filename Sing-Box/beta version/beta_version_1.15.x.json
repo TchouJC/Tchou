@@ -145,7 +145,8 @@
   "rules": [
 
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
-      {"type":"logical","mode":"and","rules":[{ "network":"udp"},{"port":[500,4500] }],"outbound": "🎯 全球直连"},
+      {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
+
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
    
       {"ip_is_private": true,"outbound": "🎯 全球直连"}, 
