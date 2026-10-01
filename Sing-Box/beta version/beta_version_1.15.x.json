@@ -24,7 +24,6 @@
       "inet4_range": "198.19.0.0/16"
     }
   ],
-
   "rules": [
     {
       "query_type": [
@@ -33,34 +32,28 @@
       ],
       "action": "reject"
     },
-
     {
       "clash_mode": "direct",
       "server": "local"
     },
-
     {
       "clash_mode": "global",
       "server": "fakeip"
     },
-
     {
       "rule_set": [
         "fakeipfilter-cn",
         "geosite-cn",
         "geosite-microsoft@cn",
         "apple-cn",
-        "apple@cn",
         "geosite-private"
       ],
       "server": "local"
     },
-
     {
       "rule_set": "fakeipfilter-!cn",
       "server": "google"
     },
-
     {
       "type": "logical",
       "mode": "and",
@@ -76,17 +69,16 @@
           "invert": true
         }
       ],
+      "action": "evaluate",
       "server": "google",
       "client_subnet": "223.5.5.0/24",
       "timeout": "2s"
     },
-
     {
       "match_response": true,
       "rule_set": "geoip-cn",
       "server": "local"
     },
-
     {
       "query_type": [
         "A",
@@ -96,7 +88,6 @@
       "rewrite_ttl": 1
     }
   ],
-
   "final": "google",
   "strategy": "ipv4_only",
   "cache_capacity": 8192,
@@ -105,7 +96,6 @@
   },
   "reverse_mapping": true
 },
-
   "outbounds": [
       { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇲 美国节点", "🇭🇰 香港节点", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🔯 香港自动", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区", "🎯 全球直连"],"default": "🔯 台湾自动","interrupt_exist_connections": true },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🔯 香港自动", "🌐 其他地区", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇲 美国节点", "🇭🇰 香港节点", "🐸 手动切换", "♻️ 自动选择" ],"default": "🎯 全球直连","interrupt_exist_connections": true },
