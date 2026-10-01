@@ -17,11 +17,6 @@ secret: ""
 external-ui: "ui"
 external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
-# Smart LightGBM 模型
-lgbm-auto-update: true
-lgbm-update-interval: 72
-lgbm-url: "https://gh-proxy.com/https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model-large.bin"
-
 tun:
   enable: true
   stack: mixed
