@@ -75,15 +75,8 @@
       "client_subnet": "223.5.5.0/24",
       "timeout": "2s"
     },
-    {
-      "query_type": [
-        "A",
-        "AAAA"
-      ],
-      "server": "fakeip",
-      "rewrite_ttl": 60
-    }
-  ],
+    {"query_type":["A","AAAA"],"server":"fakeip","rewrite_ttl":1}],
+
   "final": "google",
   "strategy": "ipv4_only",
   "cache_capacity": 8192,
