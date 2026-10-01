@@ -283,16 +283,13 @@
       "store_dns": true
     }
   },
-  "certificate": {
-    "store": "chrome"
-  },
   "ntp": {
     "enabled": true,
-    "server": "time.apple.com"
+    "server": "time.cloudflare.com"
   },
   "log": {
     "disabled": false,
-    "level": "info",
+    "level": "debug",
     "timestamp": true
   }
 }
