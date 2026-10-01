@@ -99,7 +99,7 @@
   "reverse_mapping": true
 },
   "outbounds": [
-      { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇲 美国节点", "🇭🇰 香港节点", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🔯 香港自动", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区", "🎯 全球直连"],"default": "🔯 台湾自动","interrupt_exist_connections": true },
+      { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇲 美国节点", "🔯 香港自动", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区", "🎯 全球直连"],"default": "🔯 台湾自动","interrupt_exist_connections": true },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🔯 香港自动", "🌐 其他地区", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇲 美国节点", "🇭🇰 香港节点", "🐸 手动切换", "♻️ 自动选择" ],"default": "🎯 全球直连","interrupt_exist_connections": true },
       { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🚀 节点选择", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🔯 香港自动", "🌐 其他地区"],"default": "🚀 节点选择","interrupt_exist_connections": true },
       { "tag": "💰 PayPal", "type": "selector", "outbounds": ["🚀 节点选择", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🔯 香港自动", "🌐 其他地区"],"default": "🚀 节点选择","interrupt_exist_connections": true },
@@ -125,16 +125,16 @@
       { "tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|经常|永久|需要|direct"] }], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100 },
       { "tag": "🐸 手动切换", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|经常|永久|需要"] }]},
       { "tag": "🌐 其他地区", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["🇹🇼|🇺🇲|🇯🇵|🇸🇬|🇭🇰|Taiwan|TW|Japan|JP|Singapore|SG|USA|US|United States|Hong Kong|HongKong|HK|台湾|日本|新加坡|狮城|美国|香港|订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|经常|永久|需要"] }] },
+      { "tag": "🇭🇰 香港节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|香港|港|HongKong|Hong Kong"] }] },
       { "tag": "🇹🇼 台湾节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇹🇼|TW|台湾|湾|Taiwan"] }] },
       { "tag": "🇯🇵 日本节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇯🇵|Japan|JP|日本"] }] },
       { "tag": "🇸🇬 新加坡节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇸🇬|Singapore|SG|新加坡|狮城"] }] },
       { "tag": "🇺🇲 美国节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇺🇲|USA|美国|United States|US"] }] },
-      { "tag": "🇭🇰 香港节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|香港|港|HongKong|Hong Kong"] }] },
+      { "tag": "🔯 香港自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|香港|港|HongKong|Hong Kong"] }], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100 },
       { "tag": "🔯 台湾自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇹🇼|TW|台湾|湾|Taiwan"] }], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100 },
       { "tag": "🔯 日本自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇯🇵|Japan|JP|日本"] }], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100 },
       { "tag": "🔯 新加坡自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇸🇬|Singapore|SG|新加坡|狮城"] }], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100 },
       { "tag": "🔯 美国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇺🇲|USA|美国|United States|US"] }], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100 },           
-      { "tag": "🔯 香港自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|香港|港|HongKong|Hong Kong"] }], "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100 },
       { "tag": "🎯 全球直连", "type": "direct", "domain_resolver": "ali" },
       { "tag": "︎GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["订阅|更新|距离|节点|超时|官网|剩余|套餐|最新|机场|故障|流量|到期|收藏|过期|无法使用|经常|永久|需要"] }]}
    ],   
