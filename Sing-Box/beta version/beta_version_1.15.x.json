@@ -149,20 +149,20 @@
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
    
       {"ip_is_private": true,"outbound": "🎯 全球直连"}, 
+      {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
+
 
       {"type": "logical","mode": "or","rules": [{"port": 53},{"protocol": "dns"}],"action": "hijack-dns"},
       
-      {"type": "logical","mode": "or","rules": [{"domain_suffix": "push.apple.com"},{"rule_set": ["geoip-telegram","geoip-twitter","geoip-facebook","geoip-netflix"]}],"invert": true,"action": "sniff","sniffer": ["http","tls","quic"],"timeout": "100ms"},
+      {"action": "sniff","sniffer": ["http","tls","quic"],"timeout": "100ms"},
 
-      {"type": "logical","mode": "or","rules": [{"port": 853},{"protocol": ["stun", "quic"]}],"action": "reject","no_drop": true},
-            
-      {"network": "icmp", "action": "resolve"},
+      {"port":853,"action":"reject","no_drop":true},
+      
       {"network": "icmp", "outbound": "🎯 全球直连"},
 
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
 
-      {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
 
       {"rule_set": "Tchou_Proxy","outbound": "🚀 节点选择"},
       {"rule_set": "Tchou_Direct","outbound": "🎯 全球直连"},
@@ -196,10 +196,12 @@
 
       {"rule_set": "gfw","outbound": "🚀 节点选择"},
       {"rule_set": "geosite-geolocation-!cn","outbound": "🚀 节点选择"},
+      {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"},
+
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
-      {"inbound": "mixed-in", "action": "resolve"},
-      {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"}
+      {"inbound": "mixed-in", "action": "resolve"}
     ],
+
     "rule_set": [
 
       {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], 
