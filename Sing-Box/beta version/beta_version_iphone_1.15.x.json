@@ -8,12 +8,14 @@
     {"tag": "fakeip","type": "fakeip","inet4_range": "198.19.0.0/16"}],
   "rules": [
     {"query_type": ["HTTPS","SVCB"],"action": "reject"},
-    {"rule_set": ["fakeipfilter-cn","geosite-cn","geosite-microsoft@cn","apple-cn","apple@cn","geosite-private"], "server": "ali"},
+    {"clash_mode": "direct","server": "local"},
+    {"clash_mode": "global","server": "fakeip"},
+    {"rule_set": ["fakeipfilter-cn","geosite-cn","geosite-microsoft@cn","apple-cn","apple@cn","geosite-private"], "server": "local"},
     {"rule_set": "fakeipfilter-!cn","server": "google"},
     {"type": "logical","mode": "and","rules": [{"query_type": ["A","AAAA"]},{"rule_set": "geosite-geolocation-!cn","invert": true}],"action": "evaluate","server": "google","client_subnet": "223.5.5.0/24","timeout": "2s"},
     {"query_type": ["A","AAAA"],"server": "fakeip","rewrite_ttl": 1}
   ],
-  "final": "fakeip",
+  "final": "google",
   "strategy": "ipv4_only",
   "cache_capacity": 8192,
   "optimistic": {"enabled": true},
@@ -70,8 +72,8 @@
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
 
       {"type":"logical","mode":"or","rules":[ {"port":53}, {"protocol":"dns"}],"action":"hijack-dns"},
-   
       {"ip_is_private": true,"outbound": "🎯 全球直连"}, 
+      
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
 
       {"action":"sniff","sniffer":["http","tls","quic"],"timeout":"100ms"},
