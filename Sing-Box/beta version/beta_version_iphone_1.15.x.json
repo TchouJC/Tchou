@@ -13,13 +13,12 @@
     {"rule_set": ["fakeipfilter-cn","geosite-cn","geosite-microsoft@cn","apple-cn","apple@cn","geosite-private"], "server": "local"},
     {"rule_set": "fakeipfilter-!cn","server": "google"},
     {"type": "logical","mode": "and","rules": [{"query_type": ["A","AAAA"]},{"rule_set": "geosite-geolocation-!cn","invert": true}],"action": "evaluate","server": "google","client_subnet": "223.5.5.0/24","timeout": "2s"},
-    {"query_type": ["A","AAAA"],"server": "fakeip","rewrite_ttl": 1}],
+    {"query_type": ["A","AAAA"],"server": "fakeip","rewrite_ttl": 1}
+  ],
   "final": "google",
   "strategy": "ipv4_only",
   "cache_capacity": 8192,
-  "optimistic": {
-    "enabled": true
-  },
+  "optimistic": {"enabled": true},
   "reverse_mapping": true
 },
   "outbounds": [
