@@ -5,8 +5,8 @@ config config 'config'
 	option scheduled_restart '0'
 	option scheduled_restart_cron '0 3 * * *'
 	option test_profile '1'
-	option core_only '0'
-	option profile 'subscription:cfg0d0caa'
+	option core_only '1'
+	option profile 'subscription:cfg0c0caa'
 
 config proxy 'proxy'
 	option enabled '1'
@@ -80,6 +80,7 @@ config router_access_control
 	list cgroup 'services/tailscale'
 	list cgroup 'services/zerotier'
 	option proxy '0'
+	option dns '0'
 
 config router_access_control
 	option enabled '1'
@@ -117,7 +118,7 @@ config log 'log'
 	option clear_at_stop '1'
 
 config mixin 'mixin'
-	option log_disabled '0'
+	option log_disabled '1'
 	option log_level 'info'
 	option log_timestamp '1'
 	option dns_independent_cache '1'
@@ -127,20 +128,4 @@ config mixin 'mixin'
 	option cache_store_rdrc '1'
 	option external_control_ui_path 'ui'
 	option external_control_ui_download_url 'https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip'
-
-config subscription
-	option name '1.15.x'
-	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/QWERT01234asdfg56789/download/collection/Sub%20Store?target=sing-box&file=https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/1.15.x/Sing-Box_Config_1.15.x.json'
-	option user_agent 'sing-box'
-	option prefer 'remote'
-	option update '2026-09-30 01:00:22'
-	option success '1'
-
-config subscription
-	option name 'momo_1.15.x'
-	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/QWERT01234asdfg56789/download/collection/Sub%20Store?target=sing-box&file=https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Sing-Box/momo/momo_1.15.x.json'
-	option user_agent 'sing-box'
-	option prefer 'remote'
-	option update '2026-09-30 01:05:36'
-	option success '1'
 

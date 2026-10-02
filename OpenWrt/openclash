@@ -134,3 +134,65 @@ config dns_servers
 	option disable_ipv6 '0'
 	option specific_group 'Disable'
 
+config dns_servers
+	option enabled '0'
+	option group 'nameserver'
+	option type 'udp'
+	option disable_ipv6 '0'
+	option ip '223.5.5.5'
+
+config dns_servers
+	option enabled '0'
+	option group 'nameserver'
+	option type 'udp'
+	option ip '119.29.29.29'
+	option disable_ipv6 '0'
+
+config dns_servers
+
+config dns_servers
+
+config dns_servers
+	option enabled '0'
+	option group 'nameserver'
+	option type 'udp'
+	option disable_ipv6 '0'
+	option ip 'https://dns.alidns.com/dns-query'
+
+config dns_servers
+	option enabled '0'
+	option group 'nameserver'
+	option type 'udp'
+	option ip 'https://doh.pub/dns-query'
+	option disable_ipv6 '0'
+
+config dns_servers
+
+config dns_servers
+	option enabled '0'
+	option group 'fallback'
+	option type 'udp'
+	option disable_ipv6 '0'
+	option ip 'https://1.1.1.1/dns-query'
+
+config dns_servers
+	option enabled '0'
+	option group 'fallback'
+	option type 'udp'
+	option ip 'https://8.8.8.8/dns-query'
+	option disable_ipv6 '0'
+
+config dns_servers
+	option enabled '0'
+	option group 'default'
+	option type 'udp'
+	option disable_ipv6 '0'
+	option ip '223.5.5.5'
+
+config dns_servers
+	option enabled '0'
+	option group 'default'
+	option type 'udp'
+	option ip '119.29.29.29'
+	option disable_ipv6 '0'
+
