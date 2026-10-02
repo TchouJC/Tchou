@@ -7,6 +7,7 @@
     {"tag": "google","type": "https","server": "8.8.8.8","detour": "🚀 节点选择"},
     {"tag": "fakeip","type": "fakeip","inet4_range": "198.19.0.0/16"}],
   "rules": [
+    {"query_type": ["HTTPS","SVCB"],"action": "reject"},
     {"clash_mode": "direct","server": "local"},
     {"clash_mode": "global","server": "fakeip"},
     {"rule_set": ["fakeipfilter-cn","geosite-cn","geosite-microsoft@cn","apple-cn","apple@cn","geosite-private"], "server": "local"},
