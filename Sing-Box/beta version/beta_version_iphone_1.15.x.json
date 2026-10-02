@@ -15,7 +15,7 @@
     {"type": "logical","mode": "and","rules": [{"query_type": ["A","AAAA"]},{"rule_set": "geosite-geolocation-!cn","invert": true}],"action": "evaluate","server": "google","client_subnet": "223.5.5.0/24","timeout": "2s"},
     {"query_type": ["A","AAAA"],"server": "fakeip","rewrite_ttl": 1}
   ],
-  "final": "google",
+  "final": "fakeip",
   "strategy": "ipv4_only",
   "cache_capacity": 8192,
   "optimistic": {"enabled": true},
