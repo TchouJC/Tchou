@@ -2,8 +2,7 @@
   "$schema": "https://sing-box.sagernet.org/schema.json",
 "dns": {
   "servers": [
-    {"tag":"local","type":"https","server":"223.5.5.5","detour":"🎯 全球直连"},
-
+    {"tag": "local","type": "local","prefer_go": true},
     {"tag": "ali","type": "https","server": "223.5.5.5","detour": "🎯 全球直连"},
     {"tag": "google","type": "https","server": "8.8.8.8","detour": "🚀 节点选择"},
     {"tag": "fakeip","type": "fakeip","inet4_range": "198.19.0.0/16"}],
