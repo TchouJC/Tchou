@@ -66,11 +66,11 @@
   ],
 "route": {
   "rules": [
+
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
-
-      {"inbound": "dns-in", "action": "hijack-dns"},      
+   
       {"ip_is_private": true,"outbound": "🎯 全球直连"}, 
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
 
@@ -206,7 +206,7 @@
         "path": "dashboard",
         "download_url": "https://gh-proxy.com/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip",
         "http_client": "🎯 全球直连",
-        "update_interval": "7d"
+        "update_interval": "1d"
       }
     }
   ],
@@ -229,9 +229,12 @@
       "store_dns": true
     }
   },
+  "certificate": {
+    "store": "chrome"
+  },
   "ntp": {
     "enabled": true,
-    "server": "time.cloudflare.com"
+    "server": "time.apple.com"
   },
   "log": {
     "disabled": false,
