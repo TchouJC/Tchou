@@ -26,7 +26,7 @@
     "reverse_mapping": true
   },
   "outbounds": [
-      { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇲 美国节点", "🔯 香港自动", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区", "🎯 全球直连"],"default": "🔯 台湾自动","interrupt_exist_connections": true },
+      { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇲 美国节点", "🔯 香港自动", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🐸 手动切换", "♻️ 自动选择", "🌐 其他地区", "🎯 全球直连"],"default": "♻️ 自动选择","interrupt_exist_connections": true },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🔯 香港自动", "🌐 其他地区", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇲 美国节点", "🇭🇰 香港节点", "🐸 手动切换", "♻️ 自动选择" ],"default": "🎯 全球直连","interrupt_exist_connections": false },
       { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🚀 节点选择", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🔯 香港自动", "🌐 其他地区"],"default": "🚀 节点选择","interrupt_exist_connections": false },
       { "tag": "💰 PayPal", "type": "selector", "outbounds": ["🚀 节点选择", "🔯 台湾自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🔯 香港自动", "🌐 其他地区"],"default": "🚀 节点选择","interrupt_exist_connections": false },
