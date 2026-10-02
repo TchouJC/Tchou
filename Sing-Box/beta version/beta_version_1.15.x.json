@@ -7,11 +7,14 @@
       "type": "local",
       "prefer_go": true
     },
+
     {
       "tag": "ali",
       "type": "https",
-      "server": "223.5.5.5"
+      "server": "223.5.5.5",
+      "detour": " 节点选择"
     },
+
     {
       "tag": "google",
       "type": "https",
@@ -41,16 +44,23 @@
       "server": "fakeip"
     },
     {
+    "rule_set": [
+      "geosite-private"
+     ],
+    "server": "local"
+    },
+      {
       "rule_set": [
         "fakeipfilter-cn",
         "geosite-cn",
         "geosite-microsoft@cn",
         "apple-cn",
-        "apple@cn",
-        "geosite-private"
+        "apple@cn"
       ],
-      "server": "local"
+      
+      "server": "google"
     },
+
     {
       "rule_set": "fakeipfilter-!cn",
       "server": "google"
@@ -75,7 +85,15 @@
       "client_subnet": "223.5.5.0/24",
       "timeout": "2s"
     },
-    {"query_type":["A","AAAA"],"server":"fakeip","rewrite_ttl":1}],
+    {
+      "query_type": [
+      "A",
+      "AAAA"
+      ],
+    "server": "fakeip",
+    "rewrite_ttl": 1
+    }
+],
 
   "final": "google",
   "strategy": "ipv4_only",
