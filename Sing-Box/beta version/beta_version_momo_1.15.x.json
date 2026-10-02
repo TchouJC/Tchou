@@ -3,15 +3,14 @@
 "dns": {
   "servers": [
     {"tag": "local","type": "local","prefer_go": true},
-    {"tag": "ali","type": "https","server": "223.5.5.5","detour": "🚀 节点选择"},
+    {"tag": "ali","type": "https","server": "223.5.5.5","detour": "🎯 全球直连"},
     {"tag": "google","type": "https","server": "8.8.8.8","detour": "🚀 节点选择"},
     {"tag": "fakeip","type": "fakeip","inet4_range": "198.19.0.0/16"}],
   "rules": [
     {"query_type": ["HTTPS","SVCB"],"action": "reject"},
     {"clash_mode": "direct","server": "local"},
     {"clash_mode": "global","server": "fakeip"},
-    {"rule_set": ["geosite-private"],"server": "local"},
-    {"rule_set": ["fakeipfilter-cn","geosite-cn","geosite-microsoft@cn","apple-cn","apple@cn"], "server": "google"},
+    {"rule_set": ["fakeipfilter-cn","geosite-cn","geosite-microsoft@cn","apple-cn","apple@cn","geosite-private"], "server": "google"},
     {"rule_set": "fakeipfilter-!cn","server": "google"},
     {"type": "logical","mode": "and","rules": [{"query_type": ["A","AAAA"]},{"rule_set": "geosite-geolocation-!cn","invert": true}],"action": "evaluate","server": "google","client_subnet": "223.5.5.0/24","timeout": "2s"},
     {"query_type": ["A","AAAA"],"server": "fakeip","rewrite_ttl": 1}],
