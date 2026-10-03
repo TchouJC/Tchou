@@ -220,8 +220,6 @@ rules:
   - RULE-SET,geolocation-!cn,🚀 节点选择
 
   - RULE-SET,telegram_ip,📲 Social,no-resolve
-  - RULE-SET,twitter_ip,📲 Social,no-resolve
-  - RULE-SET,facebook_ip,📲 Social,no-resolve
   - MATCH,🐟 漏网之鱼
 
 rule-anchor:
@@ -254,5 +252,3 @@ rule-providers:
   Download_domain: { <<: *class, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Download/Download.yaml"} 
   
   telegram_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
-  twitter_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs"}
-  facebook_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.mrs"}
