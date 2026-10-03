@@ -46,6 +46,7 @@
   ],
 "route": {
   "rules": [
+      {"inbound":"dns-in","action":"hijack-dns"},
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
@@ -117,6 +118,7 @@
     "mtu": 9000,
     "auto_route": true,
     "auto_redirect": false,
+    "dns_mode":"hijack",
     "strict_route": true,
     "endpoint_independent_nat": true,
     "platform": {
