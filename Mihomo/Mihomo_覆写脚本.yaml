@@ -188,14 +188,6 @@ rules:
   - RULE-SET,Tchou_Direct,🎯 全球直连
    # LAN
   - RULE-SET,Lan_domain,🎯 全球直连
-   # 广告拦截
-  - RULE-SET,category-ads-all,🛑 全球拦截
-   # 私网
-  - RULE-SET,private_domain,🎯 全球直连
-  - RULE-SET,private_ip,🎯 全球直连,no-resolve
-   # 中国
-  - RULE-SET,cn_domain,🎯 全球直连
-  - RULE-SET,cn_ip,🎯 全球直连,no-resolve
    # Apple
   - RULE-SET,apple@cn_domain,🎯 全球直连
   - RULE-SET,apple_domain,🍎 Apple
@@ -213,12 +205,19 @@ rules:
    # 流媒体
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,netflix_domain,🎥 NETFLIX
-   # 下载
-  - RULE-SET,Download_domain,🎯 全球直连
    # 国际
   - RULE-SET,geolocation-!cn,🚀 节点选择
-
+   # 下载
+  - RULE-SET,Download_domain,🎯 全球直连
+   # 广告拦截
+  - RULE-SET,category-ads-all,🛑 全球拦截
   - RULE-SET,telegram_ip,📲 Social,no-resolve
+   # 私网
+  - RULE-SET,private_domain,🎯 全球直连
+  - RULE-SET,private_ip,🎯 全球直连,no-resolve
+   # 中国
+  - RULE-SET,cn_domain,🎯 全球直连
+  - RULE-SET,cn_ip,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
 
 rule-anchor:
