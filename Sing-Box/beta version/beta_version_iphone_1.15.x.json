@@ -7,7 +7,6 @@
     {"tag": "google","type": "https","server": "8.8.8.8","detour": "🚀 节点选择"},
     {"tag": "fakeip","type": "fakeip","inet4_range": "198.19.0.0/16"}],
   "rules": [
-    {"query_type": ["HTTPS","SVCB"],"action": "reject"},
     {"clash_mode": "direct","server": "local"},
     {"clash_mode": "global","server": "fakeip"},
     {"rule_set": ["fakeipfilter-cn","geosite-cn","geosite-microsoft@cn","apple-cn","apple@cn","geosite-private"], "server": "local"},
@@ -15,7 +14,7 @@
     {"type": "logical","mode": "and","rules": [{"query_type": ["A","AAAA"]},{"rule_set": "geosite-geolocation-!cn","invert": true}],"action": "evaluate","server": "google","client_subnet": "223.5.5.0/24","timeout": "2s"},
     {"query_type": ["A","AAAA"],"server": "fakeip","rewrite_ttl": 1}
   ],
-  "final": "google",
+  "final": "ali",
   "strategy": "ipv4_only",
   "cache_capacity": 8192,
   "optimistic": {"enabled": true},
@@ -93,7 +92,7 @@
       { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs","update_interval": "24h"},
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs","update_interval": "24h"}
     ],
-
+    
     "final": "🐟 漏网之鱼",
     "default_http_client": "🎯 全球直连",
     "auto_detect_interface": true,
