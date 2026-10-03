@@ -41,7 +41,6 @@
       { "tag": "🎯 全球直连", "type": "direct", "domain_resolver": "ali" },
       { "tag": "︎GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["订阅|官网|流量|到期|过期|故障|失效|维护|暂停|测试|备用|客服|群|购买|套餐|续费|通知"] }]}
    ],   
-   
   "http_clients": [
     {"tag": "🎯 全球直连", "detour": "🎯 全球直连"}
   ],
@@ -77,7 +76,6 @@
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
       {"rule_set": "geosite-geolocation-!cn","outbound": "🚀 节点选择"}
     ],
-
     "rule_set": [
       {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], 
        "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json","update_interval": "24h"},
@@ -94,6 +92,7 @@
       { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs","update_interval": "24h"},
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs","update_interval": "24h"}
     ],
+    
     "final": "🐟 漏网之鱼",
     "default_http_client": "🎯 全球直连",
     "auto_detect_interface": true,
