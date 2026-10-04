@@ -123,7 +123,7 @@
       { "tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs","update_interval": "24h"}
     ],
     "auto_detect_interface": true,
-    "find_process": true,
+    "find_process": false,
     "final": "🐟 漏网之鱼",
     "default_http_client": "🎯 全球直连",
     "default_domain_resolver": {"server": "Local-DNS"}
