@@ -33,30 +33,50 @@
       "detour": "🎯 全球直连"
     }
   ],
-  "inbounds": [
+"inbounds": [
     {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "0.0.0.0",
-      "listen_port": 7890,
-      "tcp_fast_open": true,
-      "tcp_multi_path": true,
-      "udp_fragment": true
+      "tag": "dns-in",
+      "type": "direct",
+      "listen": "::",
+      "listen_port": 1053
     },
     {
-      "type": "tun",
+      "tag": "http-in",
+      "type": "http",
+      "listen": "::",
+      "listen_port": 8080
+    },
+    {
+      "tag": "socks-in",
+      "type": "socks",
+      "listen": "::",
+      "listen_port": 1080
+    },
+    {
+      "tag": "redirect-in",
+      "type": "redirect",
+      "listen": "::",
+      "listen_port": 7890
+    },
+    {
+      "tag": "tproxy-in",
+      "type": "tproxy",
+      "listen": "::",
+      "listen_port": 7891
+    },
+    {
       "tag": "tun-in",
-      "interface_name": "tun",
+      "type": "tun",
+      "interface_name": "momo",
       "address": [
-        "172.18.0.1/30",
+        "172.31.0.1/30",
         "fdfe:dcba:9876::1/126"
-      ],      
-      "mtu": 9000,
-      "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true
+      ],
+      "auto_route": false,
+      "auto_redirect": false
     }
-  ],
+  ],  
+  
   "outbounds": [
       { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["♻️ 全球自动", "🔯 台湾自动", "🔯 香港自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🐸 全球手动", "🎯 全球直连"],"default": "♻️ 全球自动","interrupt_exist_connections": true },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择", "🔯 台湾自动", "🔯 香港自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🐸 全球手动", "♻️ 全球自动" ],"default": "🎯 全球直连","interrupt_exist_connections": false },
@@ -84,7 +104,7 @@
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
       {"action": "sniff","inbound": "tun-in"},
-      {"action": "hijack-dns","protocol": "dns"},
+      {"action": "hijack-dns","protocol": "dns-in"},
       {"action": "route","clash_mode": "direct","outbound": "🎯 全球直连"},
       {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
       {"action": "route","network": "icmp","outbound": "🎯 全球直连"},
