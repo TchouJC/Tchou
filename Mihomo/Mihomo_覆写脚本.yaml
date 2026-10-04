@@ -186,6 +186,8 @@ rules:
    # 自定义
   - RULE-SET,Tchou_Proxy,🚀 节点选择
   - RULE-SET,Tchou_Direct,🎯 全球直连
+   # 下载
+  - RULE-SET,Download_domain,🎯 全球直连
    # LAN
   - RULE-SET,Lan_domain,🎯 全球直连
    # Apple
@@ -207,8 +209,6 @@ rules:
   - RULE-SET,netflix_domain,🎥 NETFLIX
    # 国际
   - RULE-SET,geolocation-!cn,🚀 节点选择
-   # 下载
-  - RULE-SET,Download_domain,🎯 全球直连
    # 广告拦截
   - RULE-SET,category-ads-all,🛑 全球拦截
   - RULE-SET,telegram_ip,📲 Social,no-resolve
@@ -248,4 +248,4 @@ rule-providers:
   geolocation-!cn: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   Download_domain: { <<: *class, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Download/Download.yaml"} 
   
-  telegram_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
+  telegram_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"} telegram_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
