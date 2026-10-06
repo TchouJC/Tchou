@@ -105,7 +105,7 @@
       {"action": "sniff"},
       {"type": "logical","mode": "or","rules":[{"port":53},{"protocol": "dns"}],"action": "hijack-dns"},
       {"clash_mode": "Direct","action": "route","outbound": "🎯 全球直连"},
-      {"type": "logical","mode": "and","rules": [{"clash_mode": "AllowAds","invert": true},{"rule_set": ["Reject","geosite-category-ads-all"]}],"action": "reject"},
+      {"type": "logical","mode": "and","rules": [{"clash_mode": "AllowAds","invert": true},{"rule_set": ["geosite-category-ads-all"]}],"action": "reject"},
       {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
       {"rule_set": "CustomRuleSet_Proxy","outbound": "🚀 节点选择"},
       {"rule_set": "CustomRuleSet_Direct","outbound": "🎯 全球直连"},
