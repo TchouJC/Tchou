@@ -159,7 +159,7 @@
       {"action": "route","clash_mode": "direct","server": "Local-DNS"},
       {"action": "route","clash_mode": "global","server": "Remote-DNS"},
       {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
-      {"action":"route","domain_suffix":["dl.google.com","gvt1.com","googleusercontent.com","update.googleapis.com","apple.com","mzstatic.com","icloud.com"],"server":"Local-DNS"},      
+      {"action":"route","domain_suffix":["dl.google.com","gvt1.com","googleusercontent.com","update.googleapis.com","apple.com","mzstatic.com","itunes.apple.com","apps.apple.com"],"server":"Local-DNS"},
       {"action": "route","domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"server": "Local-DNS"},
       {"action":"route","rule_set":["geosite-geolocation-!cn"],"server":"Fake-IP"}
       ],
