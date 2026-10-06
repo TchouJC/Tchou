@@ -110,6 +110,8 @@
       {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
       {"action": "route","network": "icmp","outbound": "🎯 全球直连"},
       {"rule_set": "CustomRuleSet_Proxy","outbound": "🚀 节点选择"},
+      {"domain_suffix": ["tools.google.com"],"outbound": " 🚀 节点选择"},
+      {"domain_suffix": ["imap.gmail.com","smtp.gmail.com","gmail.com","googlemail.com"],"outbound": " 🚀 节点选择"},
       {"rule_set": "CustomRuleSet_Direct","outbound": "🎯 全球直连"},
       {"rule_set": "apple-cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-apple", "outbound": "🍏 Apple"},
