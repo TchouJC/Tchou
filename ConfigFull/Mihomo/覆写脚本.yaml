@@ -101,7 +101,6 @@ dns:
     - "*"
     - "+.lan"
     - "+.local"
-    - "+.market.xiaomi.com"
     # Wi-Fi Calling / 3GPP / ePDG
     - "+.pub.3gppnetwork.org"
 
@@ -165,7 +164,6 @@ proxy-groups:
   - {name: 🪟 Microsoft, <<: *sh, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft.png}
   - {name: 🎵 TikTok, <<: *ss, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png}
   - {name: 🎥 NETFLIX, <<: *ss, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Netflix.png}
- 
   - {name: ♻️ 全球自动, <<: [*zd, *pc, *cs], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Auto_Link.png}
   - {name: 🚀 全球手动, <<: [*sd,*pc], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png} 
   - {name: ♻️ 台湾自动, <<: [*zd, *bt, *cs]}
