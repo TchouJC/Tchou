@@ -150,21 +150,21 @@
   },
   "dns": {
     "servers": [
-      {"tag": "Local-DNS","type": "udp","server_port": 53,"server": "223.5.5.5"},
-      {"tag": "Remote-DNS","type": "tls","detour": "🚀 节点选择","domain_resolver": "Remote-DNS-Resolver","server_port": 853,"server": "8.8.8.8"},
-      {"tag": "Remote-DNS-Resolver","type": "udp","detour": "🚀 节点选择","server_port": 53,"server": "8.8.8.8"},
-      {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"}
+      {"tag": "Local-DNS","type": "https","server": "223.5.5.5","server_port": 443,"path": "/dns-query","domain_resolver": "Local-DNS-Resolver"},
+      {"tag": "Local-DNS-Resolver","type": "udp","server": "223.5.5.5","server_port": 53},
+      {"tag": "Remote-DNS","type": "tls","server": "8.8.8.8","server_port": 853,"detour": "🚀 节点选择","domain_resolver": "Remote-DNS-Resolver"},
+      {"tag": "Remote-DNS-Resolver","type": "udp","server": "223.5.5.5","server_port":53},
+      {"tag": "FakeIP-DNS","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"}
     ],
     "rules": [
+      {"action": "route","type": "logical","mode": "and","rules": [{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"invert": true},{"query_type": ["A","AAAA"]}],"server": "FakeIP-DNS"},
       {"action": "route","clash_mode": "direct","server": "Local-DNS"},
       {"action": "route","clash_mode": "global","server": "Remote-DNS"},
       {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
-      {"action": "route","domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com",".market.xiaomi.com",".pub.3gppnetwork.org"],"server": "Local-DNS"},
-      {"action": "route","rule_set": ["geosite-geolocation-!cn"],"query_type": ["A","AAAA"],"server": "Fake-IP"}
+      {"action": "route","rule_set": ["geosite-geolocation-!cn"],"server": "Remote-DNS"}
     ],
     "disable_cache": false,
     "disable_expire": false,
-    "optimistic": {"enabled": true,"timeout": "3d"},
     "final": "Remote-DNS",
     "strategy": "ipv4_only"
   }
