@@ -116,7 +116,7 @@
       {"rule_set": "geosite-paypal", "outbound": "💰 PayPal"},
       {"rule_set": ["geosite-category-social-media-!cn", "geoip-telegram"], "outbound": "📲 Social"},
       {"rule_set": "geosite-category-ai-chat-!cn", "outbound": "🤖 AI"},
-      {"rule_set": ["geosite-google"], "outbound": "🍀 Google"},
+      {"rule_set": ["geosite-google", "geoip-google"], "outbound": "🍀 Google"},
       {"rule_set": "geosite-microsoft@cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
       {"rule_set": "geosite-tiktok", "outbound": "🎵 TikTok"},
@@ -149,7 +149,8 @@
   },
   "dns": {
     "servers": [
-      {"tag": "Local-DNS","type": "udp","server":"223.5.5.5","server_port":53},
+      {"tag": "Local-DNS","type": "udp","domain_resolver": "Local-DNS-Resolver","server_port": 53,"server": "223.5.5.5"},
+      {"tag": "Local-DNS-Resolver","type": "udp","server_port": 53,"server": "223.5.5.5"},
       {"tag": "Remote-DNS","type": "tls","detour": "🚀 节点选择","domain_resolver": "Remote-DNS-Resolver","server_port": 853,"server": "8.8.8.8"},
       {"tag": "Remote-DNS-Resolver","type": "udp","detour": "🚀 节点选择","server_port": 53,"server": "8.8.8.8"},
       {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"}
