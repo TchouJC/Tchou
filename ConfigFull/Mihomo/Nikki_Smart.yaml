@@ -112,48 +112,12 @@ dns:
 
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    # 单标签主机名 / 本地网络
     - "*"
     - "+.lan"
     - "+.local"
-    - "+.localdomain"
-    - "+.home.arpa"
-    - "+.localhost"
-    - "+.invalid"
-    - "+.test"
-    - "+.example"
-    - "+.arpa"
-
-    # Windows / 浏览器连通性检测
-    - "detectportal.firefox.com"
-    - "network-test.debian.org"
-    - "+.msftconnecttest.com"
-    - "+.msftncsi.com"
-
-    # 时间同步
-    - "time.*.com"
-    - "ntp.*.com"
-    - "+.pool.ntp.org"
-
-    # STUN / TURN
-    - "global.turn.twilio.com"
-    - "global.stun.twilio.com"
-
+    - "+.market.xiaomi.com"
     # Wi-Fi Calling / 3GPP / ePDG
     - "+.pub.3gppnetwork.org"
-
-    # 中国运营商认证
-    - "+.cmpassport.com"
-    - "id6.me"
-    - "open.e.189.cn"
-    - "+.opencloud.wostore.cn"
-    - "id.mail.wo.cn"
-    - "mdn.open.wo.cn"
-    - "nishub1.10010.com"
-    - "enrichgw.10010.com"
-
-    # Xiaomi IoT
-    - "+.market.xiaomi.com"
 
   default-nameserver:
     - 223.5.5.5
