@@ -1,3 +1,50 @@
+rule-anchor:
+  # =========================
+  # 订阅测速锚点
+  # =========================
+  dycs: &dycs {type: http, interval: 86400, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 180}, proxy: DIRECT}
+  # =========================
+  # 节点测速锚点
+  # =========================
+  cs: &cs {url: https://www.gstatic.com/generate_204, interval: 180, timeout: 5000}
+  # =========================
+  # 规则集锚点
+  # =========================
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs, proxy: 🎯 全球直连}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs, proxy: 🎯 全球直连}
+  class_yaml: &class_yaml {type: http, interval: 86400, behavior: classical, format: yaml, proxy: 🎯 全球直连}
+  #class: &class {type: http, interval: 86400, behavior: classical, format: text, proxy: 🎯 全球直连}
+  # =========================
+  # 节点锚点
+  # =========================
+  cl: &cl {type: select, proxies: [🚀 节点选择, ♻️ 全球自动, ♻️ 台湾智能, ♻️ 香港智能, ♻️ 日本智能, ♻️ 新加坡智能, ♻️ 美国智能, ⚖️ 台湾均衡, 🔯 台湾故转, 🚀 全球手动, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Global.png}
+  # =========================
+  # 节点筛选
+  # =========================
+  pc: &pc {filter: "^(?!.*(?:订阅|官网|流量|到期|过期|故障|失效|维护|暂停|测试|备用|客服|群|购买|套餐|续费|通知)).*$"}
+  bt: &bt {filter: "^(?=.*(?:Taiwan|TW|台湾|台北|Taipei))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png}
+  bh: &bh {filter: "^(?=.*(?:Hong Kong|HongKong|HK|香港))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
+  bj: &bj {filter: "^(?=.*(?:Japan|JP|日本|东京|Tokyo))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
+  bs: &bs {filter: "^(?=.*(?:新加坡|狮城|SG|Singapore))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
+  bu: &bu {filter: "^(?=.*(?:USA|United States|美国|洛杉矶|LA|New York))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
+  # =========================
+  # 智能 / 自动 / 故转 / 均衡
+  # =========================
+  lm: &lm {type: smart, uselightgbm: true, collectdata: true, include-all: true}
+  #lm: &lm {type: smart, uselightgbm: true, collectdata: false, include-all: true}
+  zd: &zd {type: url-test, include-all: true, tolerance: 20}
+  sd: &sd {type: select, include-all: true}
+  gz: &gz {type: fallback, include-all: true}
+  jh: &jh {type: load-balance, strategy: consistent-hashing, include-all: true, tolerance: 20}
+
+  # =========================
+  # 策略锚点
+  # =========================
+  st: &st {type: select, proxies: [♻️ 台湾智能, 🚀 节点选择]}
+  sh: &sh {type: select, proxies: [♻️ 香港智能, 🚀 节点选择]}
+  sj: &sj {type: select, proxies: [♻️ 日本智能, 🚀 节点选择]}
+  ss: &ss {type: select, proxies: [♻️ 新加坡智能, 🚀 节点选择]}
+
 # =========================
 # 基础代理
 # =========================
