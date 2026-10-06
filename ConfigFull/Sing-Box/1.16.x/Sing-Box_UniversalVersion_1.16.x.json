@@ -163,7 +163,7 @@
       {"action": "route","domain_suffix": ["mail.me.com","icloud.com","icloud-content.com","me.com"],"server": "Remote-DNS"},
       {"action": "route","rule_set": ["geosite-geolocation-!cn"],"server": "Remote-DNS"},
       {"action": "route","type": "logical","mode": "and","rules": [{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com",
-            ".pub.3gppnetwork.org","tools.google.com","dl.google.com","gvt1.com","update.googleapis.com","mail.me.com","icloud.com","icloud-content.com","me.com"],"invert": true},{"query_type": ["A", "AAAA"]}],"server": "Fake-IP"} 
+       ".pub.3gppnetwork.org","tools.google.com","dl.google.com","gvt1.com","update.googleapis.com","mail.me.com","icloud.com","icloud-content.com","me.com"],"invert": true},{"query_type": ["A", "AAAA"]}],"server": "Fake-IP"} 
     ],
     "disable_cache": false,
     "disable_expire": false,
