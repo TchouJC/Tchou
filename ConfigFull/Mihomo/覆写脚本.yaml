@@ -40,10 +40,10 @@ rule-anchor:
   # =========================
   # 策略锚点
   # =========================
-  st: &st {type: select, proxies: [♻️ 台湾智能, 🚀 节点选择]}
-  sh: &sh {type: select, proxies: [♻️ 香港智能, 🚀 节点选择]}
-  sj: &sj {type: select, proxies: [♻️ 日本智能, 🚀 节点选择]}
-  ss: &ss {type: select, proxies: [♻️ 新加坡智能, 🚀 节点选择]}
+  st: &st {type: select, proxies: [♻️ 台湾自动, 🚀 节点选择]}
+  sh: &sh {type: select, proxies: [♻️ 香港自动, 🚀 节点选择]}
+  sj: &sj {type: select, proxies: [♻️ 日本自动, 🚀 节点选择]}
+  ss: &ss {type: select, proxies: [♻️ 新加坡自动, 🚀 节点选择]}
 
 # =========================
 # 基础代理
