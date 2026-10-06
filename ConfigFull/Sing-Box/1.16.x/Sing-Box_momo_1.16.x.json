@@ -167,7 +167,7 @@
     "find_process": true,
     "final": "🐟 漏网之鱼",
     "default_http_client": "🎯 全球直连",
-    "default_domain_resolver": {"server": "Local-DNS"}
+    "default_domain_resolver": "Local-DNS"
   },
   "dns": {
     "servers": [
