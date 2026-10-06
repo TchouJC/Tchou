@@ -20,9 +20,7 @@
       "external_ui_download_detour": "🎯 全球直连",
       "secret": "",
       "default_mode": "rule",
-      "access_control_allow_origin": [
-        "*"
-      ],
+      "access_control_allow_origin": ["*"],
       "access_control_allow_private_network": true
     },
     "cache_file": {
