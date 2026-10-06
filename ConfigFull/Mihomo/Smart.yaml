@@ -33,6 +33,7 @@ rule-anchor:
   lm: &lm {type: smart, uselightgbm: true, collectdata: true, include-all: true}
   #lm: &lm {type: smart, uselightgbm: true, collectdata: false, include-all: true}
   zd: &zd {type: url-test, include-all: true, tolerance: 20}
+  sd: &sd {type: select, include-all: true}
   gz: &gz {type: fallback, include-all: true}
   jh: &jh {type: load-balance, strategy: consistent-hashing, include-all: true, tolerance: 20}
 
@@ -203,7 +204,6 @@ sniffer:
     - "Mijia Cloud"
     - "+.push.apple.com"
 
-# 出站策略 smart参数 （ uselightgbm: false, collectdata: false, strategy: sticky-sessions,policy-priority: "Premium:0.9;SG:1.3" ）
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [♻️ 全球自动, ♻️ 台湾智能, ♻️ 香港智能, ♻️ 日本智能, ♻️ 新加坡智能, ♻️ 美国智能, ⚖️ 台湾均衡, 🔯 台湾故转, 🚀 全球手动, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png}
   - {name: 🐟 漏网之鱼, <<: *cl, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Fish_b.png}
@@ -217,7 +217,7 @@ proxy-groups:
   - {name: 🎥 NETFLIX, <<: *ss, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Netflix.png}
  
   - {name: ♻️ 全球自动, <<: [*zd, *cs, *pc], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Auto_Link.png}
-  - {name: 🚀 全球手动, type: select, include-all: true, <<: *pc, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png} 
+  - {name: 🚀 全球手动, <<: [*sd,*pc], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png} 
   - {name: ♻️ 台湾智能, <<: [*lm, *bt, *cs]}
   - {name: ♻️ 香港智能, <<: [*lm, *bh, *cs]}
   - {name: ♻️ 日本智能, <<: [*lm, *bj, *cs]}
