@@ -269,8 +269,8 @@ rules:
   - MATCH,🐟 漏网之鱼
 
 rule-providers: 
-  CustomRuleSet_Proxy: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Proxy_classical.yaml"}
-  CustomRuleSet_Direct: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Direct_classical.yaml"}
+  CustomRuleSet_Proxy: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Mihomo/CustomRuleSet_Proxy_classical.yaml"}
+  CustomRuleSet_Direct: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Mihomo/CustomRuleSet_Direct_classical.yaml"}
   Download_domain: { <<: *class_yaml, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Download/Download.yaml"} 
   Lan_domain: { <<: *class_yaml, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Lan/Lan.yaml"}
   apple@cn_domain: {<<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}  
