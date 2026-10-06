@@ -53,8 +53,7 @@
       ],      
       "mtu": 1500,
       "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true
+      "strict_route": true
     }
   ],
   "outbounds": [
