@@ -181,6 +181,7 @@
       {"action": "route","clash_mode": "direct","server": "Local-DNS"},
       {"action": "route","clash_mode": "global","server": "Remote-DNS"},
       {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
+      {"action": "route","domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"server": "Local-DNS"},
       {"action": "route","type": "logical","mode": "and","rules": [{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"invert": true},{"query_type": ["A","AAAA"]}],"server": "Fake-IP"},
       {"action": "route","rule_set": ["geosite-geolocation-!cn"],"server": "Remote-DNS"}],"disable_cache": false,"disable_expire": false,"optimistic": {"enabled": true,"timeout": "3d"},
     "final": "Remote-DNS",
