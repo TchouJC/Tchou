@@ -226,8 +226,8 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: yaml, proxy: 🎯 全球直连}
  # class: &class {type: http, interval: 86400, behavior: classical, format: text, proxy: 🎯 全球直连}
 rule-providers: 
-  Tchou_Proxy: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Mihomo/Rule%20Set/Tchou_Proxy_classical.yaml"}
-  Tchou_Direct: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Mihomo/Rule%20Set/Tchou_Direct_classical.yaml"}
+  Tchou_Proxy: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Proxy_classical.yaml"}
+  Tchou_Direct: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Direct_classical.yaml"}
   Lan_domain: { <<: *class, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Lan/Lan.yaml"}
   category-ads-all: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
   private_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
