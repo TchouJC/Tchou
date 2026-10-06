@@ -116,7 +116,7 @@
       {"rule_set": "geosite-paypal", "outbound": "💰 PayPal"},
       {"rule_set": ["geosite-category-social-media-!cn", "geoip-telegram"], "outbound": "📲 Social"},
       {"rule_set": "geosite-category-ai-chat-!cn", "outbound": "🤖 AI"},
-      {"rule_set": ["geosite-google", "geoip-google"], "outbound": "🍀 Google"},
+      {"rule_set": ["geosite-google"], "outbound": "🍀 Google"},
       {"rule_set": "geosite-microsoft@cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
       {"rule_set": "geosite-tiktok", "outbound": "🎵 TikTok"},
