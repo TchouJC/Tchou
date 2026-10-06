@@ -150,7 +150,6 @@
   "dns": {
     "servers": [
       {"tag": "Local-DNS","type": "udp","server":"223.5.5.5","server_port":53},
-      {"tag": "Local-DNS-Resolver","type": "udp","server_port": 53,"server": "223.5.5.5"},
       {"tag": "Remote-DNS","type": "tls","detour": "🚀 节点选择","domain_resolver": "Remote-DNS-Resolver","server_port": 853,"server": "8.8.8.8"},
       {"tag": "Remote-DNS-Resolver","type": "udp","detour": "🚀 节点选择","server_port": 53,"server": "8.8.8.8"},
       {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"}
@@ -159,7 +158,8 @@
       {"action": "route","clash_mode": "direct","server": "Local-DNS"},
       {"action": "route","clash_mode": "global","server": "Remote-DNS"},
       {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
-      {"action":"route","domain_suffix":["dl.google.com","gvt1.com","googleusercontent.com","update.googleapis.com","swcdn.apple.com","updates.cdn-apple.com","mesu.apple.com","xp.apple.com","mzstatic.com","itunes.apple.com","apps.apple.com"],"server":"Local-DNS"},
+      {"action":"route","domain_suffix":["dl.google.com","gvt1.com","update.googleapis.com",
+       "swcdn.apple.com","updates.cdn-apple.com","mesu.apple.com","xp.apple.com","mzstatic.com","itunes.apple.com","apps.apple.com","push.apple.com"],"server":"Local-DNS"},
       {"action": "route","domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"server": "Local-DNS"},
       {"action":"route","rule_set":["geosite-geolocation-!cn"],"server":"Fake-IP"}
       ],
