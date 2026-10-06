@@ -6,6 +6,12 @@
     "output": "",
     "timestamp": true
   },
+  "ntp": {
+    "enabled": true,
+    "server": "time.apple.com",
+    "server_port": 123,
+    "detour": "🎯 全球直连"
+  },
   "experimental": {
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
