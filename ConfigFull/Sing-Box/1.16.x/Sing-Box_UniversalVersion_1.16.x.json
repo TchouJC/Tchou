@@ -80,7 +80,7 @@
     }
   ],
   "outbounds": [
-      { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["♻️ 全球自动", "🔯 台湾自动", "🔯 香港自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🐸 全球手动", "🎯 全球直连"],"default": "🔯 香港自动","interrupt_exist_connections": true },
+      { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["♻️ 全球自动", "🔯 台湾自动", "🔯 香港自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🐸 全球手动", "🎯 全球直连"],"default": "♻️ 全球自动","interrupt_exist_connections": true },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择", "🔯 台湾自动", "🔯 香港自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🐸 全球手动", "♻️ 全球自动" ],"default": "🎯 全球直连","interrupt_exist_connections": false },
       { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🔯 香港自动", "🚀 节点选择"],"default": "🔯 香港自动","interrupt_exist_connections": false },
       { "tag": "💰 PayPal", "type": "selector", "outbounds": ["🔯 台湾自动", "🚀 节点选择"],"default": "🔯 台湾自动","interrupt_exist_connections": false },
@@ -154,7 +154,7 @@
     "servers": [
       {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"},
       {"tag": "Local-DNS","type": "udp","server": "223.5.5.5","server_port": 53},
-      {"tag": "Remote-DNS","type": "tls","detour": " 节点选择","server": "8.8.8.8","server_port": 853}
+      {"tag": "Remote-DNS","type": "tls","detour": "🚀 节点选择","server": "8.8.8.8","server_port": 853}
     ],
     "rules": [
       {"action": "route","clash_mode": "direct","server": "Local-DNS"},
