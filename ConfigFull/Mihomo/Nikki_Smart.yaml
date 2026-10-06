@@ -12,7 +12,7 @@ rule-anchor:
   # =========================
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs, proxy: 🎯 全球直连}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs, proxy: 🎯 全球直连}
-  class: &class {type: http, interval: 86400, behavior: classical, format: yaml, proxy: 🎯 全球直连}
+  class_yaml: &class_yaml {type: http, interval: 86400, behavior: classical, format: yaml, proxy: 🎯 全球直连}
   #class: &class {type: http, interval: 86400, behavior: classical, format: text, proxy: 🎯 全球直连}
   # =========================
   # 节点锚点
@@ -28,10 +28,14 @@ rule-anchor:
   bs: &bs {filter: "^(?=.*(?:新加坡|狮城|SG|Singapore))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
   bu: &bu {filter: "^(?=.*(?:USA|United States|美国|洛杉矶|LA|New York))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
   # =========================
-  # Smart
+  # 智能 / 自动 / 故转 / 均衡
   # =========================
   lm: &lm {type: smart, uselightgbm: true, collectdata: true, include-all: true}
   #lm: &lm {type: smart, uselightgbm: true, collectdata: false, include-all: true}
+  zd: &zd {type: url-test, include-all: true, tolerance: 20}
+  gz: &gz {type: fallback, include-all: true}
+  jh: &jh {type: load-balance, strategy: consistent-hashing, include-all: true, tolerance: 20}
+
   # =========================
   # 策略锚点
   # =========================
@@ -39,7 +43,6 @@ rule-anchor:
   sh: &sh {type: select, proxies: [♻️ 香港智能, 🚀 节点选择]}
   sj: &sj {type: select, proxies: [♻️ 日本智能, 🚀 节点选择]}
   ss: &ss {type: select, proxies: [♻️ 新加坡智能, 🚀 节点选择]}
-
 
 proxy-providers:
   Sub-Store:
@@ -229,8 +232,8 @@ rules:
   - AND,((NETWORK,UDP),(DST-PORT,4500)),🎯 全球直连
   - DOMAIN-SUFFIX,pub.3gppnetwork.org,🎯 全球直连
    # 自定义
-  - RULE-SET,Tchou_Proxy,🚀 节点选择
-  - RULE-SET,Tchou_Direct,🎯 全球直连
+  - RULE-SET,CustomRuleSet_Proxy,🚀 节点选择
+  - RULE-SET,CustomRuleSet_Direct,🎯 全球直连
    # 下载
   - RULE-SET,Download_domain,🎯 全球直连
    # LAN
@@ -266,9 +269,9 @@ rules:
   - MATCH,🐟 漏网之鱼
 
 rule-providers: 
-  Tchou_Proxy: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Mihomo/CustomRuleSet_Proxy_classical.yaml"}
-  Tchou_Direct: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Mihomo/CustomRuleSet_Direct_classical.yaml"}
-  Lan_domain: { <<: *class, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Lan/Lan.yaml"}
+  CustomRuleSet_Proxy: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Proxy_classical.yaml"}
+  CustomRuleSet_Direct: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Direct_classical.yaml"}
+  Lan_domain: { <<: *class_yaml, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Lan/Lan.yaml"}
   category-ads-all: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
   private_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   private_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}

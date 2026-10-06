@@ -36,8 +36,6 @@ rule-anchor:
   gz: &gz {type: fallback, include-all: true}
   jh: &jh {type: load-balance, strategy: consistent-hashing, include-all: true, tolerance: 20}
 
-
-
   # =========================
   # 策略锚点
   # =========================
@@ -45,7 +43,6 @@ rule-anchor:
   sh: &sh {type: select, proxies: [♻️ 香港智能, 🚀 节点选择]}
   sj: &sj {type: select, proxies: [♻️ 日本智能, 🚀 节点选择]}
   ss: &ss {type: select, proxies: [♻️ 新加坡智能, 🚀 节点选择]}
-
 
 proxy-providers:
   Sub-Store:
@@ -238,8 +235,8 @@ rules:
   - AND,((NETWORK,UDP),(DST-PORT,4500)),🎯 全球直连
   - DOMAIN-SUFFIX,pub.3gppnetwork.org,🎯 全球直连
    # 自定义
-  - RULE-SET,Tchou_Proxy,🚀 节点选择
-  - RULE-SET,Tchou_Direct,🎯 全球直连
+  - RULE-SET,CustomRuleSet_Proxy,🚀 节点选择
+  - RULE-SET,CustomRuleSet_Direct,🎯 全球直连
    # 下载
   - RULE-SET,Download_domain,🎯 全球直连
    # LAN
@@ -275,8 +272,8 @@ rules:
   - MATCH,🐟 漏网之鱼
 
 rule-providers: 
-  Tchou_Proxy: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Proxy_classical.yaml"}
-  Tchou_Direct: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Direct_classical.yaml"}
+  CustomRuleSet_Proxy: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Proxy_classical.yaml"}
+  CustomRuleSet_Direct: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Direct_classical.yaml"}
   Lan_domain: { <<: *class_yaml, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Lan/Lan.yaml"}
   category-ads-all: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
   private_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
