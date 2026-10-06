@@ -96,7 +96,6 @@
       {"rule_set": "geosite-paypal", "outbound": "💰 PayPal"},
       {"rule_set": ["geosite-category-social-media-!cn", "geoip-telegram"], "outbound": "📲 Social"},
       {"rule_set": "geosite-category-ai-chat-!cn", "outbound": "🤖 AI"},
-      {"domain": ["update.googleapis.com","dl.google.com","clients2.google.com","clientservices.google.com","tools.google.com"],"outbound": "🎯 全球直连"},
       {"rule_set": ["geosite-google", "geoip-google"], "outbound": "🍀 Google"},
       {"rule_set": "geosite-microsoft@cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
@@ -140,7 +139,6 @@
       {"action": "route","clash_mode": "direct","server": "Local-DNS"},
       {"action": "route","clash_mode": "global","server": "Remote-DNS"},
       {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
-      {"action": "route","type": "logical","mode": "and","rules": [{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"invert": true},{"query_type": ["A","AAAA"]}],"server": "Fake-IP"},
       {"action": "route","rule_set": ["geosite-geolocation-!cn"],"server": "Remote-DNS"}],"disable_cache": false,"disable_expire": false,"optimistic": {"enabled": true,"timeout": "3d"},
     "final": "Remote-DNS",
     "strategy": "ipv4_only"
