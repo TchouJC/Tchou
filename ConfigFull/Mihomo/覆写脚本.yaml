@@ -260,13 +260,10 @@ rules:
   - MATCH,🐟 漏网之鱼
 
 rule-providers: 
-
   CustomRuleSet_Proxy: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Proxy_classical.yaml"}
   CustomRuleSet_Direct: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/Rule%20Set/Mihomo/CustomRuleSet_Direct_classical.yaml"}
-
   Download_domain: { <<: *class, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Download/Download.yaml"} 
   Lan_domain: { <<: *class_yaml, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Lan/Lan.yaml"}
-
   apple@cn_domain: {<<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}  
   apple_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"}
   paypal_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
@@ -278,12 +275,9 @@ rule-providers:
   microsoft_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
   tiktok_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
   netflix_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
-
   geolocation-!cn: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
-
   category-ads-all: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
   telegram_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
-
   private_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   private_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
   cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
