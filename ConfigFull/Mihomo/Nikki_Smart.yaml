@@ -160,7 +160,7 @@ dns:
     - 119.29.29.29
 
   nameserver:
-    - 127.0.0.1:1053
+    - 127.0.0.1:5335
 
   proxy-server-nameserver:
     - 223.5.5.5
