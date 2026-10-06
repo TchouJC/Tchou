@@ -119,8 +119,8 @@
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
-      {"inbound": "dns-in", "action": "hijack-dns"},      
       {"action": "sniff","inbound": "tun-in"},
+      {"inbound": "dns-in", "action": "hijack-dns"},      
       {"action": "route","clash_mode": "direct","outbound": "🎯 全球直连"},
       {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
       {"action": "route","network": "icmp","outbound": "🎯 全球直连"},
@@ -138,10 +138,11 @@
       {"rule_set": "geosite-tiktok", "outbound": "🎵 TikTok"},
       {"rule_set": ["geosite-netflix", "geoip-netflix"], "outbound": "🎥 Netflix"},
       {"rule_set": "geosite-geolocation-!cn","outbound": "🚀 节点选择"},
-      {"rule_set": "geosite-category-ads-all","clash_mode": "rule","action": "reject"},
+      {"rule_set": "geosite-category-ads-all","outbound": "🛑 全球拦截"},
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
-      {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"}
+      {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"},
+      {"ip_is_private": true,"action": "route","outbound": "🎯 全球直连"}
     ],
     "rule_set": [
       { "tag": ["CustomRuleSet_Direct", "CustomRuleSet_Proxy"], 
