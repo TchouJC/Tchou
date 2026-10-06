@@ -17,7 +17,7 @@ rule-anchor:
   # =========================
   # 节点锚点
   # =========================
-  cl: &cl {type: select, proxies: [🚀 节点选择, ♻️ 全球自动, ♻️ 台湾智能, ♻️ 香港智能, ♻️ 日本智能, ♻️ 新加坡智能, ♻️ 美国智能, ⚖️ 台湾均衡, 🔯 台湾故转, 🚀 全球手动, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Global.png}
+  cl: &cl {type: select, proxies: [🚀 节点选择, ♻️ 全球自动, ♻️ 台湾自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ⚖️ 台湾均衡, 🔯 台湾故转, 🚀 全球手动, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Global.png}
   # =========================
   # 节点筛选
   # =========================
