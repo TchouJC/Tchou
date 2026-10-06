@@ -102,6 +102,7 @@
       {"rule_set": "geosite-tiktok", "outbound": "🎵 TikTok"},
       {"rule_set": ["geosite-netflix", "geoip-netflix"], "outbound": "🎥 Netflix"},
       {"rule_set": "geosite-geolocation-!cn","outbound": "🚀 节点选择"},
+      {"rule_set": "geosite-category-ads-all","clash_mode": "rule","action": "GLOBAL"},
       {"rule_set": "geosite-category-ads-all","clash_mode": "rule","action": "reject"},
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
