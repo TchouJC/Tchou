@@ -101,7 +101,8 @@ dns:
     - "*"
     - "+.lan"
     - "+.local"
-    # Wi-Fi Calling / 3GPP / ePDG
+    - "+.market.xiaomi.com"
+    # Wi-Fi Calling / 3GPP / ePDG    
     - "+.pub.3gppnetwork.org"
 
   default-nameserver:
