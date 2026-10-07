@@ -17,7 +17,7 @@ rule-anchor:
   # =========================
   # 节点锚点
   # =========================
-  cl: &cl {type: select, proxies: [🚀 节点选择, ♻️ 全球自动, ♻️ 台湾智能, ♻️ 香港智能, ♻️ 日本智能, ♻️ 新加坡智能, ♻️ 美国智能, ⚖️ 台湾均衡, 🔯 台湾故转, 🚀 全球手动, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Global.png}
+  cl: &cl {type: select, proxies: [🚀 节点选择, ♻️ 全球自动, ♻️ 台湾智能, ♻️ 香港智能, ♻️ 日本智能, ♻️ 新加坡智能, ♻️ 美国智能, 🔯 台湾故转, ⚖️ 台湾均衡, 🚀 全球手动, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Global.png}
   # =========================
   # 节点筛选
   # =========================
@@ -164,7 +164,7 @@ sniffer:
     - "+.push.apple.com"
 
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [♻️ 全球自动, ♻️ 台湾智能, ♻️ 香港智能, ♻️ 日本智能, ♻️ 新加坡智能, ♻️ 美国智能, ⚖️ 台湾均衡, 🔯 台湾故转, 🚀 全球手动, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png}
+  - {name: 🚀 节点选择, type: select, proxies: [♻️ 全球自动, ♻️ 台湾智能, ♻️ 香港智能, ♻️ 日本智能, ♻️ 新加坡智能, ♻️ 美国智能, 🔯 台湾故转, ⚖️ 台湾均衡, 🚀 全球手动, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png}
   - {name: 🐟 漏网之鱼, <<: *cl, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Fish_b.png}
   - {name: 🍎 Apple, <<: *sh, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Apple_rainbow.png}
   - {name: 💶 PayPal, <<: *st, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/PayPal_business.png}
