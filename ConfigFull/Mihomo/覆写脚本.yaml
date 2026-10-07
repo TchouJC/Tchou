@@ -26,7 +26,7 @@ rule-anchor:
   bh: &bh {filter: "^(?=.*(?:Hong Kong|HongKong|HK|香港))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Hong_Kong.png}
   bj: &bj {filter: "^(?=.*(?:Japan|JP|日本|东京|Tokyo))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Japan.png}
   bs: &bs {filter: "^(?=.*(?:新加坡|狮城|SG|Singapore))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Singapore.png}
-  bu: &bu {filter: "^(?=.*(?:USA|United States|美国|洛杉矶|LA|New York))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
+  bu: &bu {filter: "^(?=.*(?:USA|United States|美国|洛杉矶|Los Angeles|New York))(?!(?:.*?(订阅|官网|流量|到期|过期|故障|失效|维护|测试|备用))).*$", icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/USA.png}
   # =========================
   # 智能 / 自动 / 故转 / 均衡
   # =========================
