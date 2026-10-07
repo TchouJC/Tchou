@@ -12,3 +12,5 @@ Quantumult X_配置文件：
 https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Quantumult%20X/QuantumultX_Rule%20Policy%20Set.conf
 Loon_配置文件：
 https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Loon/Loon_ConfigFile.conf
+Shadowrocket_配置文件：
+https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Shadowrocket/Shadowrocket_ConfigFile.conf
