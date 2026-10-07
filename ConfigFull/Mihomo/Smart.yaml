@@ -181,8 +181,8 @@ proxy-groups:
   - {name: ♻️ 日本智能, <<: [*lm, *bj, *cs]}
   - {name: ♻️ 新加坡智能, <<: [*lm, *bs, *cs]}
   - {name: ♻️ 美国智能, <<: [*lm, *bu, *cs]}
-  - {name: ⚖️ 台湾均衡, <<: [*jh, *bt, *cs]}
   - {name: 🔯 台湾故转, <<: [*gz, *bt, *cs]}
+  - {name: ⚖️ 台湾均衡, <<: [*jh, *bt, *cs]}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/DIRECT.png}
   - {name: 🛑 全球拦截, type: select, proxies: [REJECT], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/AdblockPlus_2.png}
 
