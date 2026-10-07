@@ -46,7 +46,6 @@
       }
     }
   ],
-  
   "http_clients": [
     {
       "tag": "rule_download",
