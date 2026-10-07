@@ -8,16 +8,3 @@ Sing-Box_UniversalVersion_1.16.x:
 http://192.168.10.2:5000/config/http://192.168.10.2:3001/QWERT01234asdfg56789/download/collection/Sub%20Store?target=sing-box&file=https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Sing-Box/1.16.x/Sing-Box_UniversalVersion_1.16.x.json
 Sing-Box_momo_1.16.x:
 http://192.168.10.2:5000/config/http://192.168.10.2:3001/QWERT01234asdfg56789/download/collection/Sub%20Store?target=sing-box&file=https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Sing-Box/1.16.x/Sing-Box_momo_1.16.x.json
-
-Sing-Box_RuleSet：
-https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Sing-Box/CustomRuleSet_Direct.json
-https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Sing-Box/CustomRuleSet_Proxy.json
-
-Mihomo_配置文件：
-https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Mihomo/Smart.yaml
-https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Mihomo/Nikki_Smart.yaml
-https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Mihomo/%E8%A6%86%E5%86%99%E8%84%9A%E6%9C%AC.yaml
-
-Mihomo_RuleSet：
-https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Mihomo/CustomRuleSet_Direct_classical.yaml
-https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Mihomo/CustomRuleSet_Proxy_classical.yaml
