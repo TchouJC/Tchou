@@ -112,7 +112,7 @@
       { "tag": "🔯 香港自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["Hong Kong|HongKong|HK|香港"] }], "url": "https://www.gstatic.com/generate_204", "interval": "15m", "tolerance": 50 },
       { "tag": "🔯 日本自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["Japan|JP|日本|东京|Tokyo"] }], "url": "https://www.gstatic.com/generate_204", "interval": "15m", "tolerance": 50 },
       { "tag": "🔯 新加坡自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["新加坡|狮城|SG|Singapore"] }], "url": "https://www.gstatic.com/generate_204", "interval": "15m", "tolerance": 50 },
-      { "tag": "🔯 美国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["USA|United States|美国|洛杉矶|LA|New York"] }], "url": "https://www.gstatic.com/generate_204", "interval": "15m", "tolerance": 50 },           
+      { "tag": "🔯 美国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["USA|United States|美国|洛杉矶|Los Angeles|New York"] }], "url": "https://www.gstatic.com/generate_204", "interval": "15m", "tolerance": 50 },           
       { "tag": "🔯 台湾故转", "type": "fallback", "outbounds": ["{all}"], "filter": [{"action": "include","keywords": ["Taiwan|TW|台湾|台北|Taipei"]}], "url": "https://www.gstatic.com/generate_204", "interval": "5m"},
       { "tag": "🎯 全球直连", "type": "direct" },
       { "tag": "🛑 全球拦截", "type": "block" },
