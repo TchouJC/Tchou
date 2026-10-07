@@ -8,7 +8,8 @@ config config 'config'
 	option cron_expression '0 3 * * *'
 	option test_profile '1'
 	option fast_reload '1'
-	option core_only '0'
+	option core_only '1'
+	option profile 'file:Nikki_Smart.yaml'
 
 config proxy 'proxy'
 	option enabled '1'
@@ -209,4 +210,6 @@ config sniff
 config editor 'editor'
 
 config log 'log'
+	option clear_at_stop '1'
+	option scheduled_clear '0'
 
