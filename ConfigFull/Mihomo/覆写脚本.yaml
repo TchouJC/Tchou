@@ -98,7 +98,6 @@ dns:
   fake-ip-range: 198.18.0.0/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "*"
     - "+.lan"
     - "+.local"
     - "+.market.xiaomi.com"
@@ -110,22 +109,20 @@ dns:
     - 119.29.29.29
 
   nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
 
   proxy-server-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
 
   direct-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
 
   direct-nameserver-follow-policy: false
 
-  listen: 0.0.0.0:1053
+  listen: 0.0.0.0:1053  
       
 sniffer:
   enable: true
