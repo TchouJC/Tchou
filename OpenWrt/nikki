@@ -160,14 +160,14 @@ config nameserver
 config nameserver
 	option enabled '1'
 	option type 'proxy-server-nameserver'
-	list nameserver '223.5.5.5'
-	list nameserver '119.29.29.29'
+	list nameserver 'https://dns.alidns.com/dns-query'
+	list nameserver 'https://doh.pub/dns-query'
 
 config nameserver
 	option enabled '1'
 	option type 'direct-nameserver'
-	list nameserver '223.5.5.5'
-	list nameserver '119.29.29.29'
+	list nameserver 'https://dns.alidns.com/dns-query'
+	list nameserver 'https://doh.pub/dns-query'
 
 config nameserver
 	option enabled '1'
