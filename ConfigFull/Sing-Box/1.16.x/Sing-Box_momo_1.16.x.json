@@ -102,7 +102,7 @@
       { "tag": "💰 PayPal", "type": "selector", "outbounds": ["🔯 台湾自动", "🚀 节点选择"],"default": "🔯 台湾自动","interrupt_exist_connections": false },
       { "tag": "📲 Social", "type": "selector", "outbounds": ["🔯 香港自动", "🚀 节点选择"],"default": "🔯 香港自动","interrupt_exist_connections": false },
       { "tag": "🤖 AI", "type": "selector", "outbounds": ["🔯 台湾自动", "🚀 节点选择"],"default": "🔯 台湾自动","interrupt_exist_connections": false },
-      { "tag": "🍀 Google", "type": "selector", "outbounds": ["🔯 日本自动", "🚀 节点选择"],"default": "🔯 日本自动","interrupt_exist_connections": false },
+      { "tag": "🍀 Google", "type": "selector", "outbounds": ["🔯 新加坡自动", "🚀 节点选择"],"default": "🔯 日本自动","interrupt_exist_connections": false },
       { "tag": "🪟 Microsoft", "type": "selector", "outbounds": ["🔯 香港自动", "🚀 节点选择"],"default": "🔯 香港自动","interrupt_exist_connections": false },
       { "tag": "🎵 TikTok", "type": "selector", "outbounds": ["🔯 新加坡自动", "🚀 节点选择"],"default": "🔯 新加坡自动","interrupt_exist_connections": false },
       { "tag": "🎥 Netflix", "type": "selector", "outbounds": ["🔯 新加坡自动", "🚀 节点选择"],"default": "🔯 新加坡自动","interrupt_exist_connections": false },
