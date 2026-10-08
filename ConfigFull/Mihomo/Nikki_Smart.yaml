@@ -44,6 +44,7 @@ rule-anchor:
   sh: &sh {type: select, proxies: [♻️ 香港智能, 🚀 节点选择]}
   sj: &sj {type: select, proxies: [♻️ 日本智能, 🚀 节点选择]}
   ss: &ss {type: select, proxies: [♻️ 新加坡智能, 🚀 节点选择]}
+  su: &su {type: select, proxies: [♻️ 美国智能, 🚀 节点选择]}  
 
 proxy-providers:
   Sub-Store:
@@ -170,7 +171,7 @@ proxy-groups:
   - {name: 💶 PayPal, <<: *st, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/PayPal_business.png}
   - {name: 📲 Social, <<: *sh, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Telegram.png}
   - {name: 🤖 AI, <<: *st, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/ChatGPT.png}
-  - {name: 🍀 Google, <<: *sj, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Google.png}
+  - {name: 🍀 Google, <<: *ss, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Google.png}
   - {name: 🪟 Microsoft, <<: *sh, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft.png}
   - {name: 🎵 TikTok, <<: *ss, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png}
   - {name: 🎥 NETFLIX, <<: *ss, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Netflix.png}
