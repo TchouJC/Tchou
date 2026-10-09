@@ -1,6 +1,6 @@
 
 config AdGuardHome 'AdGuardHome'
-	option enabled '1'
+	option enabled '0'
 	option httpport '2000'
 	option redirect 'dnsmasq-upstream'
 	option configpath '/etc/AdGuardHome.yaml'
@@ -14,5 +14,5 @@ config AdGuardHome 'AdGuardHome'
 	option binmtime '1787066106'
 	list old_redirect 'dnsmasq-upstream'
 	list old_port '5225'
-	list old_enabled '1'
+	list old_enabled '0'
 
