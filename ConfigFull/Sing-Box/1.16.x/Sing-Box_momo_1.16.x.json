@@ -136,7 +136,7 @@
 
       {"rule_set": "geosite-paypal", "outbound": "💰 PayPal"},
 
-      {"rule_set": ["geosite-facebook", "geoip-facebook", "geosite-instagram",
+      {"rule_set": ["geosite-github", "geosite-facebook", "geoip-facebook", "geosite-instagram",
                     "geosite-twitter", "geoip-twitter", "geosite-telegram", "geoip-telegram" 
                    ], "outbound": "📲 Social"},
 
@@ -168,7 +168,7 @@
 
       { "tag": ["geosite-apple",
                 "geosite-paypal",
-                "geosite-facebook", "geosite-instagram", "geosite-twitter", "geosite-telegram",
+                "geosite-github", "geosite-facebook", "geosite-instagram", "geosite-twitter", "geosite-telegram",
                 "geosite-category-ai-chat-!cn",
                 "geosite-google-gemini", "geosite-youtube", "geosite-google","geosite-microsoft@cn", "geosite-microsoft",
                 "geosite-tiktok", "geosite-netflix",
