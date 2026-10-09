@@ -197,10 +197,6 @@ rules:
    # 自定义
   - RULE-SET,CustomRuleSet_Proxy,🚀 节点选择
   - RULE-SET,CustomRuleSet_Direct,🎯 全球直连
-   # 下载
-  - RULE-SET,Download_domain,🎯 全球直连
-   # LAN
-  - RULE-SET,Lan_domain,🎯 全球直连
    # Apple
   - RULE-SET,apple@cn_domain,🎯 全球直连
   - RULE-SET,apple_domain,🍎 Apple
@@ -220,9 +216,13 @@ rules:
   - RULE-SET,netflix_domain,🎥 NETFLIX
    # 国际
   - RULE-SET,geolocation-!cn,🚀 节点选择
-   # 广告拦截
-  - RULE-SET,category-ads-all,🛑 全球拦截
   - RULE-SET,telegram_ip,📲 Social,no-resolve
+   # 广告拦截
+  - RULE-SET,category-ads-all,🛑 全球拦截  
+   # 下载
+  - RULE-SET,Download_domain,🎯 全球直连
+   # LAN
+  - RULE-SET,Lan_domain,🎯 全球直连
    # 私网
   - RULE-SET,private_domain,🎯 全球直连
   - RULE-SET,private_ip,🎯 全球直连,no-resolve
