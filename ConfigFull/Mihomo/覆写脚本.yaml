@@ -182,6 +182,8 @@ rules:
   - AND,((NETWORK,UDP),(DST-PORT,500)),🎯 全球直连
   - AND,((NETWORK,UDP),(DST-PORT,4500)),🎯 全球直连
   - DOMAIN-SUFFIX,pub.3gppnetwork.org,🎯 全球直连
+  # QUIC
+  - AND,((DST-PORT,443),(NETWORK,udp)),🛑 全球拦截
    # 自定义
   - RULE-SET,CustomRuleSet_Proxy,🚀 节点选择
   - RULE-SET,CustomRuleSet_Direct,🎯 全球直连
@@ -192,13 +194,21 @@ rules:
    # Apple
   - RULE-SET,apple@cn_domain,🎯 全球直连
   - RULE-SET,apple_domain,🍎 Apple
-   # 针对服务
+   # 金融服务
   - RULE-SET,paypal_domain,💶 PayPal
    # 社交网络
-  - RULE-SET,social_domain,📲 Social
+  - RULE-SET,facebook_domain,📲 Social
+  - RULE-SET,facebook_ip,📲 Social,no-resolve
+  - RULE-SET,instagram_domain,📲 Social
+  - RULE-SET,twitter_domain,📲 Social
+  - RULE-SET,twitter_ip,📲 Social,no-resolve
+  - RULE-SET,telegram_domain,📲 Social
+  - RULE-SET,telegram_ip,📲 Social,no-resolve
    # AI智能
   - RULE-SET,category-ai-!cn_domain,🤖 AI
-   # Goole / Microsoft
+   # Goole / Microsoft 服务
+  - RULE-SET,gemini_domain,🍀 Google
+  - RULE-SET,youtube_domain,🍀 Google
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,microsoftcn_domain,🎯 全球直连
@@ -206,39 +216,61 @@ rules:
    # 流媒体
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,netflix_domain,🎥 NETFLIX
+  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
    # 国际
   - RULE-SET,geolocation-!cn,🚀 节点选择
    # 广告拦截
   - RULE-SET,category-ads-all,🛑 全球拦截
-  - RULE-SET,telegram_ip,📲 Social,no-resolve
    # 私网
   - RULE-SET,private_domain,🎯 全球直连
   - RULE-SET,private_ip,🎯 全球直连,no-resolve
    # 中国
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,cn_ip,🎯 全球直连,no-resolve
+    # 兜底
   - MATCH,🐟 漏网之鱼
 
 rule-providers: 
+   # 自定义
   CustomRuleSet_Proxy: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Mihomo/CustomRuleSet_Proxy_classical.yaml"}
   CustomRuleSet_Direct: { <<: *class_yaml, url: "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Mihomo/CustomRuleSet_Direct_classical.yaml"}
+   # 下载
   Download_domain: { <<: *class_yaml, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Download/Download.yaml"} 
+   # LAN
   Lan_domain: { <<: *class_yaml, url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Lan/Lan.yaml"}
+   # Apple
   apple@cn_domain: {<<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}  
   apple_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"}
+   # 金融服务
   paypal_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
-  social_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-social-media-!cn.mrs"}
+   # 社交网络
+  facebook_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/facebook.mrs"}
+  facebook_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.mrs"}
+  instagram_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/instagram.mrs"}
+  twitter_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs"}
+  twitter_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs"}
+  telegram_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
+  telegram_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
+   # AI智能
   category-ai-!cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
+   # Goole / Microsoft 服务
+  gemini_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.mrs"}
+  youtube_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   google_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
   microsoftcn_domain: {<<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs"}  
   microsoft_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
+   # 流媒体
   tiktok_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
   netflix_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
+  netflix_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
+   # 国际
   geolocation-!cn: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
+   # 广告拦截
   category-ads-all: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
-  telegram_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
+   # 私网
   private_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   private_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
+   # 中国
   cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   cn_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
