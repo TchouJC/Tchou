@@ -172,6 +172,7 @@ proxy-groups:
   - {name: 💶 PayPal, <<: *st, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/PayPal_business.png}
   - {name: 📲 Social, <<: *sh, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Telegram.png}
   - {name: 🤖 AI, <<: *st, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/ChatGPT.png}
+  - {name:  ⃢▸  Youtube, <<: *sj, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/YouTube.png}
   - {name: 🍀 Google, <<: *ss, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Google.png}
   - {name: 🪟 Microsoft, <<: *sh, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft.png}
   - {name: 🎵 TikTok, <<: *ss, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png}
@@ -211,6 +212,7 @@ rules:
    # AI智能
   - RULE-SET,category-ai-!cn_domain,🤖 AI
    # Goole / Microsoft
+  - RULE-SET,youtube_domain, ⃢▸  Youtube
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,microsoftcn_domain,🎯 全球直连
@@ -241,6 +243,7 @@ rule-providers:
   paypal_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
   social_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-social-media-!cn.mrs"}
   category-ai-!cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
+  youtube_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/youtube.mrs"}
   google_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   google_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
   microsoftcn_domain: {<<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs"}  
