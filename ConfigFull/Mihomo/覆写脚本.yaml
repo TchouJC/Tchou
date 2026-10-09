@@ -197,6 +197,7 @@ rules:
    # 金融服务
   - RULE-SET,paypal_domain,💶 PayPal
    # 社交网络
+  - RULE-SET,github_domain,📲 Social
   - RULE-SET,facebook_domain,📲 Social
   - RULE-SET,facebook_ip,📲 Social,no-resolve
   - RULE-SET,instagram_domain,📲 Social
@@ -244,6 +245,7 @@ rule-providers:
    # 金融服务
   paypal_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
    # 社交网络
+  github_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
   facebook_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/facebook.mrs"}
   facebook_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.mrs"}
   instagram_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/instagram.mrs"}
