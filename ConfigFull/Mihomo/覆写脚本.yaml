@@ -136,7 +136,7 @@ sniffer:
   parse-pure-ip: true
 
   # 全局先不要强制覆盖目标地址
-  override-destination: false
+  override-destination: true
 
   sniff:
     HTTP:
