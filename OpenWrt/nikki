@@ -32,7 +32,7 @@ config proxy 'proxy'
 	option tun_interval '1'
 
 config mixin 'mixin'
-	option log_level 'warning'
+	option log_level 'debug'
 	option mode 'rule'
 	option match_process 'off'
 	option ipv6 '0'

@@ -119,26 +119,10 @@ config log 'log'
 
 config mixin 'mixin'
 	option log_disabled '1'
-	option log_level 'info'
+	option log_level 'debug'
 	option log_timestamp '1'
 	option dns_reverse_mapping '1'
 	option external_control_ui_path 'ui'
 	option external_control_ui_download_url 'https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip'
 	option external_control_api_listen '0.0.0.0:9095'
-
-config subscription
-	option name 'UniversalVersion_1.16.x'
-	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/QWERT01234asdfg56789/download/collection/Sub%20Store?target=sing-box&file=https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Sing-Box/1.16.x/Sing-Box_UniversalVersion_1.16.x.json'
-	option user_agent 'sing-box'
-	option prefer 'remote'
-	option update '2026-10-09 21:21:52'
-	option success '1'
-
-config subscription
-	option name 'momo_1.16.x'
-	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/QWERT01234asdfg56789/download/collection/Sub%20Store?target=sing-box&file=https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Sing-Box/1.16.x/Sing-Box_momo_1.16.x.json'
-	option user_agent 'sing-box'
-	option prefer 'remote'
-	option update '2026-10-09 21:24:40'
-	option success '1'
 
