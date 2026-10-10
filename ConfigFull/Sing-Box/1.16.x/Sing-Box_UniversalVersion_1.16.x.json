@@ -117,13 +117,11 @@
 
       {"rule_set": "geosite-paypal", "outbound": "💰 PayPal"},
 
-      {"rule_set": ["geosite-github", "geosite-facebook", "geoip-facebook", "geosite-instagram",
-                    "geosite-twitter", "geoip-twitter", "geosite-telegram", "geoip-telegram" 
-                   ], "outbound": "📲 Social"},
+      {"rule_set": "geosite-category-social-media-!cn", "outbound": "📲 Social"},
 
       {"rule_set": "geosite-category-ai-chat-!cn", "outbound": "🤖 AI"},
 
-      {"rule_set": ["geosite-google-gemini", "geosite-youtube", "geosite-google", "geoip-google"], "outbound": "🍀 Google"},
+      {"rule_set": ["geosite-google", "geoip-google"], "outbound": "🍀 Google"},
       {"rule_set": "geosite-microsoft@cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
 
@@ -149,19 +147,15 @@
 
       { "tag": ["geosite-apple",
                 "geosite-paypal",
-                "geosite-github", "geosite-facebook", "geosite-instagram", "geosite-twitter", "geosite-telegram",
+                "geosite-category-social-media-!cn",
                 "geosite-category-ai-chat-!cn",
-                "geosite-google-gemini", "geosite-youtube", "geosite-google","geosite-microsoft@cn", "geosite-microsoft",
+                "geosite-google","geosite-microsoft@cn", "geosite-microsoft",
                 "geosite-tiktok", "geosite-netflix",
                 "geosite-geolocation-!cn",
                 "geosite-category-ads-all",
                 "geosite-private", "geosite-geolocation-cn", "geosite-cn"],
         "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs","update_interval": "24h"},
      
-      { "tag": "geoip-facebook", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/facebook.srs","update_interval": "24h"},
-      { "tag": "geoip-twitter", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/twitter.srs","update_interval": "24h"},
-      { "tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs","update_interval": "24h"},
-
       { "tag": "geoip-google", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs","update_interval": "24h"},
 
       { "tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs","update_interval": "24h"},
