@@ -78,7 +78,7 @@ profile:
 # =========================
 # 外部控制 / Zashboard
 # =========================
-external-controller: 0.0.0.0:9090
+external-controller: 0.0.0.0:9095
 secret: ""
 external-ui: "ui"
 external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
