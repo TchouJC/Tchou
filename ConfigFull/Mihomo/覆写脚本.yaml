@@ -182,6 +182,8 @@ rules:
   - AND,((NETWORK,UDP),(DST-PORT,500)),🎯 全球直连
   - AND,((NETWORK,UDP),(DST-PORT,4500)),🎯 全球直连
   - DOMAIN-SUFFIX,pub.3gppnetwork.org,🎯 全球直连
+   # QUIC
+  - AND,((RULE-SET,geolocation-!cn),(DST-PORT,443),(NETWORK,udp)),🛑 全球拦截  
    # 自定义
   - RULE-SET,CustomRuleSet_Proxy,🚀 节点选择
   - RULE-SET,CustomRuleSet_Direct,🎯 全球直连
