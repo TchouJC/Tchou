@@ -14,3 +14,5 @@ Loon_配置文件：
 https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Loon/Loon_ConfigFile.conf
 Shadowrocket_配置文件：
 https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Shadowrocket/Shadowrocket_ConfigFile.conf
+Mihomo覆写脚本：
+https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Mihomo/%E8%A6%86%E5%86%99%E8%84%9A%E6%9C%AC.yaml
