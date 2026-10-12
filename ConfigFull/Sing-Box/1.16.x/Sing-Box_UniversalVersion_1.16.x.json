@@ -48,7 +48,8 @@
   ],
   "http_clients": [
     {
-      "tag": "rule_download"
+      "tag": "rule_download",
+      "detour": "🚀 节点选择"
     }
   ],  
   "inbounds": [
