@@ -46,30 +46,6 @@ rule-anchor:
   ss: &ss {type: select, proxies: [♻️ 新加坡智能, 🚀 节点选择]}
   su: &su {type: select, proxies: [♻️ 美国智能, 🚀 节点选择]}  
 
-proxy-providers:
-  STC-SPADES:
-    <<: *dycs
-    url: "https://jdddf.stc-spare2.com/link/BhQWRofo6MLCRTny?sub=3"
-
-  Yue.to | 悦通:
-    <<: *dycs
-    url: "https://sso.yuetoto.com/api/v2/avatar/7cbe398712e5a087b8ffeb61f446e49d"
-
-  阿伟云:
-    <<: *dycs
-    url: "https://43.132.225.172:5000/api/v1/client/subscribe?token=97a28717e51dd54ce6cd7bc14b180b50&flag=clash"
-
-  Mitec:
-    <<: *dycs
-    url: "https://app.mitce.net/?sid=939735&token=srvfqobj"
-
-  FG🐶:
-    <<: *dycs
-    url: "https://dy5-8.fgqoq.online/lagg/612edc7f5e8971c2a6be4aa1bf682856"
-
-  星链机场:
-    <<: *dycs
-    url: "https://starlink.aliyundeepsearch.sbs/s/f28a5f8c8c4bcd7f8787ab21fb8365cc"
     
 # =========================
 # 基础代理
