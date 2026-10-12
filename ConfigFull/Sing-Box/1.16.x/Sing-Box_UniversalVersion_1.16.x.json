@@ -48,8 +48,7 @@
   ],
   "http_clients": [
     {
-      "tag": "rule_download",
-      "detour": "🎯 全球直连"
+      "tag": "rule_download"
     }
   ],  
   "inbounds": [
