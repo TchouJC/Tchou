@@ -46,7 +46,6 @@ rule-anchor:
   ss: &ss {type: select, proxies: [♻️ 新加坡智能, 🚀 节点选择]}
   su: &su {type: select, proxies: [♻️ 美国智能, 🚀 节点选择]}  
 
-    
 # =========================
 # 基础代理
 # =========================
