@@ -156,10 +156,10 @@ sniffer:
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [♻️ 全球自动, ♻️ 台湾自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, 🔯 台湾故转, ⚖️ 台湾均衡, 🚀 全球手动, 🎯 全球直连, 🛑 全球拦截], icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Flight.png}
   - {name: 🐟 漏网之鱼, <<: *cl, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Fish_b.png}
-  - {name: 🍎 Apple, <<: *sh, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Apple_rainbow.png}
+  - {name: 🍎 Apple, <<: *su, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Apple_rainbow.png}
   - {name: 💶 PayPal, <<: *st, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/PayPal_business.png}
   - {name: 📲 Social, <<: *sh, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Telegram.png}
-  - {name: 🤖 AI, <<: *st, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/ChatGPT.png}
+  - {name: 🤖 AI, <<: *su, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/ChatGPT.png}
   - {name: 🍀 Google, <<: *ss, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Google.png}
   - {name: 🪟 Microsoft, <<: *sh, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/Microsoft.png}
   - {name: 🎵 TikTok, <<: *ss, icon: https://gh-proxy.com/https://raw.githubusercontent.com/Vbaethon/HOMOMIX/main/Icon/Color/Large/TikTok.png}
