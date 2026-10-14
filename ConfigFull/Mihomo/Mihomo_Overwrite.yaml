@@ -208,7 +208,7 @@ rules:
    # AI智能
   - RULE-SET,category-ai-!cn_domain,🤖 AI
    # Goole / Microsoft 服务
-  - RULE-SET,gemini_domain,🍀 Google
+#  - RULE-SET,gemini_domain,🍀 Google
   - RULE-SET,youtube_domain,🍀 Google
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,google_ip,🍀 Google,no-resolve
@@ -256,7 +256,7 @@ rule-providers:
    # AI智能
   category-ai-!cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
    # Goole / Microsoft 服务
-  gemini_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.mrs"}
+  # gemini_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.mrs"}
   youtube_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   google_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
