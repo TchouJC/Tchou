@@ -208,10 +208,10 @@ rules:
   - RULE-SET,telegram_domain,📲 Social
   - RULE-SET,telegram_ip,📲 Social,no-resolve
   - RULE-SET,facebook_domain,📲 Social
-  - RULE-SET,facebook_ip,📲 Social,no-resolve
+#  - RULE-SET,facebook_ip,📲 Social,no-resolve
   - RULE-SET,instagram_domain,📲 Social
   - RULE-SET,twitter_domain,📲 Social
-  - RULE-SET,twitter_ip,📲 Social,no-resolve
+#  - RULE-SET,twitter_ip,📲 Social,no-resolve
    # AI智能
   - RULE-SET,category-ai-!cn_domain,🤖 AI
    # Goole / Microsoft 服务
@@ -256,10 +256,10 @@ rule-providers:
   telegram_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
   telegram_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   facebook_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/facebook.mrs"}
-  facebook_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.mrs"}
+  # facebook_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.mrs"}
   instagram_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/instagram.mrs"}
   twitter_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs"}
-  twitter_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs"}
+  # twitter_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs"}
    # AI智能
   category-ai-!cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
    # Goole / Microsoft 服务
