@@ -49,7 +49,7 @@
   "http_clients": [
     {
       "tag": "rule_download",
-      "detour": "🚀 节点选择"
+      "detour": "🎯 全球直连"
     }
   ],  
 "inbounds": [
