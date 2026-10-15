@@ -41,14 +41,14 @@
         "enabled": true,
         "path": "dashboard",
         "download_url": "https://gh-proxy.com/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip",
-        "http_client": "🚀 节点选择",
+        "http_client": "rule_download",
         "update_interval": "1d"
       }
     }
   ],
   "http_clients": [
     {
-      "tag": "🚀 节点选择",
+      "tag": "rule_download",
       "detour": "🚀 节点选择"
     }
   ],
@@ -168,7 +168,7 @@
     "auto_detect_interface": true,
     "find_process": true,
     "final": "🐟 漏网之鱼",
-    "default_http_client": "🚀 节点选择",
+    "default_http_client": "rule_download",
     "default_domain_resolver": "Local-DNS"
   },
 "dns": {
