@@ -194,10 +194,6 @@ rules:
    # 自定义
   - RULE-SET,CustomRuleSet_Proxy,🚀 节点选择
   - RULE-SET,CustomRuleSet_Direct,🎯 全球直连
-   # 下载
-  - RULE-SET,Download_domain,🎯 全球直连
-   # LAN
-  - RULE-SET,Lan_domain,🎯 全球直连
    # Apple
   - RULE-SET,apple@cn_domain,🎯 全球直连
   - RULE-SET,apple_domain,🍎 Apple
@@ -215,7 +211,7 @@ rules:
    # AI智能
   - RULE-SET,category-ai-!cn_domain,🤖 AI
    # Goole / Microsoft 服务
-#  - RULE-SET,gemini_domain,🍀 Google
+  - RULE-SET,gemini_domain,🍀 Google
   - RULE-SET,youtube_domain,🍀 Google
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,google_ip,🍀 Google,no-resolve
@@ -229,6 +225,10 @@ rules:
   - RULE-SET,geolocation-!cn,🚀 节点选择
    # 广告拦截
   - RULE-SET,category-ads-all,🛑 全球拦截
+   # 下载
+  - RULE-SET,Download_domain,🎯 全球直连
+   # LAN
+  - RULE-SET,Lan_domain,🎯 全球直连
    # 私网
   - RULE-SET,private_domain,🎯 全球直连
   - RULE-SET,private_ip,🎯 全球直连,no-resolve
@@ -256,14 +256,14 @@ rule-providers:
   telegram_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
   telegram_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   facebook_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/facebook.mrs"}
-  # facebook_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.mrs"}
+  facebook_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.mrs"}
   instagram_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/instagram.mrs"}
   twitter_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs"}
-  # twitter_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs"}
+  twitter_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs"}
    # AI智能
   category-ai-!cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
    # Goole / Microsoft 服务
-  # gemini_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.mrs"}
+  gemini_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.mrs"}
   youtube_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   google_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
