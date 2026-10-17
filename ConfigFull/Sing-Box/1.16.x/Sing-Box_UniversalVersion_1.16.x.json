@@ -103,7 +103,7 @@
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
 
-      {"action": "sniff","inbound": "tun-in","sniffer": ["tls","quic","stun","http","dns","bittorrent","dtls","ssh","rdp","ntp"]},
+      {"action": "sniff","inbound": "tun-in","sniffer": ["tls","quic","stun","http","dns","bittorrent","dtls","ssh","rdp","ntp"],"timeout": "300ms"},
       {"action": "hijack-dns","protocol": "dns"},
 
       {"action": "route","clash_mode": "direct","outbound": "🎯 全球直连"},
