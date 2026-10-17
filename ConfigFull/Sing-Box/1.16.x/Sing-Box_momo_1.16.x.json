@@ -209,6 +209,6 @@
     ],
     "final": "Remote-DNS",
     "strategy": "ipv4_only",
-    "optimistic": {"enabled": true,"timeout": "3d"}
+    "optimistic": {"enabled": true,"timeout": "3h"}
   }
 }
