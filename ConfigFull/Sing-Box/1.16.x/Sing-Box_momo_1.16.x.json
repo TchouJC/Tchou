@@ -207,8 +207,10 @@
       {"action": "route","type": "logical","mode": "and","rules": [{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"invert": true},{"query_type": ["A","AAAA"]}],"server": "Fake-IP"},
       {"action": "route","rule_set": ["geosite-geolocation-!cn"],"server": "Remote-DNS"}
     ],
-    "optimistic": {"enabled": false,"timeout": "3d"},
     "final": "Remote-DNS",
-    "strategy": "ipv4_only"
+    "strategy": "ipv4_only",
+    "cache_capacity": 8192,
+    "optimistic": {"enabled": true,"timeout": "3d"},    
+    "reverse_mapping": true
   }
 }
