@@ -67,7 +67,8 @@
       "tag": "tun-in",
       "interface_name": "Tun",
       "address": [
-        "172.18.0.1/30"
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
       ],
       "mtu": 9000,
       "auto_route": true,
@@ -99,12 +100,12 @@
     ],   
   "route": {
     "rules": [
+      {"action": "sniff","inbound": "tun-in"},      
+      {"action": "hijack-dns","protocol": "dns"},
+      
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
-
-      {"action": "sniff","inbound": "tun-in"},      
-      {"action": "hijack-dns","protocol": "dns"},
 
       {"action": "route","clash_mode": "direct","outbound": "🎯 全球直连"},
       {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
