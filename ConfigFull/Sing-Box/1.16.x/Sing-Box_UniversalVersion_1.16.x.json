@@ -100,7 +100,8 @@
     ],   
   "route": {
     "rules": [
-      {"action": "sniff","inbound": "tun-in"},      
+      {"action": "sniff","inbound": ["tun-in"],"timeout": "300ms"},
+      {"action": "route-options","sniff_override_destination": true },
       {"action": "hijack-dns","protocol": "dns"},
       
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
