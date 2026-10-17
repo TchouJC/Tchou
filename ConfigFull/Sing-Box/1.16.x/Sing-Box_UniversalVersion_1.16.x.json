@@ -67,9 +67,8 @@
       "tag": "tun-in",
       "interface_name": "Tun",
       "address": [
-        "172.18.0.1/30",
-        "fdfe:dcba:9876::1/126"
-      ],      
+        "172.18.0.1/30"
+      ],     
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
@@ -172,7 +171,7 @@
   },
 "dns": {
     "servers": [
-      {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"},
+      {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15"},
       {"tag": "Local-DNS","type": "https","domain_resolver": "Local-DNS-Resolver","server_port": 443,"server": "223.5.5.5","path": "/dns-query"},
       {"tag": "Local-DNS-Resolver","type": "udp","server_port": 53,"server": "223.5.5.5"},
       {"tag": "Remote-DNS","type": "tls","detour": "🚀 节点选择","domain_resolver": "Remote-DNS-Resolver","server_port": 853,"server": "8.8.8.8"},
