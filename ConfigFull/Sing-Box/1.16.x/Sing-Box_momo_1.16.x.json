@@ -154,7 +154,6 @@
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
       {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"},
-      {"ip_is_private": true,"action": "route","outbound": "🎯 全球直连"}
     ],
     "rule_set": [
       { "tag": ["CustomRuleSet_Direct", "CustomRuleSet_Proxy"], 
@@ -206,7 +205,7 @@
     ],
     "disable_cache": false,
     "disable_expire": false,
-    "optimistic": {"enabled": true,"timeout": "3d"},
+    "optimistic": {"enabled": false,"timeout": "3d"},
     "final": "Remote-DNS",
     "strategy": "ipv4_only"
   }

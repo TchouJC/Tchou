@@ -108,7 +108,6 @@
       {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
       {"action": "route","network": "icmp","outbound": "🎯 全球直连"},
       {"action": "route","protocol": "quic","outbound": "🛑 全球拦截"},
-      
 
       {"rule_set": "CustomRuleSet_Proxy","outbound": "🚀 节点选择"},
       {"rule_set": "CustomRuleSet_Direct","outbound": "🎯 全球直连"},
@@ -187,7 +186,7 @@
     ],
     "disable_cache": false,
     "disable_expire": false,
-    "optimistic": {"enabled": true,"timeout": "3d"},
+    "optimistic": {"enabled": false,"timeout": "3d"},
     "final": "Remote-DNS",
     "strategy": "ipv4_only"
   }
