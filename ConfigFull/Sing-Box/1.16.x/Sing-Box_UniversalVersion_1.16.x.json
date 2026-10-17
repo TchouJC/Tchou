@@ -105,7 +105,7 @@
       {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
       {"action": "route","network": "icmp","outbound": "🎯 全球直连"},
       {"action": "route","protocol": "quic","outbound": "🛑 全球拦截"},
-      
+
       {"rule_set": "CustomRuleSet_Proxy","outbound": "🚀 节点选择"},
       {"rule_set": "CustomRuleSet_Direct","outbound": "🎯 全球直连"},
 
@@ -135,8 +135,6 @@
       {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"}
     ],
     "rule_set": [
-      { "tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"},
-
       { "tag": ["CustomRuleSet_Direct", "CustomRuleSet_Proxy"], 
         "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Sing-Box/{tag}.json","update_interval": "24h"},
 
