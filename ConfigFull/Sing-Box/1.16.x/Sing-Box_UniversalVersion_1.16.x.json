@@ -98,7 +98,7 @@
     ],   
   "route": {
     "rules": [
-      {"action": "sniff","inbound": "tun-in","sniffer": ["http", "tls", "stun", "quic", "dns"], "timeout": "100ms" },
+      {"action": "sniff","inbound": "tun-in", "timeout": "100ms"},
       {"action": "hijack-dns","protocol": "dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
 
