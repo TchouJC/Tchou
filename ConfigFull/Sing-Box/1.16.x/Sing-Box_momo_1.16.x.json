@@ -153,7 +153,7 @@
 
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
-      {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"},
+      {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"}
     ],
     "rule_set": [
       { "tag": ["CustomRuleSet_Direct", "CustomRuleSet_Proxy"], 
