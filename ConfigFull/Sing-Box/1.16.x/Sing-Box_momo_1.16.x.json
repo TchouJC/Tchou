@@ -119,12 +119,13 @@
     ],   
   "route": {
     "rules": [
+      {"action": "sniff","inbound": ["redirect-in","tun-in","http-in","socks-in","tproxy-in"] },
+      {"inbound": "dns-in", "action": "hijack-dns"},
+      
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
 
-      {"inbound": "dns-in", "action": "hijack-dns"},
-      {"action": "sniff","inbound": ["redirect-in","tun-in","http-in","socks-in","tproxy-in"] },
       
       {"action": "route","clash_mode": "direct","outbound": "🎯 全球直连"},
       {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
