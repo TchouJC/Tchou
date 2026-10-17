@@ -54,26 +54,20 @@
   ],
   "inbounds": [
     {
-      "type": "mixed",
       "tag": "mixed-in",
+      "type": "mixed",
       "listen": "0.0.0.0",
-      "listen_port": 7890,
-      "tcp_fast_open": true,
-      "tcp_multi_path": true,
-      "udp_fragment": true
+      "listen_port": 7890
     },
     {
       "type": "tun",
       "tag": "tun-in",
-      "interface_name": "Tun",
       "address": [
-        "172.19.0.0/30",
-        "fdfe:dcba:9876::0/126"
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
       ],
-      "mtu": 9000,
       "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true
+      "auto_redirect": true      
     }
   ],
   "outbounds": [
@@ -94,25 +88,21 @@
       { "tag": "🔯 日本自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["Japan|JP|日本|东京|Tokyo"] }], "url": "https://www.gstatic.com/generate_204", "interval": "15m", "tolerance": 50 },
       { "tag": "🔯 新加坡自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["新加坡|狮城|SG|Singapore"] }], "url": "https://www.gstatic.com/generate_204", "interval": "15m", "tolerance": 50 },
       { "tag": "🔯 美国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["USA|United States|美国|洛杉矶|Los Angeles|New York"] }], "url": "https://www.gstatic.com/generate_204", "interval": "15m", "tolerance": 50 },           
-      { "tag": "🎯 全球直连", "type": "direct", "domain_resolver": "ali" },
+      { "tag": "🎯 全球直连", "type": "direct", "domain_resolver": "Local-DNS" },
       { "tag": "🛑 全球拦截", "type": "block" },
       { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["订阅|官网|流量|到期|过期|故障|失效|维护|暂停|测试|备用|客服|群|购买|套餐|续费|通知"] }]}
     ],   
   "route": {
     "rules": [
-      {"type": "logical", "mode": "and", "rules": [{"port": [53, 853], "invert": true}, {"clash_mode": "global", "invert": true}, {"type": "logical", "mode": "or", "rules": [{"ip_is_private": true}, {"rule_set": "geoip-cn"}]}], "action": "bypass"},
-      {"type": "logical", "mode": "or", "rules": [{"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "stun", "quic", "dns"], "timeout": "100ms"},
-      {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
-      {"ip_is_private": true, "outbound": "🎯 全球直连"},
-      {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": ["stun", "quic"]}], "action": "reject", "no_drop": true},
-      {"network": "icmp", "action": "resolve"},
-      {"network": "icmp", "outbound": "🎯 全球直连"},
-      {"action": "route","clash_mode": "direct","outbound": "🎯 全球直连"},
-      {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
+      {"action": "sniff","inbound": "tun-in","sniffer": ["quic","http","tls"]},
+      {"action": "hijack-dns","protocol": "dns"},
 
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
+
+      {"action": "route","clash_mode": "direct","outbound": "🎯 全球直连"},
+      {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
 
       {"rule_set": "CustomRuleSet_Proxy","outbound": "🚀 节点选择"},
       {"rule_set": "CustomRuleSet_Direct","outbound": "🎯 全球直连"},
@@ -140,12 +130,10 @@
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
 
-      {"inbound": "mixed-in", "action": "resolve"},
-
       {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"}
     ],
     "rule_set": [
-      {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"},
+      { "tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"},
 
       { "tag": ["CustomRuleSet_Direct", "CustomRuleSet_Proxy"], 
         "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Sing-Box/{tag}.json","update_interval": "24h"},
@@ -174,32 +162,26 @@
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs","update_interval": "24h"}
     ],
     "auto_detect_interface": true,
-    "find_process": true,
     "final": "🐟 漏网之鱼",
     "default_http_client": "rule_download",
-    "default_domain_resolver": "ali"
+    "default_domain_resolver": "Local-DNS"
   },
 "dns": {
     "servers": [
-      {"tag": "local", "type": "local", "prefer_go": true},
-      {"tag": "ali", "type": "https", "server": "223.5.5.5"},
-      {"tag": "tx", "type": "https", "server": "doh.pub", "domain_resolver": "hosts"},
-      {"tag": "google", "type": "https", "server": "8.8.8.8", "detour": "🚀 节点选择"},
-      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.19.0.0/16"},
-      {"type": "hosts", "tag": "hosts", "predefined": {"doh.pub": ["1.12.12.21", "120.53.53.53"]}}
+      {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"},
+      {"tag": "Local-DNS","type": "https","domain_resolver": "Local-DNS-Resolver","server_port": 443,"server": "223.5.5.5","path": "/dns-query"},
+      {"tag": "Local-DNS-Resolver","type": "udp","server_port": 53,"server": "223.5.5.5"},
+      {"tag": "Remote-DNS","type": "tls","detour": "🚀 节点选择","domain_resolver": "Remote-DNS-Resolver","server_port": 853,"server": "8.8.8.8"},
+      {"tag": "Remote-DNS-Resolver","type": "udp","detour": "🚀 节点选择","server_port": 53,"server": "8.8.8.8"}
     ],
-
     "rules": [
-      {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
-      {"clash_mode": "direct", "server": "ali"},
-      {"clash_mode": "global", "server": "fakeip"},
-      {"rule_set": ["fakeipfilter-cn", "geosite-cn", "geosite-microsoft@cn", "apple-cn", "geosite-private"], "server": "ali"},
-      {"rule_set": "fakeipfilter-!cn", "server": "google"},
-      {"type": "logical", "mode": "and", "rules": [{"query_type": ["A", "AAAA"]}, {"rule_set": "geosite-geolocation-!cn", "invert": true}], "action": "evaluate", "server": "google", "client_subnet": "223.5.5.0/24","timeout": "2s"},
-      {"match_response": true, "rule_set": "geoip-cn", "server": "ali"},
-      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
+      {"action": "route","clash_mode": "direct","server": "Local-DNS"},
+      {"action": "route","clash_mode": "global","server": "Remote-DNS"},
+      {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
+      {"action": "route","type": "logical","mode": "and","rules": [{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"invert": true},{"query_type": ["A","AAAA"]}],"server": "Fake-IP"},
+      {"action": "route","rule_set": ["geosite-geolocation-!cn"],"server": "Remote-DNS"}
     ],
-    "final": "google",
+    "final": "Remote-DNS",
     "strategy": "ipv4_only", 
     "cache_capacity": 8192,
     "optimistic": {"enabled": true},
