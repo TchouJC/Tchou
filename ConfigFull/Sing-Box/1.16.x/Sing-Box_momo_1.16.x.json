@@ -119,11 +119,11 @@
     ],   
   "route": {
     "rules": [
-      {"inbound": "dns-in", "action": "hijack-dns"},
       {"action": "sniff","inbound": 
       ["redirect-in","tun-in","http-in","socks-in","tproxy-in"], 
       "timeout": "100ms"
       },
+      {"inbound": "dns-in", "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
 
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
