@@ -67,9 +67,8 @@
       "tag": "tun-in",
       "interface_name": "Tun",
       "address": [
-        "172.18.0.1/30",
-        "fdfe:dcba:9876::1/126"
-      ],      
+        "172.18.0.1/30"
+      ],
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
@@ -103,18 +102,13 @@
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
       {"domain_suffix": "pub.3gppnetwork.org","outbound": "🎯 全球直连"},
-      {"type": "logical", "mode": "and", "rules": [{"port": [53, 853], "invert": true}, {"clash_mode": "global", "invert": true}, {"type": "logical", "mode": "or", "rules": [{"ip_is_private": true}, {"rule_set": "geoip-cn"}]}], "action": "bypass"},
-      
-      {"type": "logical", "mode": "or", "rules": [{"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "stun", "quic", "dns"], "timeout": "100ms"},
-      {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
-      {"ip_is_private": true,"action": "route","outbound": "🎯 全球直连"},
-      {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": ["stun", "quic"]}], "action": "reject", "no_drop": true},
-
-      {"network": "icmp", "action": "resolve"},
-      {"network": "icmp", "outbound": "🎯 全球直连"},      
-
+      {"action": "sniff","inbound": "tun-in"},
+      {"action": "hijack-dns","protocol": "dns"},
       {"action": "route","clash_mode": "direct","outbound": "🎯 全球直连"},
       {"action": "route","clash_mode": "global","outbound": "GLOBAL"},
+      {"action": "route","network": "icmp","outbound": "🎯 全球直连"},
+      {"action": "route","protocol": "quic","outbound": "🛑 全球拦截"},
+      
 
       {"rule_set": "CustomRuleSet_Proxy","outbound": "🚀 节点选择"},
       {"rule_set": "CustomRuleSet_Direct","outbound": "🎯 全球直连"},
@@ -141,9 +135,6 @@
 
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
-
-      {"inbound": "mixed-in", "action": "resolve"},
-
       {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"}
     ],
     "rule_set": [
@@ -181,7 +172,7 @@
   },
 "dns": {
     "servers": [
-      {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15"},
+      {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"},
       {"tag": "Local-DNS","type": "https","domain_resolver": "Local-DNS-Resolver","server_port": 443,"server": "223.5.5.5","path": "/dns-query"},
       {"tag": "Local-DNS-Resolver","type": "udp","server_port": 53,"server": "223.5.5.5"},
       {"tag": "Remote-DNS","type": "tls","detour": "🚀 节点选择","domain_resolver": "Remote-DNS-Resolver","server_port": 853,"server": "8.8.8.8"},
