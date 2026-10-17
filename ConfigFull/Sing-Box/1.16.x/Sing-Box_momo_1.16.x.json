@@ -88,7 +88,7 @@
       "type": "tun",
       "interface_name": "momo",
       "address": [
-        "172.19.0.1/30",
+        "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": false,
@@ -119,7 +119,7 @@
     ],   
   "route": {
     "rules": [
-      {"action": "sniff","inbound": ["redirect-in","tun-in","http-in","socks-in","tproxy-in"], "timeout": "100ms" },
+      {"action": "sniff","inbound": ["redirect-in","tun-in","http-in","socks-in","tproxy-in"], "timeout": "100ms"},
       {"inbound": "dns-in", "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
 
