@@ -54,29 +54,21 @@
     {
       "tag": "mixed-in",
       "type": "mixed",
-      "listen": "0.0.0.0",
-      "listen_port": 7890,
-      "tcp_fast_open": true,      
-      "tcp_multi_path": true,
-      "udp_fragment": true    
+      "listen": "127.0.0.1",
+      "listen_port": 7890
     },
     {
-      "tag": "tun-in",
       "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "singbox",
       "address": [
-        "172.19.0.0/30",
-        "fdfe:dcba:9876::0/126"
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
       ],
+      "mtu": 1500,
       "auto_route": true,
       "strict_route": true,
-      "endpoint_independent_nat": true,
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "0.0.0.0",
-          "server_port": 7890
-        }
-      }      
+      "endpoint_independent_nat": true
     }
   ],
   "outbounds": [
@@ -103,7 +95,10 @@
     ],   
   "route": {
     "rules": [
-      {"action": "sniff","inbound": "tun-in","timeout": "300ms"},
+      {"action": "sniff", "inbound": "tun-in",
+      "sniffer": ["http","tls","quic","stun","dns","bittorrent","dtls","ssh","rdp","ntp"],
+      "timeout": "100ms"
+      },
       {"action": "hijack-dns","protocol": "dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
 
