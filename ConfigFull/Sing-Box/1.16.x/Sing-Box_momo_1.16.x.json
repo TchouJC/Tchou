@@ -117,10 +117,7 @@
     ],   
   "route": {
     "rules": [
-      {"action": "sniff","inbound": 
-      ["redirect-in","tun-in","http-in","socks-in","tproxy-in"], 
-      "timeout": "300ms"
-      },
+      {"action": "sniff"},
       {"inbound": "dns-in", "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
 
