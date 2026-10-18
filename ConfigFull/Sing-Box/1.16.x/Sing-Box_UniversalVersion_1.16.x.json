@@ -97,7 +97,7 @@
     "rules": [
       {"action": "sniff", "inbound": "tun-in",
       "sniffer": ["http","tls","quic","stun","dns","bittorrent","dtls","ssh","rdp","ntp"],
-      "timeout": "100ms"
+      "timeout": "300ms"
       },
       {"action": "hijack-dns","protocol": "dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
