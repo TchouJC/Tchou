@@ -1,9 +1,7 @@
 {
   "$schema": "https://sing-box.sagernet.org/schema.json",  
   "log": {
-    "disabled": false,
     "level": "info",
-    "output": "",
     "timestamp": true
   },
   "ntp": {
@@ -54,26 +52,28 @@
   ],
   "inbounds": [
     {
-      "type": "mixed",
       "tag": "mixed-in",
-      "listen": "0.0.0.0",
-      "listen_port": 7890,
-      "tcp_fast_open": true,
-      "tcp_multi_path": true,
-      "udp_fragment": true
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
     },
     {
-      "type": "tun",
       "tag": "tun-in",
-      "interface_name": "Imm",
+      "type": "tun",
       "address": [
-        "172.18.0.1/30",
-        "fdfe:dcba:9876::1/126"
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
       ],
-      "mtu": 9000,
+      "stack": "system",
       "auto_route": true,
       "strict_route": true,
-      "endpoint_independent_nat": true
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
+        }
+      }      
     }
   ],
   "outbounds": [

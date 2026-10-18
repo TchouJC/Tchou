@@ -1,9 +1,7 @@
 {
   "$schema": "https://sing-box.sagernet.org/schema.json",  
   "log": {
-    "disabled": false,
     "level": "info",
-    "output": "",
     "timestamp": true
   },
   "ntp": {
