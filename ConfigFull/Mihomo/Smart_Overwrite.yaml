@@ -92,7 +92,7 @@ lgbm-url: "https://gh-proxy.com/https://github.com/vernesong/mihomo/releases/dow
 
 tun:
   enable: true
-  stack: mixed
+  stack: Mips
   dns-hijack: ["any:53", "tcp://any:53"]
   auto-route: true
   auto-redirect: true
