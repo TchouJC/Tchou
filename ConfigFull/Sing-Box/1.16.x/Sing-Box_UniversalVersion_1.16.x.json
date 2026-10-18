@@ -65,7 +65,7 @@
     {
       "type": "tun",
       "tag": "tun-in",
-      "interface_name": "Imm",
+      "interface_name": "Tun",
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
