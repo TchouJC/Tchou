@@ -139,8 +139,8 @@
       {"rule_set": "geosite-category-ads-all","action": "reject"},
 
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
-      {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"}
-
+      {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
+      {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"}
     ],
     "rule_set": [
       { "tag": ["CustomRuleSet_Direct", "CustomRuleSet_Proxy"], 
@@ -186,6 +186,7 @@
     "rules": [
       {"action": "route","clash_mode": "direct","server": "Local-DNS"},
       {"action": "route","clash_mode": "global","server": "Remote-DNS"},
+      {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
       {"action": "route","type": "logical","mode": "and","rules": [{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"invert": true},{"query_type": ["A","AAAA"]}],"server": "Fake-IP"},
       {"action": "route","rule_set": ["geosite-geolocation-!cn"],"server": "Remote-DNS"}
     ],
