@@ -52,12 +52,6 @@
   ],
   "inbounds": [
     {
-      "tag": "mixed-in",
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 7890
-    }, 
-    {
       "type": "tun",
       "tag": "tun-in",
       "interface_name": "singbox",
@@ -67,7 +61,20 @@
       ],
       "mtu": 1500,
       "auto_route": true,
+<<<<<<< HEAD
       "strict_route": true
+=======
+      "auto_redirect": false,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "platform": {"http_proxy": {"enabled": true,"server": "127.0.0.1","server_port": 7890}}
+    },    
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+>>>>>>> 8a1f25b5ef3770541cd15bc7c71e41547270d004
     }
   ],
   "outbounds": [
@@ -176,8 +183,8 @@
       {"action": "route","clash_mode": "direct","server": "Local-DNS"},
       {"action": "route","clash_mode": "global","server": "Remote-DNS"},
       {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
-      {"action": "route","type": "logical","mode": "and","rules": [{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"invert": true},{"query_type": ["A","AAAA"]}],"server": "Fake-IP"}
-    ],
+      {"action": "route","type": "logical","mode": "and","rules":[{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com",".pub.3gppnetwork.org"],"invert": true},{"query_type": ["A", "AAAA"]}],"server": "Fake-IP"}
+  ],
     "final": "Remote-DNS",
     "strategy": "ipv4_only",
     "optimistic": {"enabled": true}
