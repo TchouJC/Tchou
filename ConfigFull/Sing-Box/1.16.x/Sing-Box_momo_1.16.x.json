@@ -72,7 +72,7 @@
     {
       "tag": "mixed-in",
       "type": "mixed",
-      "listen": "127.0.0.1",
+      "listen": "::",
       "listen_port": 7890
     },
     {
