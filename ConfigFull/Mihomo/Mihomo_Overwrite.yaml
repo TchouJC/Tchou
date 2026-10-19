@@ -59,7 +59,7 @@ unified-delay: true
 tcp-concurrent: true
 
 # 日志
-log-level: warning
+log-level: info
 
 # TCP KeepAlive
 keep-alive-idle: 600
@@ -85,7 +85,7 @@ external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/ar
 
 tun:
   enable: true
-  stack: Mips
+  stack: mips
   dns-hijack: ["any:53", "tcp://any:53"]
   auto-route: true
   auto-redirect: true
