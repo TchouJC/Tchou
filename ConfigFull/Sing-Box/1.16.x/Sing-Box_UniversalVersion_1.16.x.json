@@ -4,6 +4,12 @@
     "level": "info",
     "timestamp": true
   },
+  "ntp": {
+    "enabled": true,
+    "server": "time.apple.com",
+    "server_port": 123,
+    "detour": "🎯 全球直连"
+  },
   "experimental": {
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
@@ -111,35 +117,24 @@
 
       {"rule_set": "geosite-paypal", "outbound": "💰 PayPal"},
 
-      {"rule_set": "geosite-github", "outbound": "📲 Social"},
-      {"rule_set": "geosite-telegram", "outbound": "📲 Social"},
-      {"rule_set": "geoip-telegram", "outbound": "📲 Social"},
-      {"rule_set": "geosite-facebook", "outbound": "📲 Social"},
-      {"rule_set": "geosite-instagram", "outbound": "📲 Social"},
-      {"rule_set": "geosite-twitter", "outbound": "📲 Social"},
+      {"rule_set": ["geosite-github", "geosite-telegram", "geoip-telegram", "geosite-facebook", "geosite-instagram", "geosite-twitter" ],  "outbound": "📲 Social"},
 
       {"rule_set": "geosite-category-ai-chat-!cn", "outbound": "🤖 AI"},
 
-      {"rule_set": "geosite-google-gemini", "outbound": "🍀 Google"},
-      {"rule_set": "geosite-youtube", "outbound": "🍀 Google"},
-      {"rule_set": "geosite-google", "outbound": "🍀 Google"},
-      {"rule_set": "geoip-google", "outbound": "🍀 Google"},
+      {"rule_set": ["geosite-google-gemini", "geosite-youtube","geosite-google", "geoip-google"], "outbound": "🍀 Google"},
       {"rule_set": "geosite-microsoft@cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
 
       {"rule_set": "geosite-tiktok", "outbound": "🎵 TikTok"},
-      {"rule_set": "geosite-netflix", "outbound": "🎥 Netflix"},
-      {"rule_set": "geoip-netflix", "outbound": "🎥 Netflix"},
+      {"rule_set": ["geosite-netflix", "geoip-netflix"], "outbound": "🎥 Netflix"},
 
       {"rule_set": "geosite-geolocation-!cn","outbound": "🚀 节点选择"},
 
       {"rule_set": "geosite-category-ads-all","action": "reject"},
 
-      {"rule_set": "geosite-private", "outbound": "🎯 全球直连"},
-      {"rule_set": "geoip-private", "outbound": "🎯 全球直连"},
+      {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
-      {"rule_set": "geosite-cn","outbound": "🎯 全球直连"},
-      {"rule_set": "geoip-cn","outbound": "🎯 全球直连"}
+      {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"}
     ],
     "rule_set": [
       { "tag": ["CustomRuleSet_Direct", "CustomRuleSet_Proxy"], 
