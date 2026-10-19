@@ -116,6 +116,7 @@
       {"action": "sniff"},
       {"action": "hijack-dns","protocol": "dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
+      {"port": 443, "network": "udp", "outbound": "🚀 节点选择"},
 
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
