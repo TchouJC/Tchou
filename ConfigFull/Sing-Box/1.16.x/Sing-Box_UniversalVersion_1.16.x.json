@@ -55,26 +55,8 @@
       "tag": "mixed-in",
       "type": "mixed",
       "listen": "127.0.0.1",
-      "listen_port": 7897
-    },
-    {
-      "tag": "dns-in",
-      "type": "direct",
-      "listen": "::",
-      "listen_port": 1053
-    },
-    {
-      "tag": "redirect-in",
-      "type": "redirect",
-      "listen": "::",
       "listen_port": 7890
-    },
-    {
-      "tag": "tproxy-in",
-      "type": "tproxy",
-      "listen": "::",
-      "listen_port": 7891
-    },    
+    }, 
     {
       "type": "tun",
       "tag": "tun-in",
@@ -116,7 +98,6 @@
       {"action": "sniff"},
       {"action": "hijack-dns","protocol": "dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
-      {"port": 443, "network": "udp", "outbound": "🚀 节点选择"},
 
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
       {"port":[500,4500],"network":"udp","outbound": "🎯 全球直连"},
