@@ -52,36 +52,6 @@
   ],
   "inbounds": [
     {
-      "tag": "dns-in",
-      "type": "direct",
-      "listen": "127.0.0.1",
-      "listen_port": 1053
-    },
-    {
-      "tag": "http-in",
-      "type": "http",
-      "listen": "::",
-      "listen_port": 7891
-    },
-    {
-      "tag": "socks-in",
-      "type": "socks",
-      "listen": "127.0.0.1",
-      "listen_port": 7892
-    },
-    {
-      "tag": "redirect-in",
-      "type": "redirect",
-      "listen": "127.0.0.1",
-      "listen_port": 7893
-    },
-    {
-      "tag": "tproxy-in",
-      "type": "tproxy",
-      "listen": "127.0.0.1",
-      "listen_port": 7894
-    },    
-    {
       "tag": "mixed-in",
       "type": "mixed",
       "listen": "127.0.0.1",
