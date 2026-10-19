@@ -96,7 +96,9 @@
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-      "auto_redirect": true
+      "auto_redirect": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true
     }
   ],  
   "outbounds": [
