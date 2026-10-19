@@ -67,12 +67,10 @@
       ],
       "mtu": 1500,
       "auto_route": true,
-      "auto_redirect": false,
-      "strict_route": false,
+      "strict_route": true,
       "endpoint_independent_nat": true
     }
   ],
-  
   "outbounds": [
       { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["♻️ 全球自动", "🔯 台湾自动", "🔯 香港自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🐸 全球手动", "🎯 全球直连"],"default": "♻️ 全球自动","interrupt_exist_connections": false },
       { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择", "🔯 台湾自动", "🔯 香港自动", "🔯 日本自动", "🔯 新加坡自动", "🔯 美国自动", "🐸 全球手动", "♻️ 全球自动" ],"default": "🎯 全球直连","interrupt_exist_connections": false },
@@ -97,9 +95,8 @@
     ],   
   "route": {
     "rules": [
-      { "action": "sniff" },
-      { "action": "hijack-dns", "protocol": "dns" },
-      { "port": 53, "action": "hijack-dns" },
+      {"action": "sniff"},
+      {"action": "hijack-dns","protocol": "dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
 
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
@@ -173,15 +170,17 @@
 "dns": {
     "servers": [
       {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"},
-      {"tag": "Local-DNS","type": "https","server": "223.5.5.5","path": "/dns-query","detour": "🎯 全球直连"},
-      {"tag": "Remote-DNS","type": "https","server": "1.1.1.1","path": "/dns-query","detour": "🚀 节点选择"}
+      {"tag": "Local-DNS","type": "https","domain_resolver": "Local-DNS-Resolver","server_port": 443,"server": "223.5.5.5","path": "/dns-query"},
+      {"tag": "Local-DNS-Resolver","type": "udp","server_port": 53,"server": "223.5.5.5"},
+      {"tag": "Remote-DNS","type": "tls","detour": "🚀 节点选择","domain_resolver": "Remote-DNS-Resolver","server_port": 853,"server": "8.8.8.8"},
+      {"tag": "Remote-DNS-Resolver","type": "udp","detour": "🚀 节点选择","server_port": 53,"server": "8.8.8.8"}
     ],
     "rules": [
       {"action": "route","clash_mode": "direct","server": "Local-DNS"},
       {"action": "route","clash_mode": "global","server": "Remote-DNS"},
-      {"action": "route","domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"server": "Local-DNS"},
       {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
-      {"action": "route","query_type": ["A", "AAAA"],"server": "Fake-IP"}
+      {"action": "route","type": "logical","mode": "and","rules": [{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com"],"invert": true},{"query_type": ["A","AAAA"]}],"server": "Fake-IP"},
+      {"action": "route","rule_set": ["geosite-geolocation-!cn"],"server": "Remote-DNS"}
     ],
     "final": "Remote-DNS",
     "strategy": "ipv4_only",
