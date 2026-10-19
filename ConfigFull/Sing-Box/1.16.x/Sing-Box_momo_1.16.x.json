@@ -96,11 +96,7 @@
         "fdfe:dcba:9876::1/126"
       ],
       "auto_route": true,
-<<<<<<< HEAD
       "auto_redirect": true
-=======
-      "auto_redirect": false
->>>>>>> 8a1f25b5ef3770541cd15bc7c71e41547270d004
     }
   ],  
   "outbounds": [
