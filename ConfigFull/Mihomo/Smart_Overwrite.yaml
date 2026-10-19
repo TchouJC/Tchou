@@ -59,7 +59,7 @@ unified-delay: true
 tcp-concurrent: true
 
 # 日志
-log-level: debug
+log-level: info
 
 # TCP KeepAlive
 keep-alive-idle: 600
@@ -92,7 +92,7 @@ lgbm-url: "https://gh-proxy.com/https://github.com/vernesong/mihomo/releases/dow
 
 tun:
   enable: true
-  stack: Mips
+  stack: mips
   dns-hijack: ["any:53", "tcp://any:53"]
   auto-route: true
   auto-redirect: true
@@ -106,10 +106,16 @@ dns:
   fake-ip-range: 198.18.0.0/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "*"
-    - "+.lan"
-    - "+.local"
-    - "+.market.xiaomi.com"
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
     # Wi-Fi Calling / 3GPP / ePDG    
     - "+.pub.3gppnetwork.org"
 
