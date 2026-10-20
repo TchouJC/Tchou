@@ -196,7 +196,6 @@
       { "action": "route", "type": "logical", "mode": "and", "rules": [{ "domain_suffix": [".lan", ".localdomain", ".example", ".invalid", ".localhost", ".test", ".local", ".home.arpa", ".msftconnecttest.com", ".msftncsi.com", ".pub.3gppnetwork.org"], "invert": true },{ "query_type": ["A", "AAAA"] }], "server": "Fake-IP" }
     ],
     "final": "Remote-DNS",    
-    "client_subnet": "223.5.5.0/24",
     "strategy": "ipv4_only",
     "independent_cache": true,
     "reverse_mapping": true
