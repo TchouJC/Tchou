@@ -25,7 +25,7 @@
       "enabled": true,
       "path": "cache.db",
       "cache_id": "",
-      "store_fakeip": false,
+      "store_fakeip": true,
       "store_dns": true
     }
   },
@@ -130,6 +130,8 @@
 
       {"rule_set": "geosite-geolocation-!cn","outbound": "🚀 节点选择"},
 
+      {"rule_set": "geosite-category-ads-all","action": "reject"},
+
       {"rule_set": ["geosite-private", "geoip-private"], "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-geolocation-cn","outbound": "🎯 全球直连"},
       {"rule_set": ["geosite-cn", "geoip-cn"],"outbound": "🎯 全球直连"}
@@ -163,22 +165,24 @@
     ],
     "auto_detect_interface": true,
     "find_process": true,
-    "final": "🚀 节点选择",
+    "final": "🐟 漏网之鱼",
     "default_http_client": "🎯 全球直连",
     "default_domain_resolver": "Local-DNS"
   },
 "dns": {
     "servers": [
+      {"tag": "Fake-IP","type": "fakeip","inet4_range": "198.18.0.0/15","inet6_range": "fc00::/18"},
       {"tag": "Local-DNS","type": "https","server": "223.5.5.5","path": "/dns-query"},
       {"tag": "Remote-DNS","type": "tls","server": "8.8.8.8","detour": "🚀 节点选择"}
   ],
     "rules": [
       {"action": "route","clash_mode": "direct","server": "Local-DNS"},
       {"action": "route","clash_mode": "global","server": "Remote-DNS"},
-      {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"}
+      {"action": "route","rule_set": ["geosite-cn"],"server": "Local-DNS"},
+      {"action": "route","type": "logical","mode": "and","rules":[{"domain_suffix": [".lan",".localdomain",".example",".invalid",".localhost",".test",".local",".home.arpa",".msftconnecttest.com",".msftncsi.com",".pub.3gppnetwork.org"],"invert": true},{"query_type": ["A", "AAAA"]}],"server": "Fake-IP"}
   ],
     "final": "Remote-DNS",
-    "strategy": "prefer_ipv4",
-    "optimistic": {"enabled": false}
+    "strategy": "ipv4_only",
+    "optimistic": {"enabled": true}
   }
 }
