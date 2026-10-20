@@ -115,29 +115,32 @@
       { "rule_set": ["geosite-cn", "geoip-cn"], "outbound": "🎯 全球直连" }
     ],
     "rule_set": [
-      { "tag": ["CustomRuleSet_Direct", "CustomRuleSet_Proxy"],
-        "type": "remote", "format": "source", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Sing-Box/{tag}.json", "update_interval": "24h" },
-
-      { "tag": ["apple-cn"],
-        "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/{tag}.srs", "update_interval": "24h" },
-
-      { "tag": ["geosite-apple",
-                "geosite-paypal",
-                "geosite-github", "geosite-telegram", "geosite-facebook", "geosite-instagram", "geosite-twitter",
-                "geosite-category-ai-chat-!cn",
-                "geosite-google-gemini", "geosite-youtube", "geosite-google", "geosite-microsoft@cn", "geosite-microsoft",
-                "geosite-tiktok", "geosite-netflix",
-                "geosite-geolocation-!cn",
-                "geosite-category-ads-all",
-                "geosite-private", "geosite-geolocation-cn", "geosite-cn"],
-        "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs", "update_interval": "24h" },
-
+      { "tag": "CustomRuleSet_Direct", "type": "remote", "format": "source", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Sing-Box/CustomRuleSet_Direct.json", "update_interval": "24h" },
+      { "tag": "CustomRuleSet_Proxy", "type": "remote", "format": "source", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/RuleSet/Sing-Box/CustomRuleSet_Proxy.json", "update_interval": "24h" },
+      { "tag": "apple-cn",  "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple-cn.srs", "update_interval": "24h" },
+      { "tag": "geosite-apple", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple.srs", "update_interval": "24h" },
+      { "tag": "geosite-paypal", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-paypal.srs", "update_interval": "24h" },
+      { "tag": "geosite-github", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-github.srs", "update_interval": "24h" },
+      { "tag": "geosite-telegram", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-telegram.srs", "update_interval": "24h" },
+      { "tag": "geosite-facebook", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-facebook.srs", "update_interval": "24h" },
+      { "tag": "geosite-instagram", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-instagram.srs", "update_interval": "24h" },
+      { "tag": "geosite-twitter", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-twitter.srs", "update_interval": "24h" },
+      { "tag": "geosite-category-ai-chat-!cn", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-chat-!cn.srs", "update_interval": "24h" },
+      { "tag": "geosite-google-gemini", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google-gemini.srs", "update_interval": "24h" },
+      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-youtube.srs", "update_interval": "24h" },
+      { "tag": "geosite-google", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs", "update_interval": "24h" },
+      { "tag": "geosite-microsoft@cn", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-microsoft@cn.srs", "update_interval": "24h" },
+      { "tag": "geosite-microsoft", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-microsoft.srs", "update_interval": "24h" },
+      { "tag": "geosite-tiktok", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tiktok.srs", "update_interval": "24h" },
+      { "tag": "geosite-netflix", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs", "update_interval": "24h" },
+      { "tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs", "update_interval": "24h" },
+      { "tag": "geosite-category-ads-all", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs", "update_interval": "24h" },
+      { "tag": "geosite-private", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs", "update_interval": "24h" },
+      { "tag": "geosite-geolocation-cn", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs", "update_interval": "24h" },
+      { "tag": "geosite-cn", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs", "update_interval": "24h" },
       { "tag": "geoip-telegram", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs", "update_interval": "24h" },
-
       { "tag": "geoip-google", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs", "update_interval": "24h" },
-
       { "tag": "geoip-netflix", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs", "update_interval": "24h" },
-
       { "tag": "geoip-private", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "update_interval": "24h" },
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "update_interval": "24h" }
     ],
