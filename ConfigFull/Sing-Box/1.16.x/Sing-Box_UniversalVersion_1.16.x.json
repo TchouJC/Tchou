@@ -99,6 +99,7 @@
     "rules": [
       {"action": "sniff"},
       {"action": "hijack-dns","protocol": "dns"},
+      {"type":"logical","mode":"and","rules":[{"rule_set":["geosite-youtube","geosite-google"]},{"ip_cidr":["198.18.0.0/15"],"invert":true}],"action":"reject"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
 
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
