@@ -126,7 +126,7 @@
   "route": {
     "rules": [
       {"action": "sniff"},
-     {"action": "hijack-dns","protocol": "dns"},      
+      { "inbound": "dns", "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
 
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
