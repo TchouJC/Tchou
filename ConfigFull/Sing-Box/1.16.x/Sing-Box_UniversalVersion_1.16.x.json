@@ -99,7 +99,6 @@
     "rules": [
       {"action": "sniff"},
       {"action": "hijack-dns","protocol": "dns"},
-      {"network": "tcp", "ip_cidr": ["119.29.29.29/32"], "port": 80, "action": "reject"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
 
       {"ip_cidr": "208.54.2.163/32","outbound": "🎯 全球直连"},
