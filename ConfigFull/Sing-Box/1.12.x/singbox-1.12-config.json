@@ -142,8 +142,9 @@
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "download_detour": "🎯 全球直连", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "update_interval": "24h" }
     ],
     "auto_detect_interface": true,
+    "find_process": true,
     "final": "🐟 漏网之鱼",
-    "default_domain_resolver": {"server": "Local-DNS"}
+    "default_domain_resolver": "Local-DNS"
   },
   "dns": {
     "servers": [
@@ -161,8 +162,6 @@
         ], "server": "Fake-IP" }
     ],
     "final": "Remote-DNS",
-    "strategy": "ipv4_only",
-    "independent_cache": true,
-    "reverse_mapping": true
+    "strategy": "ipv4_only"
   }
 }
