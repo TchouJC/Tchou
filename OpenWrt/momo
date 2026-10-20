@@ -14,7 +14,7 @@ config proxy 'proxy'
 	option udp_mode 'tun'
 	option ipv4_dns_hijack '1'
 	option ipv6_dns_hijack '0'
-	option ipv4_proxy '0'
+	option ipv4_proxy '1'
 	option ipv6_proxy '0'
 	option fake_ip_ping_hijack '1'
 	option router_proxy '1'
@@ -137,7 +137,7 @@ config subscription
 	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/QWERT01234asdfg56789/download/collection/SubStore?target=sing-box&file=https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Sing-Box/1.16.x/Sing-Box_UniversalVersion_1.16.x.json'
 	option user_agent 'sing-box'
 	option prefer 'remote'
-	option update '2026-10-21 01:12:08'
+	option update '2026-10-21 03:54:46'
 	option success '1'
 
 config subscription
@@ -145,7 +145,7 @@ config subscription
 	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/QWERT01234asdfg56789/download/collection/SubStore?target=sing-box&file=https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Sing-Box/1.16.x/Sing-Box_momo_1.16.x.json'
 	option user_agent 'sing-box'
 	option prefer 'remote'
-	option update '2026-10-21 01:10:30'
+	option update '2026-10-21 03:48:04'
 	option success '1'
 
 config subscription
@@ -153,7 +153,7 @@ config subscription
 	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/QWERT01234asdfg56789/download/collection/Sing-Box_1.12.x?target=sing-box&file=https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Sing-Box/1.12.x/Sing-Box_1.12.x.json'
 	option user_agent 'sing-box'
 	option prefer 'remote'
-	option update '2026-10-21 00:58:15'
+	option update '2026-10-21 03:44:56'
 	option success '1'
 
 config subscription
@@ -161,5 +161,6 @@ config subscription
 	option url 'http://192.168.10.2:5000/config/http://192.168.10.2:3001/QWERT01234asdfg56789/download/collection/Sing-Box_1.12.x?target=sing-box&file=https://gh-proxy.com/https://raw.githubusercontent.com/TchouJC/Tchou/refs/heads/main/ConfigFull/Sing-Box/1.12.x/Momo_1.12.x.json'
 	option user_agent 'sing-box'
 	option prefer 'remote'
-	option success '0'
+	option update '2026-10-21 03:42:14'
+	option success '1'
 
