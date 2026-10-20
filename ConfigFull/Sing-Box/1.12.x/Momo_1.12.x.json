@@ -57,13 +57,17 @@
       "tag": "redirect-in",
       "type": "redirect",
       "listen": "::",
-      "listen_port": 7891
+      "listen_port": 7891,
+      "sniff": true,
+      "sniff_override_destination": true      
     },
     {
       "tag": "tproxy-in",
       "type": "tproxy",
       "listen": "::",
-      "listen_port": 7892
+      "listen_port": 7892,
+      "sniff": true,
+      "sniff_override_destination": true      
     },
     {
       "type": "tun",
@@ -74,10 +78,10 @@
         "fdfe:dcba:9876::1/126"
       ],
       "mtu": 1500,
-      "auto_route": true,
-      "auto_redirect": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true,
+      "auto_route": false,
+      "auto_redirect": false,
+      "strict_route": false,
+      "endpoint_independent_nat": false,
       "sniff": true,
       "sniff_override_destination": true
     }
@@ -106,7 +110,7 @@
   "route": {
     "rules": [
       { "action": "sniff" },
-      { "inbound": "dns-in", "action": "hijack-dns"},
+      {"action": "hijack-dns", "protocol": "dns" },      
       { "ip_is_private": true, "outbound": "🎯 全球直连" },
 
       { "ip_cidr": "208.54.2.163/32", "outbound": "🎯 全球直连" },
